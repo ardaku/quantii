@@ -1,0 +1,8 @@
+[package]
+name = "arc"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+novuskinc = "0.1"
+# ardaku = "0.0.1"
