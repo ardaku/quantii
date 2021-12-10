@@ -3,6 +3,20 @@ name = "arc"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+name = "libarc_os"
+path = "src/lib.rs"
+
+[[bin]]
+name = "arc"
+path = "src/main.rs"
+
 [dependencies]
 novuskinc = "0.1"
 # ardaku = "0.0.1"
+
+# When v3 comes out (which should be soon) add the tag field
+[dependencies.novusk]
+# And change this to new-kernel
+git = "https://github.com/NathanMcMillan54/novusk"
+features = ["hifive", "rpi3"]
