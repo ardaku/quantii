@@ -11,4 +11,4 @@ endif
 
 all:
 	@ echo "Compiling Arc..."
-	@ cargo build --release --target $(TARGET)
+	@ cargo +nightly build --release --target $(TARGET)
