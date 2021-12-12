@@ -1,5 +1,7 @@
 #![no_std]
 
+pub(crate) mod symbols;
+
 #[macro_use] extern crate novuskinc;
 
 use novuskinc::kernel::syscalls;
