@@ -24,7 +24,7 @@ The OS executable will be located at ``./target/aarch64-novusk/release/kernel8.i
 Make sure you have at least Qemu v4.2.1+
 
 ```commandline
-qemu-system-aarch64 -M raspi3 -kernel target/aarch64-nnovusk/release/kernel8.img
+qemu-system-aarch64 -M raspi3 -kernel target/aarch64-novusk/release/kernel8.img
 ```
 
 ## Test RISC-V in QEMU
