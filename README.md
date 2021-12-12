@@ -2,11 +2,13 @@
 Novusk-based OS running the Ardaku engine.
 
 ## Build Environment
-You will need the nightly toolchain and sources.
+You will need the nightly toolchain and sources as well as cargo-binutils.
 
 ```commandline
 rustup toolchain install nightly
 rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
+rustup component add llvm-tools-preview
+cargo install cargo-binutils
 ```
 
 ## Build:
