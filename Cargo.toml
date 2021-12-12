@@ -13,7 +13,9 @@ path = "src/main.rs"
 
 [dependencies]
 novuskinc = "0.1"
-# ardaku = "0.0.1"
+
+[dependencies.ardaku]
+git = "https://github.com/ardaku/ardaku"
 
 # When v3 comes out (which should be soon) add the tag field
 [dependencies.novusk]
