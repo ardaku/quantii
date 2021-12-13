@@ -12,6 +12,7 @@ name = "arc"
 path = "src/main.rs"
 
 [dependencies]
+libm = "0.2"
 novuskinc = "0.1"
 
 [dependencies.ardaku]
