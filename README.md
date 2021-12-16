@@ -5,8 +5,8 @@ Novusk-based OS running the Ardaku engine.
 You will need the nightly toolchain and sources as well as cargo-binutils.
 
 ```commandline
-rustup toolchain install nightly
-rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
+rustup toolchain install nightly-2021-12-14
+rustup component add rust-src --toolchain nightly-2021-12-14
 rustup component add llvm-tools-preview
 cargo install cargo-binutils
 ```
@@ -24,7 +24,7 @@ The OS executable will be located at ``./target/aarch64-novusk/release/kernel8.i
 Make sure you have at least Qemu v4.2.1+
 
 ```commandline
-qemu-system-aarch64 -M raspi3 -kernel target/aarch64-novusk/release/kernel8.img
+qemu-system-aarch64 -M raspi3 -kernel target/aarch64-novusk/release/kernel8.img -serial null -serial stdio
 ```
 
 ## Test RISC-V in QEMU

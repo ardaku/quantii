@@ -17,7 +17,7 @@ all: build image
 
 build:
 	@ echo "Compiling Arc..."
-	@ cargo +nightly build --release --target $(TARGET)
+	@ cargo +nightly-2021-12-14 build --release --target $(TARGET)
 
 image:
 	@ echo "Creating image..."

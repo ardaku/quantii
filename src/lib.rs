@@ -1,8 +1,8 @@
 #![no_std]
 
-pub(crate) mod symbols;
-
-#[macro_use] extern crate novuskinc;
+extern crate novuskinc;
+// Missing intrinsics patch.
+extern crate compiler_builtins_patch;
 
 use novuskinc::kernel::syscalls;
 
@@ -32,6 +32,16 @@ impl ardaku::System for System {
     }
 }
 
-pub fn arc_setup() {
+pub fn arc_setup() -> ! {
+    use ardaku::System;
+
+    System.write(b"\n\n=== ARDAKU STARTED ===\n");
+
     ardaku::start(System, APP_EXE).unwrap();
+
+    System.write(b"\n=== ARDAKU STOPPED ===\n");
+
+    loop {
+        System.sleep();
+    }
 }

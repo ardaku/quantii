@@ -14,6 +14,7 @@ path = "src/main.rs"
 [dependencies]
 libm = "0.2"
 novuskinc = "0.1"
+compiler_builtins_patch = { git = "https://github.com/ardaku/compiler-builtins", tag = "novusk" }
 
 [dependencies.ardaku]
 git = "https://github.com/ardaku/ardaku"
