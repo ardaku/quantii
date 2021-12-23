@@ -151,9 +151,9 @@ dependencies = [
 
 [[package]]
 name = "bootloader"
-version = "0.9.19"
+version = "0.9.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b7c452074efc3c0bfb241fb7bc87df04741c7c85e926f6a07c05f8fbd6008240"
+checksum = "6b0718f186cd449b21f044683933284ed90fb83f3e13949ff0e03b0b6f02e38e"
 
 [[package]]
 name = "cast"
@@ -285,7 +285,7 @@ checksum = "c8e3aa52243e26f5922fa522b0814019e0c98fc567e2756d715dce7ad7a81f49"
 dependencies = [
  "proc-macro2 1.0.34",
  "quote 1.0.10",
- "syn 1.0.82",
+ "syn 1.0.83",
 ]
 
 [[package]]
@@ -349,7 +349,7 @@ dependencies = [
  "proc-macro2 1.0.34",
  "quote 1.0.10",
  "strsim",
- "syn 1.0.82",
+ "syn 1.0.83",
 ]
 
 [[package]]
@@ -360,7 +360,7 @@ checksum = "d9b5a2f4ac4969822c62224815d069952656cadc7084fdca9751e6d959189b72"
 dependencies = [
  "darling_core",
  "quote 1.0.10",
- "syn 1.0.82",
+ "syn 1.0.83",
 ]
 
 [[package]]
@@ -462,7 +462,7 @@ dependencies = [
  "darling",
  "proc-macro2 1.0.34",
  "quote 1.0.10",
- "syn 1.0.82",
+ "syn 1.0.83",
 ]
 
 [[package]]
@@ -1416,9 +1416,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "1.0.82"
+version = "1.0.83"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8daf5dd0bb60cbd4137b1b587d2fc0ae729bc07cf01cd70b36a1ed5ade3b9d59"
+checksum = "23a1dfb999630e338648c83e91c59a4e9fb7620f520c3194b6b89e276f2f1959"
 dependencies = [
  "proc-macro2 1.0.34",
  "quote 1.0.10",
@@ -1764,5 +1764,5 @@ checksum = "21a8200930e2dbd515c231f7a46033bd6dfe1497a8e9a539878f0de8f0cd730b"
 dependencies = [
  "proc-macro2 1.0.34",
  "quote 1.0.10",
- "syn 1.0.82",
+ "syn 1.0.83",
 ]

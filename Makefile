@@ -4,7 +4,7 @@ IMAGE_CMD =?
 
 ifeq ($(ARCH), aarch64)
 	TARGET = aarch64-novusk.json
-	IMAGE_CMD = rust-objcopy --strip-all -O binary target/aarch64-novusk/release/arc target/aarch64-novusk/release/kernel8.img
+	IMAGE_CMD = aarch64-linux-gnu-objcopy --strip-all -O binary target/aarch64-novusk/release/arc target/aarch64-novusk/release/kernel8.img
 endif
 
 ifeq ($(ARCH), riscv)
