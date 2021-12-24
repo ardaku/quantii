@@ -6,6 +6,8 @@ extern crate compiler_builtins_patch;
 
 use novuskinc::kernel::syscalls;
 
+pub mod novusk;
+
 const APP_EXE: &[u8] = include_bytes!("hello_world.wasm");
 
 struct System;
