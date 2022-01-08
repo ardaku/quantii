@@ -26,10 +26,15 @@ impl ardaku::System for System {
     }
 
     fn version(&self) -> u32 {
-        unsafe { syscalls::syscall(syscalls::VERSION, 0) }.into()
+        #[cfg(not(target_arch = "riscv32"))]
+        unsafe { syscalls::syscall(syscalls::VERSION, 0) }.into();
+
+        #[cfg(target_arch = "riscv32")]
+        return 3;
     }
 
     fn reboot(&self) {
+        #[cfg(not(target_arch = "riscv32"))]
         unsafe { syscalls::syscall(syscalls::REBOOT, 0) };
     }
 }

@@ -13,7 +13,7 @@ path = "src/main.rs"
 
 [dependencies]
 libm = "0.2"
-novuskinc = "0.1"
+novuskinc = "0.1.1"
 compiler_builtins_patch = { git = "https://github.com/ardaku/compiler-builtins", tag = "novusk" }
 
 [dependencies.ardaku]
@@ -23,5 +23,4 @@ git = "https://github.com/ardaku/ardaku"
 [dependencies.novusk]
 # And change this to new-kernel
 git = "https://github.com/NathanMcMillan54/novusk"
-tag = "v3-beta-k3.2"
 features = ["custom_config", "hifive", "rpi3"]
