@@ -9,7 +9,7 @@ endif
 
 ifeq ($(ARCH), riscv)
 	TARGET = riscv32imac-unknown-none-elf
-	IMAGE_CMD = mv target/riscv32imac-unknown-none-elf/release/arc target/riscv32imac-unknown-none-elf/release/arc_os.img
+	IMAGE_CMD = mv target/riscv32imac-unknown-none-elf/release/arc target/riscv32imac-unknown-none-elf/release/risc32_arc.img
 endif
 
 all: build image

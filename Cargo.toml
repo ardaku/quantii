@@ -23,5 +23,5 @@ git = "https://github.com/ardaku/ardaku"
 [dependencies.novusk]
 # And change this to new-kernel
 git = "https://github.com/NathanMcMillan54/novusk"
-# rev = "9662ee6"
+tag = "v3-beta-k3.2"
 features = ["custom_config", "hifive", "rpi3"]

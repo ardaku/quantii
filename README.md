@@ -1,5 +1,5 @@
 # Arc
-Novusk-based OS running the Ardaku engine.
+[Novusk](https://github.com/NathanMcMillan54/novusk/) based OS running the Ardaku engine.
 
 ## Build Environment
 You will need the nightly toolchain and sources as well as cargo-binutils.
@@ -28,7 +28,12 @@ qemu-system-aarch64 -M raspi3 -kernel target/aarch64-novusk/release/kernel8.img 
 ```
 
 ## Test RISC-V in QEMU
-TODO
+The OS executable will be located at ``./target/riscv32imac-unknown-none-elf/release/riscv32_arc.img``
+Make sure you have at least Qemu v4.2.1+
+
+```commandline
+qemu-system-riscv32 -nographic -machine sifive_e -m 128M -kernel target/riscv32imac-unknown-none-elf/release/riscv32_arc.img -serial 'mon:stdio' -bios none
+```
 
 ## Test on Raspberry Pi
 
