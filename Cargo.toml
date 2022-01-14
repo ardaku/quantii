@@ -19,8 +19,7 @@ compiler_builtins_patch = { git = "https://github.com/ardaku/compiler-builtins",
 [dependencies.ardaku]
 git = "https://github.com/ardaku/ardaku"
 
-# When v3 comes out (which should be soon) add the tag field
 [dependencies.novusk]
-# And change this to new-kernel
-git = "https://github.com/NathanMcMillan54/novusk"
+git = "https://github.com/new-kernel/novusk"
+tag = "v3"
 features = ["custom_config", "hifive", "rpi3"]
