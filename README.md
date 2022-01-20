@@ -1,8 +1,10 @@
-# Arc
-[Novusk](https://github.com/NathanMcMillan54/novusk/) based OS running the Ardaku engine.
+# Quantii
+[Novusk](https://github.com/NathanMcMillan54/novusk/) based OS running the
+[Ardaku](https://github.com/ardaku/ardaku/) engine.
 
 ## Build Environment
-You will need the nightly toolchain and sources as well as cargo-binutils.
+You will need the nightly toolchain and sources as well as cargo-binutils and
+the binutils-aarch64-linux-gnu package installed.
 
 ```commandline
 rustup toolchain install nightly-2021-12-14
@@ -28,11 +30,11 @@ qemu-system-aarch64 -M raspi3 -kernel target/aarch64-novusk/release/kernel8.img 
 ```
 
 ## Test RISC-V in QEMU
-The OS executable will be located at ``./target/riscv32imac-unknown-none-elf/release/riscv32_arc.img``
+The OS executable will be located at ``./target/riscv32imac-unknown-none-elf/release/riscv32_quantii.img``
 Make sure you have at least Qemu v4.2.1+
 
 ```commandline
-qemu-system-riscv32 -nographic -machine sifive_e -m 128M -kernel target/riscv32imac-unknown-none-elf/release/riscv32_arc.img -serial 'mon:stdio' -bios none
+qemu-system-riscv32 -nographic -machine sifive_e -m 128M -kernel target/riscv32imac-unknown-none-elf/release/quantii.img -serial 'mon:stdio' -bios none
 ```
 
 ## Test on Raspberry Pi

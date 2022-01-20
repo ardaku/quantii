@@ -1,20 +1,20 @@
 [package]
-name = "arc"
+name = "quantii"
 version = "0.1.0"
 edition = "2021"
 
 [lib]
-name = "libarc_os"
+name = "quantii"
 path = "src/lib.rs"
 
 [[bin]]
-name = "arc"
+name = "quantii"
 path = "src/main.rs"
 
 [dependencies]
 libm = "0.2"
 novuskinc = "0.1.1"
-compiler_builtins_patch = { git = "https://github.com/ardaku/compiler-builtins", tag = "novusk" }
+compiler_builtins_patch = { git = "https://github.com/ardaku/compiler-builtins", branch = "quantii" }
 
 [dependencies.ardaku]
 git = "https://github.com/ardaku/ardaku"

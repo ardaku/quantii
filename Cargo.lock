@@ -47,17 +47,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "arc"
-version = "0.1.0"
-dependencies = [
- "ardaku",
- "compiler_builtins_patch",
- "libm",
- "novusk",
- "novuskinc 0.1.1",
-]
-
-[[package]]
 name = "ardaku"
 version = "0.1.0"
 source = "git+https://github.com/ardaku/ardaku#5b2ce66b5ae6bede576457138c19ea089fcf9a01"
@@ -198,7 +187,7 @@ dependencies = [
 [[package]]
 name = "compiler_builtins_patch"
 version = "0.1.66"
-source = "git+https://github.com/ardaku/compiler-builtins?tag=novusk#2bda4a41d9460ead8633e4b1fbb84635abd4d1af"
+source = "git+https://github.com/ardaku/compiler-builtins?branch=quantii#9190dcf4d02fb28d32e10484eb7e5d8c9b28de8d"
 
 [[package]]
 name = "conquer-once"
@@ -290,7 +279,7 @@ checksum = "c8e3aa52243e26f5922fa522b0814019e0c98fc567e2756d715dce7ad7a81f49"
 dependencies = [
  "proc-macro2 1.0.36",
  "quote 1.0.14",
- "syn 1.0.85",
+ "syn 1.0.86",
 ]
 
 [[package]]
@@ -354,7 +343,7 @@ dependencies = [
  "proc-macro2 1.0.36",
  "quote 1.0.14",
  "strsim",
- "syn 1.0.85",
+ "syn 1.0.86",
 ]
 
 [[package]]
@@ -365,7 +354,7 @@ checksum = "d9b5a2f4ac4969822c62224815d069952656cadc7084fdca9751e6d959189b72"
 dependencies = [
  "darling_core",
  "quote 1.0.14",
- "syn 1.0.85",
+ "syn 1.0.86",
 ]
 
 [[package]]
@@ -467,7 +456,7 @@ dependencies = [
  "darling",
  "proc-macro2 1.0.36",
  "quote 1.0.14",
- "syn 1.0.85",
+ "syn 1.0.86",
 ]
 
 [[package]]
@@ -1074,6 +1063,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "quantii"
+version = "0.1.0"
+dependencies = [
+ "ardaku",
+ "compiler_builtins_patch",
+ "libm",
+ "novusk",
+ "novuskinc 0.1.1",
+]
+
+[[package]]
 name = "quote"
 version = "0.6.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1502,9 +1502,9 @@ dependencies = [
 
 [[package]]
 name = "syn"
-version = "1.0.85"
+version = "1.0.86"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a684ac3dcd8913827e18cd09a68384ee66c1de24157e3c556c9ab16d85695fb7"
+checksum = "8a65b3f4ffa0092e9887669db0eae07941f023991ab58ea44da8fe8e2d511c6b"
 dependencies = [
  "proc-macro2 1.0.36",
  "quote 1.0.14",
@@ -1851,5 +1851,5 @@ checksum = "21a8200930e2dbd515c231f7a46033bd6dfe1497a8e9a539878f0de8f0cd730b"
 dependencies = [
  "proc-macro2 1.0.36",
  "quote 1.0.14",
- "syn 1.0.85",
+ "syn 1.0.86",
 ]

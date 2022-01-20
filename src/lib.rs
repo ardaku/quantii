@@ -27,19 +27,25 @@ impl ardaku::System for System {
 
     fn version(&self) -> u32 {
         #[cfg(not(target_arch = "riscv32"))]
-        unsafe { syscalls::syscall(syscalls::VERSION, 0) }.into();
+        unsafe {
+            syscalls::syscall(syscalls::VERSION, 0).into()
+        }
 
         #[cfg(target_arch = "riscv32")]
-        return 3;
+        {
+            3
+        }
     }
 
     fn reboot(&self) {
         #[cfg(not(target_arch = "riscv32"))]
-        unsafe { syscalls::syscall(syscalls::REBOOT, 0) };
+        unsafe {
+            syscalls::syscall(syscalls::REBOOT, 0)
+        };
     }
 }
 
-pub fn arc_setup() -> ! {
+pub fn setup() -> ! {
     use ardaku::System;
 
     System.write(b"\n\n=== ARDAKU STARTED ===\n");

@@ -1,17 +1,16 @@
 #![no_std]
 #![no_main]
 
-extern crate libarc_os;
 extern crate novusk;
+extern crate quantii;
 
-use libarc_os::arc_setup;
+use quantii::setup;
 
 // Called from novusk
 #[no_mangle]
 pub extern "C" fn kernel_main() -> ! {
-    arc_setup()
+    setup()
 }
 
 #[no_mangle]
-pub extern "C" fn initramfs_main() {  }
-
+pub extern "C" fn initramfs_main() {}

@@ -1,6 +1,5 @@
-pub const ARC_KONFIG: &'static str = include_str!("arc_konfig.txt");
-
+#[allow(improper_ctypes_definitions)]
 #[no_mangle]
 pub extern "C" fn kernel_config() -> &'static str {
-    return ARC_KONFIG;
+    include_str!("quantii_config.txt")
 }
