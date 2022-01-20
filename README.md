@@ -4,7 +4,7 @@
 
 ## Build Environment
 You will need the nightly toolchain and sources as well as cargo-binutils and
-the binutils-aarch64-linux-gnu package installed.
+the binutils-aarch64-linux-gnu, qemu-system-riscv packages installed.
 
 ```commandline
 rustup toolchain install nightly-2021-12-14
@@ -30,7 +30,7 @@ qemu-system-aarch64 -M raspi3 -kernel target/aarch64-novusk/release/kernel8.img 
 ```
 
 ## Test RISC-V in QEMU
-The OS executable will be located at ``./target/riscv32imac-unknown-none-elf/release/riscv32_quantii.img``
+The OS executable will be located at ``./target/riscv32imac-unknown-none-elf/release/quantii.img``
 Make sure you have at least Qemu v4.2.1+
 
 ```commandline
