@@ -23,3 +23,14 @@ git = "https://github.com/ardaku/ardaku"
 git = "https://github.com/new-kernel/novusk"
 tag = "v3"
 features = ["custom_config", "hifive", "rpi3"]
+
+[profile.release]
+opt-level = "z"
+debug = false
+debug-assertions = false
+overflow-checks = false
+lto = false
+panic = "abort"
+incremental = false
+codegen-units = 16
+rpath = false
