@@ -1074,6 +1074,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "quantii-runner"
+version = "0.1.0"
+
+[[package]]
 name = "quote"
 version = "0.6.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1807,6 +1811,10 @@ source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba565
 dependencies = [
  "pc-beeper",
 ]
+
+[[package]]
+name = "xtask"
+version = "0.1.0"
 
 [[package]]
 name = "xtensa"

@@ -1,0 +1,28 @@
+rustflags = [
+    "-C", "link-arg=--nmagic",
+    "-C", "link-arg=-Tlink.x",
+]
+
+[unstable]
+build-std = ["core", "alloc", "compiler_builtins"]
+build-std-features = ["compiler-builtins-mem"]
+
+[target.aarch64-novusk]
+runner = "quantii-runner"
+
+[target.riscv32imac-unknown-none-elf]
+runner = "quantii-runner"
+
+[profile.release]
+opt-level = 3
+debug = false
+debug-assertions = false
+overflow-checks = false
+lto = false
+panic = "abort"
+incremental = true
+codegen-units = 16
+rpath = false
+
+[build]
+target = "aarch64-unknown-none"

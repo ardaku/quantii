@@ -1,37 +1,28 @@
 ## Build Environment
-You will need the nightly toolchain and sources as well as cargo-binutils and
-the binutils-aarch64-linux-gnu, qemu-system-riscv packages installed.
+You will need the rustup, the nightly toolchain and sources as well as
+cargo-binutils and the binutils-aarch64-linux-gnu, qemu-system-riscv packages
+installed.
 
-```commandline
+```shell
 rustup toolchain install nightly-2021-12-14
 rustup component add rust-src --toolchain nightly-2021-12-14
 rustup component add llvm-tools-preview
 cargo install cargo-binutils
 ```
 
-## Build:
+## Building Instructions
+Quantii uses cargo-xtask, so building and testing the OS is easy:
 
-Use ``aarch64`` for arm (64 bit), and riscv (32 bit for now)
-
-```commandline
-make all ARCH=<architecture>
+```shell
+cargo dist arm # Build OS for AARCH64
+cargo qemu arm # Emulate OS in AARCH64 QEMU
+cargo dist riscv # Build OS for RISC-V (doesn't work yet)
+cargo qemu riscv # Emulate OS in RISC-V QEMU (doesn't work yet)
 ```
 
-## Test ARM in QEMU
-The OS executable will be located at ``./target/aarch64-novusk/release/kernel8.img``
-Make sure you have at least Qemu v4.2.1+
+Distribution artifacts go into `/target/dist/`
 
-```commandline
-qemu-system-aarch64 -M raspi3 -kernel target/aarch64-novusk/release/kernel8.img -serial null -serial stdio
-```
-
-## Test RISC-V in QEMU
-The OS executable will be located at ``./target/riscv32imac-unknown-none-elf/release/quantii.img``
-Make sure you have at least Qemu v4.2.1+
-
-```commandline
-qemu-system-riscv32 -nographic -machine sifive_e -m 128M -kernel target/riscv32imac-unknown-none-elf/release/quantii.img -serial 'mon:stdio' -bios none
-```
+# Try On Real Hardware
 
 ## Test on Raspberry Pi
 
@@ -39,3 +30,6 @@ qemu-system-riscv32 -nographic -machine sifive_e -m 128M -kernel target/riscv32i
 
 Install the Raspberry Pi boot files from [here](https://github.com/raspberrypi/firmware/tree/master/boot) and replace 
 ``kernel8.img`` with ``target/aarch64-novusk/release/kernel8.img``
+
+## Test on VisionFive
+TODO

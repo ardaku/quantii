@@ -1,8 +1,7 @@
-rustflags = [
-    "-C", "link-arg=--nmagic",
-    "-C", "link-arg=-Tlink.x",
-]
-
-[unstable]
-build-std = ["core", "alloc", "compiler_builtins"]
-build-std-features = ["compiler-builtins-mem"]
+[alias]
+xtask = "run -p xtask --"
+x = "xtask"
+dist = "x dist"
+qemu = "x qemu"
+d = "dist"
+l = "launch"

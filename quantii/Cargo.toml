@@ -1,0 +1,25 @@
+[package]
+name = "quantii"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "quantii"
+path = "src/lib.rs"
+
+[[bin]]
+name = "quantii"
+path = "src/main.rs"
+
+[dependencies]
+libm = "0.2"
+novuskinc = "0.1.1"
+compiler_builtins_patch = { git = "https://github.com/ardaku/compiler-builtins", branch = "quantii" }
+
+[dependencies.ardaku]
+git = "https://github.com/ardaku/ardaku"
+
+[dependencies.novusk]
+git = "https://github.com/new-kernel/novusk"
+tag = "v3"
+features = ["custom_config", "hifive", "rpi3"]

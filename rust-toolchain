@@ -1,1 +1,3 @@
-nightly-2021-12-14
+[toolchain]
+channel = "nightly-2021-12-14"
+targets = ["aarch64-unknown-none", "riscv32imac-unknown-none-elf"]
