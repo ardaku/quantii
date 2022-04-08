@@ -28,7 +28,7 @@ fn main() {
         _path if _path.ends_with("aarch64-novusk/release/quantii") => {
             Command::new("qemu-system-aarch64")
                 .args([
-                    "-M", "raspi3", "-kernel", path, "-serial", "null",
+                    "-M", "raspi3b", "-kernel", path, "-serial", "null",
                     "-serial", "stdio",
                 ])
                 .status()
