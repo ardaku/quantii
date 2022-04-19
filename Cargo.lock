@@ -49,7 +49,7 @@ dependencies = [
 [[package]]
 name = "ardaku"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/ardaku#5b2ce66b5ae6bede576457138c19ea089fcf9a01"
+source = "git+https://github.com/ardaku/ardaku#7908c5ae0b524c9bebe5e207b67d6786a3bce818"
 dependencies = [
  "wasmi",
 ]
