@@ -18,6 +18,30 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
-fn main() {
-    println!("cargo:rerun-if-changed=src/novusk/arc_konfig.txt");
+extern crate neutron_api;
+extern crate quantii;
+
+use neutron_api::*;
+
+use quantii::System;
+
+/// `QuantII SHell`
+///
+/// sh variant. Kinda like bash or zsh
+pub fn call_qiish(_entrance_code: u8) {
+    static STANDARD_COLOR: neutron_api::ColorCode =
+        ColorCode::new(Color::White, Color::Black);
+
+    use ardaku::System;
+
+    // if entrance_code == 0 {
+    // qiish_localenv(context)
+    // } else if entrance_code == 1 && Hasher::hash(key) == quantii::TERM_HASH.level1.get_next_hash() {}
+
+    System.write(b"computer#username@0 % ");
+    let shell = Shell::new();
 }
+
+// fn qiish_localenv(context: &[u8]) {
+//     ardaku::System.write("Entered level 0 term")
+// }

@@ -14,7 +14,10 @@ path = "src/main.rs"
 [dependencies]
 libm = "0.2"
 novuskinc = "0.1.1"
+#sha2 = "0.10.2"
 compiler_builtins_patch = { git = "https://github.com/ardaku/compiler-builtins", branch = "quantii" }
+#rand = "0.8.5"
+#getrandom = { version = "0.2", features = ["js"] }
 
 [dependencies.ardaku]
 git = "https://github.com/ardaku/ardaku"
@@ -23,3 +26,6 @@ git = "https://github.com/ardaku/ardaku"
 git = "https://github.com/new-kernel/novusk"
 tag = "v3"
 features = ["custom_config", "hifive", "rpi3"]
+
+[dependencies.neutron_api]
+git = "https://github.com/SpectralProject/NeutronAPI/"
