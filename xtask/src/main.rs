@@ -1,3 +1,25 @@
+// Copyright (c) 2022 The Quantii Contributors
+//
+// This file is part of Quantii.
+//
+// Quantii is free software: you can redistribute
+// it and/or modify it under the terms of the GNU
+// Lesser General Public License as published by
+// the Free Software Foundation, either version 3
+// of the License, or (at your option) any later
+// version.
+//
+// Quantii is distributed in the hope that it
+// will be useful, but WITHOUT ANY WARRANTY;
+// without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR
+// PURPOSE. See the GNU Lesser General Public
+// License for more details.
+//
+// You should have received a copy of the GNU
+// Lesser General Public License along with
+// Quantii. If not, see <https://www.gnu.org/licenses/>.
+
 use std::{env, process::Command};
 
 fn help() {
@@ -5,7 +27,7 @@ fn help() {
     println!("  --help         Print this message");
     println!("  dist [arch]    Build release artifacts to ./target/dist");
     println!("  qemu <arch>    Build and launch OS in QEMU");
-    println!("");
+    println!();
     println!("Arch:");
     println!("  riscv          RISC-V 64 (experimental)");
     println!("  arm            AARCH 64");
@@ -41,6 +63,28 @@ fn dist_riscv() {
     .unwrap();
 }
 
+fn dist_ci() {
+    // Build for ARM
+    let status = Command::new("cargo")
+        .args(["build", "--release", "--target", "aarch64-novusk.json"])
+        .status()
+        .expect("failed to execute process");
+    assert!(status.success());
+    // Clippy for ARM
+    let status = Command::new("cargo")
+        .args([
+            "clippy",
+            "--target",
+            "aarch64-novusk.json",
+            "--",
+            "-D",
+            "warnings",
+        ])
+        .status()
+        .expect("failed to execute process");
+    assert!(status.success());
+}
+
 fn dist_arm() {
     let _ = std::fs::remove_dir_all("../target/dist/quantii-arm");
     let _ = std::fs::create_dir_all("../target/dist/quantii-arm");
@@ -64,13 +108,14 @@ fn dist_arm() {
 }
 
 fn dist() {
-    match env::args().skip(2).next().as_ref().map(|x| x.as_str()) {
+    match env::args().nth(2).as_deref() {
         None => {
             dist_arm();
             dist_riscv();
         }
         Some("riscv") => dist_riscv(),
         Some("arm") => dist_arm(),
+        Some("ci") => dist_ci(),
         Some(arg) => panic!("dist: Invalid argument: {}", arg),
     }
 }
@@ -97,7 +142,7 @@ fn qemu_arm() {
 }
 
 fn qemu() {
-    match env::args().skip(2).next().as_ref().map(|x| x.as_str()) {
+    match env::args().nth(2).as_deref() {
         None => panic!("qemu: need arch"),
         Some("riscv") => qemu_riscv(),
         Some("arm") => qemu_arm(),
@@ -116,7 +161,7 @@ fn main() {
     // Go to Quantii
     env::set_current_dir("quantii").unwrap();
     // Options
-    match env::args().skip(1).next().as_ref().map(|x| x.as_str()) {
+    match env::args().nth(1).as_deref() {
         None | Some("--help") => help(),
         Some("dist") => dist(),
         Some("qemu") => qemu(),
