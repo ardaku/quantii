@@ -27,7 +27,7 @@ fn help() {
     println!("  --help         Print this message");
     println!("  dist [arch]    Build release artifacts to ./target/dist");
     println!("  qemu <arch>    Build and launch OS in QEMU");
-    println!("");
+    println!();
     println!("Arch:");
     println!("  riscv          RISC-V 64 (experimental)");
     println!("  arm            AARCH 64");
@@ -64,8 +64,22 @@ fn dist_riscv() {
 }
 
 fn dist_ci() {
+    // Build for ARM
     let status = Command::new("cargo")
         .args(["build", "--release", "--target", "aarch64-novusk.json"])
+        .status()
+        .expect("failed to execute process");
+    assert!(status.success());
+    // Clippy for ARM
+    let status = Command::new("cargo")
+        .args([
+            "clippy",
+            "--target",
+            "aarch64-novusk.json",
+            "--",
+            "-D",
+            "warnings",
+        ])
         .status()
         .expect("failed to execute process");
     assert!(status.success());
@@ -94,7 +108,7 @@ fn dist_arm() {
 }
 
 fn dist() {
-    match env::args().skip(2).next().as_ref().map(|x| x.as_str()) {
+    match env::args().nth(2).as_deref() {
         None => {
             dist_arm();
             dist_riscv();
@@ -128,7 +142,7 @@ fn qemu_arm() {
 }
 
 fn qemu() {
-    match env::args().skip(2).next().as_ref().map(|x| x.as_str()) {
+    match env::args().nth(2).as_deref() {
         None => panic!("qemu: need arch"),
         Some("riscv") => qemu_riscv(),
         Some("arm") => qemu_arm(),
@@ -147,7 +161,7 @@ fn main() {
     // Go to Quantii
     env::set_current_dir("quantii").unwrap();
     // Options
-    match env::args().skip(1).next().as_ref().map(|x| x.as_str()) {
+    match env::args().nth(1).as_deref() {
         None | Some("--help") => help(),
         Some("dist") => dist(),
         Some("qemu") => qemu(),

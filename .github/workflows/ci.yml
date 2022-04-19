@@ -15,10 +15,19 @@ jobs:
       with:
         profile: minimal
         toolchain: ${{ matrix.tc }}
+        components: rustfmt, clippy
         override: true
     - uses: actions-rs/cargo@v1
       with:
         command: test
+    - uses: actions-rs/cargo@v1
+      with:
+        command: fmt
+        args: --check
+    - uses: actions-rs/cargo@v1
+      with:
+        command: clippy
+        args: -- -D warnings
   dist:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -31,6 +40,7 @@ jobs:
       with:
         profile: minimal
         toolchain: ${{ matrix.tc }}
+        components: clippy, rust-src
         override: true
     - uses: actions-rs/cargo@v1
       with:
