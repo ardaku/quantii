@@ -19,7 +19,6 @@ jobs:
     - uses: actions-rs/cargo@v1
       with:
         command: test
-        args: --all
   dist:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -35,4 +34,4 @@ jobs:
         override: true
     - uses: actions-rs/cargo@v1
       with:
-        command: dist ci
+        command: run dist ci
