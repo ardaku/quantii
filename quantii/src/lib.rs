@@ -1,5 +1,5 @@
 /**
-Copyright (c) 2022 Quantii Foundation
+Copyright (c) 2022 The Quantii contributors
 
 This file is part of Quantii.
 
