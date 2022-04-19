@@ -34,4 +34,5 @@ jobs:
         override: true
     - uses: actions-rs/cargo@v1
       with:
-        command: run dist ci
+        command: run
+        args: dist ci
