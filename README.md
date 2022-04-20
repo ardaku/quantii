@@ -45,4 +45,4 @@ for more target architectures quickly.
 See the [Porting Guide](PORTING.md).
 
 ## Building
-See the [Instructions](BUILDING.md).
+See the [Instructions Guide](BUILDING.md).
