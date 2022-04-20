@@ -1,26 +1,24 @@
-/**
-Copyright (c) 2022 Quantii Contributors
-
-This file is part of Quantii.
-
-Quantii is free software: you can redistribute
-it and/or modify it under the terms of the GNU
-Lesser General Public License as published by
-the Free Software Foundation, either version 3
-of the License, or (at your option) any later
-version.
-
-Quantii is distributed in the hope that it
-will be useful, but WITHOUT ANY WARRANTY;
-without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR
-PURPOSE. See the GNU Lesser General Public
-License for more details.
-
-You should have received a copy of the GNU
-Lesser General Public License along with
-Quantii. If not, see <https://www.gnu.org/licenses/>.
- */
+// Copyright (c) 2022 The Quantii Contributors
+//
+// This file is part of Quantii.
+//
+// Quantii is free software: you can redistribute
+// it and/or modify it under the terms of the GNU
+// Lesser General Public License as published by
+// the Free Software Foundation, either version 3
+// of the License, or (at your option) any later
+// version.
+//
+// Quantii is distributed in the hope that it
+// will be useful, but WITHOUT ANY WARRANTY;
+// without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR
+// PURPOSE. See the GNU Lesser General Public
+// License for more details.
+//
+// You should have received a copy of the GNU
+// Lesser General Public License along with
+// Quantii. If not, see <https://www.gnu.org/licenses/>.
 
 #![no_std]
 
@@ -34,7 +32,7 @@ pub mod novusk;
 
 const APP_EXE: &[u8] = include_bytes!("hello_world.wasm");
 
-struct System;
+pub struct System;
 
 impl ardaku::System for System {
     fn sleep(&self) -> (ardaku::Event, u32) {
@@ -69,7 +67,7 @@ impl ardaku::System for System {
     }
 }
 
-pub fn setup() -> ! {
+pub fn setup() {
     use ardaku::System;
 
     System.write(b"\n\n=== ARDAKU STARTED ===\n");
@@ -78,7 +76,4 @@ pub fn setup() -> ! {
 
     System.write(b"\n=== ARDAKU STOPPED ===\n");
 
-    loop {
-        System.sleep();
-    }
 }
