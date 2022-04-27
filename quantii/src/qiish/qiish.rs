@@ -28,20 +28,17 @@ clippy::nursery,
 clippy::cargo,
 )]
 
-// #![allow(clippy::implicit_return)]
-// #![allow(clippy::missing_inline_in_public_items)]
+#![allow(clippy::implicit_return)]
+#![allow(clippy::missing_inline_in_public_items)]
 
 
 extern crate quantii;
 extern crate std;
 
-use alloc::{
-    string::{
-        String,
-        ToString
-    },
-    vec::Vec
-};
+use alloc::{string::{
+    String,
+    ToString
+}, vec, vec::Vec};
 use std::{
     collections::HashMap,
     fs,
@@ -51,10 +48,14 @@ use std::{
     },
     path::Path,
     print,
-    println
-};
+    println};
+
+// #[path="option_parse.rs"]
+// mod option_parse;
 
 pub const QIISHENV: &Path = Path::new("/home/.qiishenv");
+
+static mut CWD: &Path = Path::new("/home");
 
 /// `QuantII SHell`
 ///
@@ -65,7 +66,7 @@ pub fn call_qiish(_entrance_code: u8) {
 
     let env = get_env();
 
-    let cwd = Path::new("/home");
+
 
     let computer_name: &String = &match env.get("computername") {
         Ok(_env) => _env,
@@ -79,40 +80,123 @@ pub fn call_qiish(_entrance_code: u8) {
 
     let _ = stdout().flush();
 
-    while !exit {
-        // The @0 represents terminal mode.
-        // Since right now only 0 is supported,
-        // it is stated directly as such.
-        print!(computer_name + "#" + username + "@" + "0" + "%");
+    unsafe {
+        while !exit {
+            // The @0 represents terminal mode.
+            // Since right now only 0 is supported,
+            // it is stated directly as such.
+            print!(computer_name + "#" + username + "@" + "0" + "%");
 
-        let mut line: String;
-        stdin().read_line(&mut line);
+            let mut line: String;
+            stdin().read_line(&mut line);
 
-        let command: (String, String) = line.split_once(" ").unwrap().into();
-        let full_command: (String, Vec<String>) = (command.0, command.1.split_whitespace().collect());
-        let exit_code: (
-            i16, // Exit code itself
-            bool // Whether or not the shell should exit
-        ) = call_command(full_command, &env);
+            let command: (String, String) = line.split_once(" ").unwrap().trim().into();
+            let full_command: (String, Vec<String>) = (command.0, command.1.split_whitespace().collect());
+            let exit_code: (
+                i16, // Exit code itself
+                bool // Whether or not the shell should exit
+            ) = call_command(full_command, &env);
 
-        if exit_code.0 > 0 {
-            println!("\nProgram exited with error code {}", exit_code.0)
-        } else if exit_code.0 < -1 {
-            println!("\nProgram exited with irregular error code {}", exit_code.0)
+            if exit_code.0 > 0 {
+                println!("\nProgram exited with error code {}", exit_code.0)
+            } else if exit_code.0 < -1 {
+                println!("\nProgram exited with irregular error code {}", exit_code.0)
+            }
+            exit = exit_code.1;
         }
-        exit = exit_code.1;
     }
 }
 
-fn call_command(command: (String, Vec<String>), environment: &HashMap<String, String>) -> (i16, bool) {
+unsafe fn call_command(command: (String, Vec<String>), _environment: &HashMap<String, String>) -> (i16, bool) {
     match command.0.as_str() {
         "exit" => (0, true),
+        "cd" => cd(command),
+        "ls" => ls(command),
 
         _ => {
             println!("Unrecognized command: {}", command.0);
             (-1, false)
         }
     }
+}
+
+unsafe fn ls(command: (String, Vec<String>)) -> (i16, bool) {
+    if command.1.is_empty() {
+        return call_command(("ls".to_string(), vec!["~".to_string()]), environment)
+    }
+
+    const PATH: &Path =
+        Path::new(
+            command.1
+                .get(0)
+                .unwrap())
+            .canonicalize()
+            .unwrap()
+            .as_path();
+
+    if !PATH.is_dir() {
+        return if PATH.is_file() {
+            println!("ls: Cannot change directory into a file: {}",
+                     PATH.file_name()
+                         .unwrap()
+                         .to_str()
+                         .unwrap());
+            (-1, false)
+        } else {
+            println!("ls: No such file or directory: {}",
+                     PATH.file_name()
+                         .unwrap()
+                         .to_str()
+                         .unwrap());
+            (-1, false)
+        }
+    };
+
+    const PATHS: ReadDir = fs::read_dir(PATH).unwrap();
+
+    for path in PATHS {
+        print!("{} ", path.unwrap().path().display())
+    }
+    return (0, false)
+}
+
+fn cd(command: (String, Vec<String>)) -> (i16, bool) {
+    unsafe {
+    free(command.1);
+    if command.1.is_empty() {
+        unsafe { return call_command(("cd".to_string(), vec!["~".to_string()]), environment) }
+    }
+
+    const PATH: &Path =
+        Path::new(
+            command.1
+                .get(0)
+                .unwrap())
+            .canonicalize()
+            .unwrap()
+            .as_path();
+
+    if !PATH.is_dir() {
+        return if PATH.is_file() {
+            println!("cd: Cannot change directory into a file: {}",
+                     PATH.file_name()
+                         .unwrap()
+                         .to_str()
+                         .unwrap());
+            (-1, false)
+        } else {
+            println!("cd: No such file or directory: {}",
+                     PATH.file_name()
+                         .unwrap()
+                         .to_str()
+                         .unwrap());
+            (-1, false)
+        }
+    }
+
+    CWD = PATH;
+    (0, false)
+}
 }
 
 fn get_env() -> HashMap<String, String> {
