@@ -5,7 +5,7 @@
 ## Project Overview
 Quantii is an OS designed for the future.  Powered by WebAssembly and the Rust
 programming language, Quantii provides a novel take on OS security.  The main
-architecuture targets for Quantii are ARM64 and RISCV64.  Once the project gets
+architecture targets for Quantii are ARM64 and RISCV64.  Once the project gets
 to a completed and successful state, we will add X86\_64 support as well.
 
 ### Graphics
@@ -19,7 +19,7 @@ itself well to power users.
 ### Security
 OS security is broken, and has always been tacked on.  Quantii is designed with
 security in mind from the start.  Quantii runs on an app model, similar to a
-mobile operating system.  Each app is sandboxed within it's own WebAssembly
+mobile operating system.  Each app is sandboxed within its own WebAssembly
 task.  This means apps by themselves can't affect any other app.  They can't
 even access the same files.  Files have to explicitly shared from one app to
 another by the user.
@@ -33,7 +33,7 @@ operating systems.
 Additionally, Quantii uses the asynchronous
 [Daku](https://github.com/ardaku/daku) API which means syscalls are queued up,
 then sent together in a single syscall.  This reduces the number of calls to
-functions outside of the sandbox, which should allow a significant performance
+functions outside the sandbox, which should allow a significant performance
 improvement for I/O bound applications over conventional operating systems.
 
 ### WebAssembly
@@ -45,4 +45,4 @@ for more target architectures quickly.
 See the [Porting Guide](PORTING.md).
 
 ## Building
-See the [Instructions Guide](BUILDING.md).
+See the [Instructions](BUILDING.md).
