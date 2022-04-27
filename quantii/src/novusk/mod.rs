@@ -21,4 +21,6 @@
 // Lesser General Public License along with
 // Quantii. If not, see <https://www.gnu.org/licenses/>.
 
+//! TODO! doc
+/// TODO! doc
 pub mod konfig;

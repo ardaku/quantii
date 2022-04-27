@@ -20,6 +20,18 @@
 // Lesser General Public License along with
 // Quantii. If not, see <https://www.gnu.org/licenses/>.
 
+//! TODO!(Quantii documentation)
+
+// #![warn(
+// clippy::all,
+// clippy::restriction,
+// clippy::pedantic,
+// clippy::nursery,
+// clippy::cargo,
+// )]
+// #![allow(clippy::implicit_return)]
+// #![allow(clippy::missing_inline_in_public_items)]
+
 #![no_std]
 
 extern crate novuskinc;

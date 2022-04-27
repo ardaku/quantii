@@ -27,8 +27,8 @@ clippy::pedantic,
 clippy::nursery,
 clippy::cargo,
 )]
-#![allow(clippy::implicit_return)]
-#![allow(clippy::missing_inline_in_public_items)]
+// #![allow(clippy::implicit_return)]
+// #![allow(clippy::missing_inline_in_public_items)]
 
 
 extern crate quantii;
