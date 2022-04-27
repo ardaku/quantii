@@ -27,6 +27,7 @@ clippy::pedantic,
 clippy::nursery,
 clippy::cargo,
 )]
+
 // #![allow(clippy::implicit_return)]
 // #![allow(clippy::missing_inline_in_public_items)]
 
@@ -34,17 +35,24 @@ clippy::cargo,
 extern crate quantii;
 extern crate std;
 
-use alloc::string::{String, ToString};
-use alloc::vec::Vec;
-use std::collections::HashMap;
-use std::fs;
-use std::io::stdin;
-use std::io::stdout;
-use std::path::Path;
-use std::print;
-use std::println;
-
-use quantii::System;
+use alloc::{
+    string::{
+        String,
+        ToString
+    },
+    vec::Vec
+};
+use std::{
+    collections::HashMap,
+    fs,
+    io::{
+        stdin,
+        stdout
+    },
+    path::Path,
+    print,
+    println
+};
 
 pub const QIISHENV: &Path = Path::new("/home/.qiishenv");
 
