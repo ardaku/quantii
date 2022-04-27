@@ -25,6 +25,7 @@
 
 extern crate novusk;
 extern crate quantii;
+extern crate alloc;
 
 use ardaku::System;
 use quantii::setup;
