@@ -19,6 +19,7 @@
 // You should have received a copy of the GNU
 // Lesser General Public License along with
 // Quantii. If not, see <https://www.gnu.org/licenses/>.
+<<<<<<< HEAD
 
 
 //! TODO!(Quantii documentation)
@@ -32,6 +33,8 @@
 // )]
 // #![allow(clippy::implicit_return)]
 // #![allow(clippy::missing_inline_in_public_items)]
+=======
+>>>>>>> stable
 
 #![no_std]
 
