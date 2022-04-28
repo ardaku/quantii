@@ -20,6 +20,19 @@
 // Lesser General Public License along with
 // Quantii. If not, see <https://www.gnu.org/licenses/>.
 
+
+//! TODO!(Quantii documentation)
+
+// #![warn(
+// clippy::all,
+// clippy::restriction,
+// clippy::pedantic,
+// clippy::nursery,
+// clippy::cargo,
+// )]
+// #![allow(clippy::implicit_return)]
+// #![allow(clippy::missing_inline_in_public_items)]
+
 #![no_std]
 
 extern crate novuskinc;
@@ -32,7 +45,7 @@ pub mod novusk;
 
 const APP_EXE: &[u8] = include_bytes!("hello_world.wasm");
 
-struct System;
+pub struct System;
 
 impl ardaku::System for System {
     fn sleep(&self) -> (ardaku::Event, u32) {
@@ -67,7 +80,7 @@ impl ardaku::System for System {
     }
 }
 
-pub fn setup() -> ! {
+pub fn setup() {
     use ardaku::System;
 
     System.write(b"\n\n=== ARDAKU STARTED ===\n");
@@ -76,7 +89,4 @@ pub fn setup() -> ! {
 
     System.write(b"\n=== ARDAKU STOPPED ===\n");
 
-    loop {
-        System.sleep();
-    }
 }

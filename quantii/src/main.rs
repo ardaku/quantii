@@ -25,13 +25,24 @@
 
 extern crate novusk;
 extern crate quantii;
+extern crate alloc;
 
+use ardaku::System;
 use quantii::setup;
+
+#[path="qiish/qiish.rs"]
+mod qiish;
 
 // Called from novusk
 #[no_mangle]
 pub extern "C" fn kernel_main() -> ! {
-    setup()
+    setup();
+
+    qiish::call_qiish(0);
+
+    loop {
+        quantii::System.sleep();
+    }
 }
 
 #[no_mangle]
