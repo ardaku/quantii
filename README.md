@@ -2,6 +2,27 @@
 [Novusk](https://github.com/NathanMcMillan54/novusk/) based OS running the
 [Ardaku](https://github.com/ardaku/ardaku/) engine.
 
+## About
+An OS where all userspace programs are compiled to WebAssembly.  Rather than
+relying on context switching to protect memory, Quantii relies on WebAssembly
+sandboxing guarantees.  Each userspace program is contained so it can't
+interfere with other programs (such as by tampering with their files).  Apps
+interact with the hardware via either the Daku (for gui, multi-media, semantic
+filesystem, async networking, etc.) or WASI (for hierarchical filesystem,
+blocking networking, etc.) APIs.  Each WebAssembly program will use a
+[custom data section](https://www.w3.org/TR/2019/REC-wasm-core-1-20191205/#name-section%E2%91%A0)
+to store metadata about the program.  For porting to this OS, crates that work
+on Linux and Windows will need to add support using the daku/wasi crates as
+opposed to the windows/winapi or libc/nix crates.  Luckily a lot of crates
+can already work on WASI.  Multi-threading is supported via an async task API in
+Daku (similar to Dart/Flutter Isolates), since there is no native threading
+support in WebAssembly 1.0.  Quantii is a modular OS that can be compiled with
+different kernels, WebAssembly runtimes, and / or WASI implementations depending
+on the requirements for a specific target.  Rust programs made for the OS target
+either wasm32-wasi or wasm32-unknown-unknown.  Each program will have access to
+select portals, which are similar to app permissions on Android, and each portal
+is a message channel for interacting with hardware.
+
 ## Project Overview
 Quantii is an OS designed for the future.  Powered by WebAssembly and the Rust
 programming language, Quantii provides a novel take on OS security.  The main
