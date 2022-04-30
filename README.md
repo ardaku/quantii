@@ -10,7 +10,7 @@ interfere with other programs (such as by tampering with their files).  Apps
 interact with the hardware via either the Daku (for gui, multi-media, semantic
 filesystem, async networking, etc.) or WASI (for hierarchical filesystem,
 blocking networking, etc.) APIs.  Each WebAssembly program will use a
-[custom data section](https://www.w3.org/TR/2019/REC-wasm-core-1-20191205/#name-section%E2%91%A0)
+[custom data section](https://www.w3.org/TR/2019/REC-wasm-core-1-20191205/#binary-customsec)
 to store metadata about the program.  For porting to this OS, crates that work
 on Linux and Windows will need to add support using the daku/wasi crates as
 opposed to the windows/winapi or libc/nix crates.  Luckily a lot of crates
