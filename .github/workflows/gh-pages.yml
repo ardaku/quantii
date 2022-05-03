@@ -24,6 +24,6 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
-          branch: gh-pages
+          branch: deploy
           folder: ./book
           # enable_jekyll: false
