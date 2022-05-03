@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - gh-pages
+      - docs
   pull_request:
 
 jobs:
@@ -24,6 +24,5 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
-          branch: deploy
+          branch: gh-pages
           folder: ./book
-          # enable_jekyll: false
