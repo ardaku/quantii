@@ -39,6 +39,8 @@ extern crate novuskinc;
 // Missing intrinsics patch.
 extern crate compiler_builtins_patch;
 
+
+use ardaku::{Error};
 use novuskinc::kernel::syscalls;
 
 pub mod novusk;
@@ -83,10 +85,17 @@ impl ardaku::System for System {
 pub fn setup() {
     use ardaku::System;
 
-    System.write(b"\n\n=== ARDAKU STARTED ===\n");
+    System.write(b"\n[INFO] Quantii Operating System");
+    System.write(b"[INFO] Quantii v0.0.1\n");
 
-    ardaku::start(System, APP_EXE).unwrap();
+    System.write(b"\n=== ARDAKU STARTED ===\n");
+
+    ardaku::start(System, APP_EXE).unwrap_or_else(|e| match e {
+        Error::InvalidWasm => System.write(b"Ardaku: Error: WASM file is invalid"),
+        Error::LinkerFailed => System.write(b"Ardaku: Error: Could not link WASM file"),
+        Error::Crash(_) => System.write(b"Ardaku: Error: WASM file crashed"),
+        Error::MissingMemory => System.write(b"Ardaku: Error: Ran out of memory for WASM")
+    });
 
     System.write(b"\n=== ARDAKU STOPPED ===\n");
-
 }
