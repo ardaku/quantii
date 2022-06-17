@@ -29,9 +29,6 @@ extern crate alloc;
 
 use alloc::borrow::ToOwned;
 use alloc::string::{String, ToString};
-use core::any::Any;
-use core::borrow::Borrow;
-use core::fmt::Debug;
 use ardaku::Error as ArdakuError;
 use novuskinc::kernel::syscalls;
 
