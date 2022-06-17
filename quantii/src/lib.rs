@@ -24,8 +24,8 @@
 
 extern crate novuskinc;
 // Missing intrinsics patch.
-extern crate compiler_builtins_patch;
 extern crate alloc;
+extern crate compiler_builtins_patch;
 
 use alloc::borrow::ToOwned;
 use alloc::string::{String, ToString};
@@ -81,17 +81,21 @@ pub fn setup() -> ! {
     let mut msg: String;
     match ardaku::start(System, APP_EXE) {
         Ok(_) => msg = "\n=== ARDAKU SUCCESSFULLY EXECUTED ===\n".to_owned(),
-        Err(e) => {
-            match e {
-                ArdakuError::InvalidWasm => msg = "Ardaku: Error: Invalid WASM file".to_owned(),
-                ArdakuError::LinkerFailed => msg = "Ardaku: Error: Failed to link WASM file".to_owned(),
-                ArdakuError::Crash(c) => {
-                    msg = "Ardaku: Error: Crash:".to_owned();
-                    msg += &c.to_string();
-                },
-                ArdakuError::MissingMemory => msg = "Ardaku: Error: Ran out of memory".to_owned(),
+        Err(e) => match e {
+            ArdakuError::InvalidWasm => {
+                msg = "Ardaku: Error: Invalid WASM file".to_owned()
             }
-        }
+            ArdakuError::LinkerFailed => {
+                msg = "Ardaku: Error: Failed to link WASM file".to_owned()
+            }
+            ArdakuError::Crash(c) => {
+                msg = "Ardaku: Error: Crash:".to_owned();
+                msg += &c.to_string();
+            }
+            ArdakuError::MissingMemory => {
+                msg = "Ardaku: Error: Ran out of memory".to_owned()
+            }
+        },
     }
 
     System.write(msg.as_bytes());
