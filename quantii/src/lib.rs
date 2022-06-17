@@ -25,7 +25,14 @@
 extern crate novuskinc;
 // Missing intrinsics patch.
 extern crate compiler_builtins_patch;
+extern crate alloc;
 
+use alloc::borrow::ToOwned;
+use alloc::string::{String, ToString};
+use core::any::Any;
+use core::borrow::Borrow;
+use core::fmt::Debug;
+use ardaku::Error as ArdakuError;
 use novuskinc::kernel::syscalls;
 
 pub mod novusk;
@@ -70,9 +77,27 @@ impl ardaku::System for System {
 pub fn setup() -> ! {
     use ardaku::System;
 
-    System.write(b"\n\n=== ARDAKU STARTED ===\n");
+    System.write(b"Quantii OS v0.0.1");
 
-    ardaku::start(System, APP_EXE).unwrap();
+    System.write(b"\n=== ARDAKU STARTED ===\n");
+
+    let mut msg: String;
+    match ardaku::start(System, APP_EXE) {
+        Ok(_) => msg = "\n=== ARDAKU SUCCESSFULLY EXECUTED ===\n".to_owned(),
+        Err(e) => {
+            match e {
+                ArdakuError::InvalidWasm => msg = "Ardaku: Error: Invalid WASM file".to_owned(),
+                ArdakuError::LinkerFailed => msg = "Ardaku: Error: Failed to link WASM file".to_owned(),
+                ArdakuError::Crash(c) => {
+                    msg = "Ardaku: Error: Crash:".to_owned();
+                    msg += &c.to_string();
+                },
+                ArdakuError::MissingMemory => msg = "Ardaku: Error: Ran out of memory".to_owned(),
+            }
+        }
+    }
+
+    System.write(msg.as_bytes());
 
     System.write(b"\n=== ARDAKU STOPPED ===\n");
 
