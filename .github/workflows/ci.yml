@@ -46,3 +46,8 @@ jobs:
       with:
         command: run
         args: dist ci
+  cargo-deny:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: EmbarkStudios/cargo-deny-action@v1
