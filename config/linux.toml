@@ -3,10 +3,6 @@ rustflags = [
     "-C", "link-arg=-Tlink.x",
 ]
 
-[unstable]
-build-std = ["core", "alloc", "compiler_builtins"]
-build-std-features = ["compiler-builtins-mem"]
-
 [target.aarch64-novusk]
 runner = "quantii-runner"
 
@@ -26,3 +22,7 @@ rpath = false
 
 [build]
 target = "aarch64-unknown-none"
+
+[unstable]
+build-std = ["core", "alloc", "compiler_builtins"]
+#build-std-features = ["compiler-builtins-mem"]
