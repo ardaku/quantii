@@ -20,7 +20,7 @@
 // Lesser General Public License along with
 // Quantii. If not, see <https://www.gnu.org/licenses/>.
 
-use std::{env, process::Command};
+use std::{env, fs, process::Command};
 
 fn help() {
     println!("Commands:");
@@ -42,8 +42,8 @@ fn build() {
 }
 
 fn dist_riscv() {
-    let _ = std::fs::remove_dir_all("../target/dist/quantii-riscv");
-    let _ = std::fs::create_dir_all("../target/dist/quantii-riscv");
+    let _ = fs::remove_dir_all("../target/dist/quantii-riscv");
+    let _ = fs::create_dir_all("../target/dist/quantii-riscv");
 
     let status = Command::new("cargo")
         .args([
@@ -56,7 +56,7 @@ fn dist_riscv() {
         .expect("failed to execute process");
     assert!(status.success());
 
-    std::fs::copy(
+    fs::copy(
         "../target/riscv32imac-unknown-none-elf/release/quantii",
         "../target/dist/quantii-riscv/quantii.img",
     )
@@ -86,8 +86,8 @@ fn dist_ci() {
 }
 
 fn dist_arm() {
-    let _ = std::fs::remove_dir_all("../target/dist/quantii-arm");
-    let _ = std::fs::create_dir_all("../target/dist/quantii-arm");
+    let _ = fs::remove_dir_all("../target/dist/quantii-arm");
+    let _ = fs::create_dir_all("../target/dist/quantii-arm");
 
     let status = Command::new("cargo")
         .args(["build", "--release", "--target", "aarch64-novusk.json"])
@@ -156,8 +156,15 @@ fn main() {
     let curdir = curdir.as_path().to_str().unwrap();
     let path = env::var("PATH").unwrap();
     env::set_var("PATH", format!("{curdir}/target/bin:{}", path));
-    // Build tools
+    // Install runner
     build();
+    // Create config
+    const CONFIG_PATH: &str = "quantii/.cargo/config.toml";
+    if env!("HOST").contains("aarch64-apple") {
+        fs::copy("config/macos.toml", CONFIG_PATH).unwrap();
+    } else {
+        fs::copy("config/linux.toml", CONFIG_PATH).unwrap();
+    }
     // Go to Quantii
     env::set_current_dir("quantii").unwrap();
     // Options
