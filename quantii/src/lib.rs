@@ -22,9 +22,9 @@
 
 #![no_std]
 
+extern crate alloc;
 extern crate novuskinc;
 // Missing intrinsics patch.
-extern crate alloc;
 extern crate compiler_builtins_patch;
 
 use alloc::borrow::ToOwned;
@@ -77,7 +77,7 @@ impl ardaku::System for System {
     /// Reboot the system.
     ///
     /// This does not work on RISC-V targets.
-    fn reboot(&self){
+    fn reboot(&self) {
         // This is a no-op on RISC-V.
         #[cfg(target_arch = "riscv32")]
         Self::write(self, b"Reboot not supported on RISC-V");
@@ -97,28 +97,26 @@ pub fn setup() -> ! {
 
     System.write(b"\n=== ARDAKU STARTED ===\n");
 
+    let combined: String;
     let msg = match ardaku::start(System, APP_EXE) {
         Ok(_) => "\n=== ARDAKU SUCCESSFULLY EXECUTED ===\n",
         Err(e) => match e {
-            ArdakuError::InvalidWasm => {
-                "Ardaku: Error: Invalid WASM file"
-            }
+            ArdakuError::InvalidWasm => "Ardaku: Error: Invalid WASM file",
             ArdakuError::LinkerFailed => {
-                msg = "Ardaku: Error: Failed to link WASM file".to_owned()
+                "Ardaku: Error: Failed to link WASM file"
             }
             ArdakuError::Crash(c) => {
-                msg = "Ardaku: Error: Crash:".to_owned();
-                msg += &c.to_string();
+                combined = "Ardaku: Error: Crash: ".to_owned()
+                    + c.to_string().as_str();
+                combined.as_str()
             }
-            ArdakuError::MissingMemory => {
-                msg = "Ardaku: Error: Ran out of memory".to_owned()
-            }
+            ArdakuError::MissingMemory => "Ardaku: Error: Ran out of memory",
         },
-    }
+    };
 
     System.write(msg.as_bytes());
 
-    System.write(b"\n=== ARDAKU STOPPED ===\n");
+    System.write(b"=== ARDAKU STOPPED ===\n");
 
     // TODO: Do something more proper after the app has stopped.
     loop {
