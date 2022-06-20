@@ -159,11 +159,13 @@ fn main() {
     // Install runner
     build();
     // Create config
-    const CONFIG_PATH: &str = "quantii/.cargo/config.toml";
-    if env!("HOST").contains("aarch64-apple") {
-        fs::copy("config/macos.toml", CONFIG_PATH).unwrap();
+    const CONFIG_DIR: &str = "quantii/.cargo/";
+    const CONFIG_FILE: &str = "quantii/.cargo/config.toml";
+    fs::create_dir_all(CONFIG_DIR).unwrap();
+    if cfg!(target_arch = "aarch64") && cfg!(target_vendor = "apple") {
+        fs::copy("config/macos.toml", CONFIG_FILE).unwrap();
     } else {
-        fs::copy("config/linux.toml", CONFIG_PATH).unwrap();
+        fs::copy("config/linux.toml", CONFIG_FILE).unwrap();
     }
     // Go to Quantii
     env::set_current_dir("quantii").unwrap();
