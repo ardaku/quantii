@@ -97,12 +97,11 @@ pub fn setup() -> ! {
 
     System.write(b"\n=== ARDAKU STARTED ===\n");
 
-    let mut msg: String;
-    match ardaku::start(System, APP_EXE) {
-        Ok(_) => msg = "\n=== ARDAKU SUCCESSFULLY EXECUTED ===\n".to_owned(),
+    let msg = match ardaku::start(System, APP_EXE) {
+        Ok(_) => "\n=== ARDAKU SUCCESSFULLY EXECUTED ===\n",
         Err(e) => match e {
             ArdakuError::InvalidWasm => {
-                msg = "Ardaku: Error: Invalid WASM file".to_owned()
+                "Ardaku: Error: Invalid WASM file"
             }
             ArdakuError::LinkerFailed => {
                 msg = "Ardaku: Error: Failed to link WASM file".to_owned()
