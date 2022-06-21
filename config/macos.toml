@@ -4,7 +4,7 @@ rustflags = [
 ]
 
 [unstable]
-build-std = ["core", "alloc", "compiler_builtins"]
+# build-std = ["core", "alloc", "compiler_builtins"]
 # build-std-features = ["compiler-builtins-mem"]
 
 [target.aarch64-novusk]

@@ -1,0 +1,2821 @@
+   Compiling xtask v0.1.0 (/Users/jasonq/Documents/GitHub/quantii/xtask)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.83s
+     Running `target/debug/xtask dist arm`
+  Installing quantii-runner v0.1.0 (/Users/jasonq/Documents/GitHub/quantii/runner)
+   Compiling quantii-runner v0.1.0 (/Users/jasonq/Documents/GitHub/quantii/runner)
+    Finished release [optimized] target(s) in 0.21s
+   Replacing target/bin/quantii-runner
+    Replaced package `quantii-runner v0.1.0 (/Users/jasonq/Documents/GitHub/quantii/runner)` with `quantii-runner v0.1.0 (/Users/jasonq/Documents/GitHub/quantii/runner)` (executable `quantii-runner`)
+warning: be sure to add `target/bin` to your PATH to be able to run the installed binaries
+   Compiling scopeguard v1.1.0
+   Compiling spin v0.5.2
+   Compiling ctypes v0.1.0 (https://github.com/new-kernel/novusk?tag=v3#1b7d3dc2)
+   Compiling cfg-if v1.0.0
+   Compiling printk v0.1.0 (https://github.com/new-kernel/novusk?tag=v3#1b7d3dc2)
+   Compiling cfg-if v0.1.10
+   Compiling memory_units v0.4.0
+   Compiling tock-registers v0.7.0
+error[E0463]: can't find crate for `core`
+  |
+  = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+  = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0463]: can't find crate for `compiler_builtins`
+
+error[E0463]: can't find crate for `alloc`
+ --> /Users/jasonq/.cargo/git/checkouts/novusk-db670569701117fa/1b7d3dc/kernel/printk/src/lib.rs:3:14
+  |
+3 | #[macro_use] extern crate alloc;
+  |              ^^^^^^^^^^^^^^^^^^^ can't find crate
+
+error[E0463]: can't find crate for `core`
+ --> /Users/jasonq/.cargo/git/checkouts/novusk-db670569701117fa/1b7d3dc/kernel/printk/src/lib.rs:5:5
+  |
+5 | use core::fmt::Arguments;
+  |     ^^^^ can't find crate
+  |
+  = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+  = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0463]: can't find crate for `core`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:192:1
+    |
+192 | extern crate core as std;
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^ can't find crate
+    |
+    = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+    = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+For more information about this error, try `rustc --explain E0463`.
+error[E0412]: cannot find type `Arguments` in this scope
+  --> /Users/jasonq/.cargo/git/checkouts/novusk-db670569701117fa/1b7d3dc/kernel/printk/src/lib.rs:10:36
+   |
+10 |     pub(crate) fn arch_printk(fmt: Arguments);
+   |                                    ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Arguments` in this scope
+  --> /Users/jasonq/.cargo/git/checkouts/novusk-db670569701117fa/1b7d3dc/kernel/printk/src/lib.rs:11:37
+   |
+11 |     pub(crate) fn kmain_printk(fmt: Arguments);
+   |                                     ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Arguments` in this scope
+  --> /Users/jasonq/.cargo/git/checkouts/novusk-db670569701117fa/1b7d3dc/kernel/printk/src/lib.rs:14:21
+   |
+14 | pub fn _printk(fmt: Arguments) -> Arguments {
+   |                     ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Arguments` in this scope
+  --> /Users/jasonq/.cargo/git/checkouts/novusk-db670569701117fa/1b7d3dc/kernel/printk/src/lib.rs:14:35
+   |
+14 | pub fn _printk(fmt: Arguments) -> Arguments {
+   |                                   ^^^^^^^^^ not found in this scope
+
+error: cannot find macro `stringify` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:470:24
+    |
+470 |         f.debug_struct(stringify!(ScopeGuard))
+    |                        ^^^^^^^^^
+
+error: cannot find attribute `derive` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:212:3
+    |
+212 | #[derive(Debug)]
+    |   ^^^^^^
+
+error: cannot find attribute `derive` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:162:7
+    |
+162 |     #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+    |       ^^^^^^
+
+error: cannot find attribute `derive` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:92:15
+    |
+92  |               #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+    |                 ^^^^^^
+...
+174 | /     define_unit! {
+175 | |         /// Memory size specified in `wasm32` words.
+176 | |         newtype Words is bytes = 4;
+177 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `define_unit` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find attribute `derive` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:92:15
+    |
+92  |               #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+    |                 ^^^^^^
+...
+179 | /     define_unit! {
+180 | |         /// Memory size specified in WebAssembly [memory pages][memory page].
+181 | |         ///
+182 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+183 | |         newtype Pages is bytes = 65536;
+184 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `define_unit` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find attribute `derive` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:92:15
+    |
+92  |               #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+    |                 ^^^^^^
+...
+202 | /     define_unit! {
+203 | |         /// Memory size specified in words.
+204 | |         newtype Words is bytes = mem::size_of::<usize>();
+205 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `define_unit` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find attribute `derive` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:92:15
+    |
+92  |               #[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
+    |                 ^^^^^^
+...
+207 | /     define_unit! {
+208 | |         /// Memory size specified in [memory pages][memory page].
+209 | |         ///
+210 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+211 | |         newtype Pages is bytes = 4096;
+212 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `define_unit` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0433]: failed to resolve: use of undeclared crate or module `mem`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:119:11
+    |
+119 |     Bytes(mem::size_of::<T>())
+    |           ^^^ use of undeclared crate or module `mem`
+
+error: requires `sized` lang_item
+
+error: could not compile `cfg-if` due to 2 previous errors
+warning: build failed, waiting for other jobs to finish...
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:37:29
+    |
+37  |         impl<T: Into<Self>> ops::Add<T> for $name {
+    |                             ^^^ use of undeclared crate or module `ops`
+...
+166 | impl_ops!(Bytes);
+    | ---------------- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:46:29
+    |
+46  |         impl<T: Into<Self>> ops::Sub<T> for $name {
+    |                             ^^^ use of undeclared crate or module `ops`
+...
+166 | impl_ops!(Bytes);
+    | ---------------- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:55:29
+    |
+55  |         impl<T: Into<Self>> ops::Mul<T> for $name {
+    |                             ^^^ use of undeclared crate or module `ops`
+...
+166 | impl_ops!(Bytes);
+    | ---------------- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:64:29
+    |
+64  |         impl<T: Into<Self>> ops::Div<T> for $name {
+    |                             ^^^ use of undeclared crate or module `ops`
+...
+166 | impl_ops!(Bytes);
+    | ---------------- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:37:29
+    |
+37  |           impl<T: Into<Self>> ops::Add<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+174 | /     define_unit! {
+175 | |         /// Memory size specified in `wasm32` words.
+176 | |         newtype Words is bytes = 4;
+177 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:46:29
+    |
+46  |           impl<T: Into<Self>> ops::Sub<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+174 | /     define_unit! {
+175 | |         /// Memory size specified in `wasm32` words.
+176 | |         newtype Words is bytes = 4;
+177 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:55:29
+    |
+55  |           impl<T: Into<Self>> ops::Mul<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+174 | /     define_unit! {
+175 | |         /// Memory size specified in `wasm32` words.
+176 | |         newtype Words is bytes = 4;
+177 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+Some errors have detailed explanations: E0412, E0463.
+For more information about an error, try `rustc --explain E0412`.
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:64:29
+    |
+64  |           impl<T: Into<Self>> ops::Div<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+174 | /     define_unit! {
+175 | |         /// Memory size specified in `wasm32` words.
+176 | |         newtype Words is bytes = 4;
+177 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: could not compile `ctypes` due to 2 previous errors
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:37:29
+    |
+37  |           impl<T: Into<Self>> ops::Add<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+179 | /     define_unit! {
+180 | |         /// Memory size specified in WebAssembly [memory pages][memory page].
+181 | |         ///
+182 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+183 | |         newtype Pages is bytes = 65536;
+184 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:46:29
+    |
+46  |           impl<T: Into<Self>> ops::Sub<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+179 | /     define_unit! {
+180 | |         /// Memory size specified in WebAssembly [memory pages][memory page].
+181 | |         ///
+182 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+183 | |         newtype Pages is bytes = 65536;
+184 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: could not compile `printk` due to 9 previous errors
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:55:29
+    |
+55  |           impl<T: Into<Self>> ops::Mul<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+179 | /     define_unit! {
+180 | |         /// Memory size specified in WebAssembly [memory pages][memory page].
+181 | |         ///
+182 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+183 | |         newtype Pages is bytes = 65536;
+184 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:64:29
+    |
+64  |           impl<T: Into<Self>> ops::Div<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+179 | /     define_unit! {
+180 | |         /// Memory size specified in WebAssembly [memory pages][memory page].
+181 | |         ///
+182 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+183 | |         newtype Pages is bytes = 65536;
+184 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0433]: failed to resolve: use of undeclared crate or module `mem`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:204:34
+    |
+204 |         newtype Words is bytes = mem::size_of::<usize>();
+    |                                  ^^^ use of undeclared crate or module `mem`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:37:29
+    |
+37  |           impl<T: Into<Self>> ops::Add<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+202 | /     define_unit! {
+203 | |         /// Memory size specified in words.
+204 | |         newtype Words is bytes = mem::size_of::<usize>();
+205 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:46:29
+    |
+46  |           impl<T: Into<Self>> ops::Sub<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+202 | /     define_unit! {
+203 | |         /// Memory size specified in words.
+204 | |         newtype Words is bytes = mem::size_of::<usize>();
+205 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:55:29
+    |
+55  |           impl<T: Into<Self>> ops::Mul<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+202 | /     define_unit! {
+203 | |         /// Memory size specified in words.
+204 | |         newtype Words is bytes = mem::size_of::<usize>();
+205 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `write` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:29:24
+   |
+29 |             Some(s) => write!(f, "Once {{ data: ")
+   |                        ^^^^^
+
+error: cannot find macro `write` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:31:20
+   |
+31 |                 .and_then(|()| write!(f, "}}")),
+   |                                ^^^^^
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:64:29
+    |
+64  |           impl<T: Into<Self>> ops::Div<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+202 | /     define_unit! {
+203 | |         /// Memory size specified in words.
+204 | |         newtype Words is bytes = mem::size_of::<usize>();
+205 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `write` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:32:21
+   |
+32 |             None => write!(f, "Once {{ <uninitialized> }}")
+   |                     ^^^^^
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:37:29
+    |
+37  |           impl<T: Into<Self>> ops::Add<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+207 | /     define_unit! {
+208 | |         /// Memory size specified in [memory pages][memory page].
+209 | |         ///
+210 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+211 | |         newtype Pages is bytes = 4096;
+212 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `panic` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:128:29
+    |
+128 |                 PANICKED => panic!("Once has panicked"),
+    |                             ^^^^^
+
+error: cannot find macro `panic` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:151:31
+    |
+151 |                 PANICKED   => panic!("Once has panicked"),
+    |                               ^^^^^
+
+error: cannot find attribute `derive` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:81:3
+   |
+81 | #[derive(Debug)]
+   |   ^^^^^^
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:46:29
+    |
+46  |           impl<T: Into<Self>> ops::Sub<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+207 | /     define_unit! {
+208 | |         /// Memory size specified in [memory pages][memory page].
+209 | |         ///
+210 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+211 | |         newtype Pages is bytes = 4096;
+212 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `write` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:203:28
+    |
+203 |             Some(guard) => write!(f, "Mutex {{ data: ")
+    |                            ^^^^^
+
+error: cannot find macro `write` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:205:20
+    |
+205 |                 .and_then(|()| write!(f, "}}")),
+    |                                ^^^^^
+
+error: cannot find macro `write` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:206:21
+    |
+206 |             None => write!(f, "Mutex {{ <locked> }}"),
+    |                     ^^^^^
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:55:29
+    |
+55  |           impl<T: Into<Self>> ops::Mul<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+207 | /     define_unit! {
+208 | |         /// Memory size specified in [memory pages][memory page].
+209 | |         ///
+210 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+211 | |         newtype Pages is bytes = 4096;
+212 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find attribute `derive` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:72:3
+   |
+72 | #[derive(Debug)]
+   |   ^^^^^^
+
+error: cannot find attribute `derive` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:81:3
+   |
+81 | #[derive(Debug)]
+   |   ^^^^^^
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ops`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:64:29
+    |
+64  |           impl<T: Into<Self>> ops::Div<T> for $name {
+    |                               ^^^ use of undeclared crate or module `ops`
+...
+207 | /     define_unit! {
+208 | |         /// Memory size specified in [memory pages][memory page].
+209 | |         ///
+210 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+211 | |         newtype Pages is bytes = 4096;
+212 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:30:17
+    |
+30  |         impl<T: Into<Bytes>> RoundUpTo<$name> for T {
+    |                 ^^^^ not found in this scope
+...
+166 | impl_ops!(Bytes);
+    | ---------------- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:37:17
+    |
+37  |         impl<T: Into<Self>> ops::Add<T> for $name {
+    |                 ^^^^ not found in this scope
+...
+166 | impl_ops!(Bytes);
+    | ---------------- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:46:17
+    |
+46  |         impl<T: Into<Self>> ops::Sub<T> for $name {
+    |                 ^^^^ not found in this scope
+...
+166 | impl_ops!(Bytes);
+    | ---------------- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:55:17
+    |
+55  |         impl<T: Into<Self>> ops::Mul<T> for $name {
+    |                 ^^^^ not found in this scope
+...
+166 | impl_ops!(Bytes);
+    | ---------------- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find attribute `derive` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:97:3
+   |
+97 | #[derive(Debug)]
+   |   ^^^^^^
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:64:17
+    |
+64  |         impl<T: Into<Self>> ops::Div<T> for $name {
+    |                 ^^^^ not found in this scope
+...
+166 | impl_ops!(Bytes);
+    | ---------------- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `debug_assert` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:223:9
+    |
+223 |         debug_assert!(self.lock.load(Ordering::Relaxed) & !WRITER > 0);
+    |         ^^^^^^^^^^^^
+
+error: cannot find macro `debug_assert_eq` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:235:9
+    |
+235 |         debug_assert_eq!(self.lock.load(Ordering::Relaxed) & !(WRITER | UPGRADED), 0);
+    |         ^^^^^^^^^^^^^^^
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:19:14
+    |
+19  |           impl From<$name> for Bytes {
+    |                ^^^^ not found in this scope
+...
+174 | /     define_unit! {
+175 | |         /// Memory size specified in `wasm32` words.
+176 | |         newtype Words is bytes = 4;
+177 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_from_bytes` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `write` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:345:28
+    |
+345 |             Some(guard) => write!(f, "RwLock {{ data: ")
+    |                            ^^^^^
+
+error: cannot find macro `write` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:347:32
+    |
+347 |                 .and_then(|()| write!(f, "}}")),
+    |                                ^^^^^
+
+error: cannot find macro `write` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:348:21
+    |
+348 |             None => write!(f, "RwLock {{ <locked> }}"),
+    |                     ^^^^^
+
+error: cannot find macro `debug_assert` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:510:9
+    |
+510 |         debug_assert!(self.lock.load(Ordering::Relaxed) & !(WRITER | UPGRADED) > 0);
+    |         ^^^^^^^^^^^^
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:30:17
+    |
+30  |           impl<T: Into<Bytes>> RoundUpTo<$name> for T {
+    |                   ^^^^ not found in this scope
+...
+174 | /     define_unit! {
+175 | |         /// Memory size specified in `wasm32` words.
+176 | |         newtype Words is bytes = 4;
+177 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `debug_assert_eq` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:517:9
+    |
+517 |         debug_assert_eq!(
+    |         ^^^^^^^^^^^^^^^
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:37:17
+    |
+37  |           impl<T: Into<Self>> ops::Add<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+174 | /     define_unit! {
+175 | |         /// Memory size specified in `wasm32` words.
+176 | |         newtype Words is bytes = 4;
+177 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: cannot find macro `debug_assert_eq` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:527:9
+    |
+527 |         debug_assert_eq!(self.lock.load(Ordering::Relaxed) & WRITER, WRITER);
+    |         ^^^^^^^^^^^^^^^
+
+error: cannot find macro `unreachable` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:123:31
+    |
+123 |                 INCOMPLETE => unreachable!(),
+    |                               ^^^^^^^^^^^
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:46:17
+    |
+46  |           impl<T: Into<Self>> ops::Sub<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+174 | /     define_unit! {
+175 | |         /// Memory size specified in `wasm32` words.
+176 | |         newtype Words is bytes = 4;
+177 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:55:17
+    |
+55  |           impl<T: Into<Self>> ops::Mul<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+174 | /     define_unit! {
+175 | |         /// Memory size specified in `wasm32` words.
+176 | |         newtype Words is bytes = 4;
+177 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:64:17
+    |
+64  |           impl<T: Into<Self>> ops::Div<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+174 | /     define_unit! {
+175 | |         /// Memory size specified in `wasm32` words.
+176 | |         newtype Words is bytes = 4;
+177 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:19:14
+    |
+19  |           impl From<$name> for Bytes {
+    |                ^^^^ not found in this scope
+...
+179 | /     define_unit! {
+180 | |         /// Memory size specified in WebAssembly [memory pages][memory page].
+181 | |         ///
+182 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+183 | |         newtype Pages is bytes = 65536;
+184 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_from_bytes` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:30:17
+    |
+30  |           impl<T: Into<Bytes>> RoundUpTo<$name> for T {
+    |                   ^^^^ not found in this scope
+...
+179 | /     define_unit! {
+180 | |         /// Memory size specified in WebAssembly [memory pages][memory page].
+181 | |         ///
+182 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+183 | |         newtype Pages is bytes = 65536;
+184 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:37:17
+    |
+37  |           impl<T: Into<Self>> ops::Add<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+179 | /     define_unit! {
+180 | |         /// Memory size specified in WebAssembly [memory pages][memory page].
+181 | |         ///
+182 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+183 | |         newtype Pages is bytes = 65536;
+184 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:46:17
+    |
+46  |           impl<T: Into<Self>> ops::Sub<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+179 | /     define_unit! {
+180 | |         /// Memory size specified in WebAssembly [memory pages][memory page].
+181 | |         ///
+182 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+183 | |         newtype Pages is bytes = 65536;
+184 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:55:17
+    |
+55  |           impl<T: Into<Self>> ops::Mul<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+179 | /     define_unit! {
+180 | |         /// Memory size specified in WebAssembly [memory pages][memory page].
+181 | |         ///
+182 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+183 | |         newtype Pages is bytes = 65536;
+184 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:64:17
+    |
+64  |           impl<T: Into<Self>> ops::Div<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+179 | /     define_unit! {
+180 | |         /// Memory size specified in WebAssembly [memory pages][memory page].
+181 | |         ///
+182 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+183 | |         newtype Pages is bytes = 65536;
+184 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:19:14
+    |
+19  |           impl From<$name> for Bytes {
+    |                ^^^^ not found in this scope
+...
+202 | /     define_unit! {
+203 | |         /// Memory size specified in words.
+204 | |         newtype Words is bytes = mem::size_of::<usize>();
+205 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_from_bytes` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:30:17
+    |
+30  |           impl<T: Into<Bytes>> RoundUpTo<$name> for T {
+    |                   ^^^^ not found in this scope
+...
+202 | /     define_unit! {
+203 | |         /// Memory size specified in words.
+204 | |         newtype Words is bytes = mem::size_of::<usize>();
+205 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:37:17
+    |
+37  |           impl<T: Into<Self>> ops::Add<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+202 | /     define_unit! {
+203 | |         /// Memory size specified in words.
+204 | |         newtype Words is bytes = mem::size_of::<usize>();
+205 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:46:17
+    |
+46  |           impl<T: Into<Self>> ops::Sub<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+202 | /     define_unit! {
+203 | |         /// Memory size specified in words.
+204 | |         newtype Words is bytes = mem::size_of::<usize>();
+205 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:55:17
+    |
+55  |           impl<T: Into<Self>> ops::Mul<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+202 | /     define_unit! {
+203 | |         /// Memory size specified in words.
+204 | |         newtype Words is bytes = mem::size_of::<usize>();
+205 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:64:17
+    |
+64  |           impl<T: Into<Self>> ops::Div<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+202 | /     define_unit! {
+203 | |         /// Memory size specified in words.
+204 | |         newtype Words is bytes = mem::size_of::<usize>();
+205 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:19:14
+    |
+19  |           impl From<$name> for Bytes {
+    |                ^^^^ not found in this scope
+...
+207 | /     define_unit! {
+208 | |         /// Memory size specified in [memory pages][memory page].
+209 | |         ///
+210 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+211 | |         newtype Pages is bytes = 4096;
+212 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_from_bytes` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:30:17
+    |
+30  |           impl<T: Into<Bytes>> RoundUpTo<$name> for T {
+    |                   ^^^^ not found in this scope
+...
+207 | /     define_unit! {
+208 | |         /// Memory size specified in [memory pages][memory page].
+209 | |         ///
+210 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+211 | |         newtype Pages is bytes = 4096;
+212 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:37:17
+    |
+37  |           impl<T: Into<Self>> ops::Add<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+207 | /     define_unit! {
+208 | |         /// Memory size specified in [memory pages][memory page].
+209 | |         ///
+210 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+211 | |         newtype Pages is bytes = 4096;
+212 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:46:17
+    |
+46  |           impl<T: Into<Self>> ops::Sub<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+207 | /     define_unit! {
+208 | |         /// Memory size specified in [memory pages][memory page].
+209 | |         ///
+210 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+211 | |         newtype Pages is bytes = 4096;
+212 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:55:17
+    |
+55  |           impl<T: Into<Self>> ops::Mul<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+207 | /     define_unit! {
+208 | |         /// Memory size specified in [memory pages][memory page].
+209 | |         ///
+210 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+211 | |         newtype Pages is bytes = 4096;
+212 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Into` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/memory_units-0.4.0/src/lib.rs:64:17
+    |
+64  |           impl<T: Into<Self>> ops::Div<T> for $name {
+    |                   ^^^^ not found in this scope
+...
+207 | /     define_unit! {
+208 | |         /// Memory size specified in [memory pages][memory page].
+209 | |         ///
+210 | |         /// [memory page]: https://en.wikipedia.org/wiki/Page_(computer_memory)
+211 | |         newtype Pages is bytes = 4096;
+212 | |     }
+    | |_____- in this macro invocation
+    |
+    = note: this error originates in the macro `impl_ops` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0433]: failed to resolve: use of undeclared type `AtomicBool`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:113:19
+    |
+113 |             lock: AtomicBool::new(false),
+    |                   ^^^^^^^^^^ use of undeclared type `AtomicBool`
+
+error[E0433]: failed to resolve: use of undeclared type `UnsafeCell`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:114:19
+    |
+114 |             data: UnsafeCell::new(user_data),
+    |                   ^^^^^^^^^^ use of undeclared type `UnsafeCell`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:131:55
+    |
+131 |         while self.lock.compare_and_swap(false, true, Ordering::Acquire) != false
+    |                                                       ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:134:34
+    |
+134 |             while self.lock.load(Ordering::Relaxed)
+    |                                  ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:174:32
+    |
+174 |         self.lock.store(false, Ordering::Release);
+    |                                ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:181:52
+    |
+181 |         if self.lock.compare_and_swap(false, true, Ordering::Acquire) == false
+    |                                                    ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:197:30
+    |
+197 | impl<T: ?Sized + fmt::Debug> fmt::Debug for Mutex<T>
+    |                              ^^^ use of undeclared crate or module `fmt`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:197:18
+    |
+197 | impl<T: ?Sized + fmt::Debug> fmt::Debug for Mutex<T>
+    |                  ^^^ use of undeclared crate or module `fmt`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:199:27
+    |
+199 |     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result
+    |                           ^^^ use of undeclared crate or module `fmt`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:199:46
+    |
+199 |     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result
+    |                                              ^^^ use of undeclared crate or module `fmt`
+
+error: could not compile `cfg-if` due to 2 previous errors
+Some errors have detailed explanations: E0405, E0433, E0463.
+For more information about an error, try `rustc --explain E0405`.
+error[E0433]: failed to resolve: use of undeclared type `Default`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:213:20
+    |
+213 |         Mutex::new(Default::default())
+    |                    ^^^^^^^ use of undeclared type `Default`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:233:32
+    |
+233 |         self.lock.store(false, Ordering::Release);
+    |                                ^^^^^^^^ use of undeclared type `Ordering`
+
+error: could not compile `memory_units` due to 58 previous errors
+error[E0463]: can't find crate for `core`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:19:5
+   |
+19 | use core::cell::UnsafeCell;
+   |     ^^^^ can't find crate
+   |
+   = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+   = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0463]: can't find crate for `core`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:20:5
+   |
+20 | use core::marker::PhantomData;
+   |     ^^^^ can't find crate
+   |
+   = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+   = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0433]: failed to resolve: use of undeclared type `AtomicUsize`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:128:19
+    |
+128 |             lock: AtomicUsize::new(0),
+    |                   ^^^^^^^^^^^ use of undeclared type `AtomicUsize`
+
+error[E0463]: can't find crate for `core`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/lib.rs:72:5
+   |
+72 | use core::ops::{BitAnd, BitOr, BitOrAssign, Not, Shl, Shr};
+   |     ^^^^ can't find crate
+   |
+   = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+   = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0433]: failed to resolve: use of undeclared type `UnsafeCell`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:129:19
+    |
+129 |             data: UnsafeCell::new(user_data),
+    |                   ^^^^^^^^^^ use of undeclared type `UnsafeCell`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:199:49
+    |
+199 |         let value = self.lock.fetch_add(READER, Ordering::Acquire);
+    |                                                 ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:205:41
+    |
+205 |             self.lock.fetch_sub(READER, Ordering::Release);
+    |                                         ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0463]: can't find crate for `core`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:68:5
+   |
+68 | use core::marker::PhantomData;
+   |     ^^^^ can't find crate
+   |
+   = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+   = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0463]: can't find crate for `core`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:69:5
+   |
+69 | use core::ops::{Add, AddAssign};
+   |     ^^^^ can't find crate
+   |
+   = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+   = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0463]: can't find crate for `core`
+ --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:4:5
+  |
+4 | use core::fmt;
+  |     ^^^^ can't find crate
+  |
+  = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+  = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0433]: failed to resolve: use of undeclared type `NonNull`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:210:32
+    |
+210 |                 data: unsafe { NonNull::new_unchecked(self.data.get()) },
+    |                                ^^^^^^^ use of undeclared type `NonNull`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:224:37
+    |
+224 |         self.lock.fetch_sub(READER, Ordering::Release);
+    |                                     ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:236:51
+    |
+236 |         self.lock.fetch_and(!(WRITER | UPGRADED), Ordering::Release);
+    |                                                   ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0463]: can't find crate for `core`
+ --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:5:5
+  |
+5 | use core::marker::PhantomData;
+  |     ^^^^ can't find crate
+  |
+  = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+  = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:245:13
+    |
+245 |             Ordering::Acquire,
+    |             ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:246:13
+    |
+246 |             Ordering::Relaxed,
+    |             ^^^^^^^^ use of undeclared type `Ordering`
+
+error: cannot find attribute `derive` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:157:3
+    |
+157 | #[derive(Copy, Clone)]
+    |   ^^^^^^
+
+error[E0433]: failed to resolve: use of undeclared type `NonNull`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:253:32
+    |
+253 |                 data: unsafe { NonNull::new_unchecked(self.data.get()) },
+    |                                ^^^^^^^ use of undeclared type `NonNull`
+
+error: cannot find attribute `derive` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:30:3
+   |
+30 | #[derive(Copy, Clone)]
+   |   ^^^^^^
+
+error: cannot find macro `write` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:108:9
+    |
+108 |         write!(f, "{:?}", self.value)
+    |         ^^^^^
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:328:41
+    |
+328 |         if self.lock.fetch_or(UPGRADED, Ordering::Acquire) & (WRITER | UPGRADED) == 0 {
+    |                                         ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `NonNull`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:331:32
+    |
+331 |                 data: unsafe { NonNull::new_unchecked(self.data.get()) },
+    |                                ^^^^^^^ use of undeclared type `NonNull`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:342:30
+    |
+342 | impl<T: ?Sized + fmt::Debug> fmt::Debug for RwLock<T> {
+    |                              ^^^ use of undeclared crate or module `fmt`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:342:18
+    |
+342 | impl<T: ?Sized + fmt::Debug> fmt::Debug for RwLock<T> {
+    |                  ^^^ use of undeclared crate or module `fmt`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:343:27
+    |
+343 |     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+    |                           ^^^ use of undeclared crate or module `fmt`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:343:46
+    |
+343 |     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+    |                                              ^^^ use of undeclared crate or module `fmt`
+
+error[E0433]: failed to resolve: use of undeclared type `Default`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:355:21
+    |
+355 |         RwLock::new(Default::default())
+    |                     ^^^^^^^ use of undeclared type `Default`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:366:13
+    |
+366 |             Ordering::Acquire,
+    |             ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:367:13
+    |
+367 |             Ordering::Relaxed,
+    |             ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `mem`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:380:13
+    |
+380 |             mem::forget(self);
+    |             ^^^ use of undeclared crate or module `mem`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:440:37
+    |
+440 |         self.lock.fetch_add(READER, Ordering::Acquire);
+    |                                     ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:467:37
+    |
+467 |         self.lock.fetch_add(READER, Ordering::Acquire);
+    |                                     ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:511:37
+    |
+511 |         self.lock.fetch_sub(READER, Ordering::Release);
+    |                                     ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:521:39
+    |
+521 |         self.lock.fetch_sub(UPGRADED, Ordering::AcqRel);
+    |                                       ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:531:51
+    |
+531 |         self.lock.fetch_and(!(WRITER | UPGRADED), Ordering::Release);
+    |                                                   ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:26:21
+   |
+26 | impl<T: fmt::Debug> fmt::Debug for Once<T> {
+   |                     ^^^ use of undeclared crate or module `fmt`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:26:9
+   |
+26 | impl<T: fmt::Debug> fmt::Debug for Once<T> {
+   |         ^^^ use of undeclared crate or module `fmt`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:27:27
+   |
+27 |     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+   |                           ^^^ use of undeclared crate or module `fmt`
+
+error[E0463]: can't find crate for `core`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:44:20
+   |
+44 |         unsafe { ::core::ptr::read_volatile(self.value.get()) }
+   |                    ^^^^ can't find crate
+   |
+   = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+   = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:27:46
+   |
+27 |     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+   |                                              ^^^ use of undeclared crate or module `fmt`
+
+error[E0463]: can't find crate for `core`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:53:20
+   |
+53 |         unsafe { ::core::ptr::write_volatile(self.value.get(), value) }
+   |                    ^^^^ can't find crate
+   |
+   = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+   = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0463]: can't find crate for `core`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:74:20
+   |
+74 |         unsafe { ::core::ptr::read_volatile(&self.value) }
+   |                    ^^^^ can't find crate
+   |
+   = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+   = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0433]: failed to resolve: use of undeclared type `AtomicUsize`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:54:16
+   |
+54 |         state: AtomicUsize::new(INCOMPLETE),
+   |                ^^^^^^^^^^^ use of undeclared type `AtomicUsize`
+
+error[E0433]: failed to resolve: use of undeclared type `UnsafeCell`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:55:15
+   |
+55 |         data: UnsafeCell::new(None),
+   |               ^^^^^^^^^^ use of undeclared type `UnsafeCell`
+
+error[E0463]: can't find crate for `core`
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:95:20
+   |
+95 |         unsafe { ::core::ptr::write_volatile(self.value.get(), value) }
+   |                    ^^^^ can't find crate
+   |
+   = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+   = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:101:42
+    |
+101 |         let mut status = self.state.load(Ordering::SeqCst);
+    |                                          ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:106:50
+    |
+106 | ...                   Ordering::SeqCst);
+    |                       ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:114:42
+    |
+114 |                 self.state.store(status, Ordering::SeqCst);
+    |                                          ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:126:46
+    |
+126 |                     status = self.state.load(Ordering::SeqCst)
+    |                                              ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0463]: can't find crate for `core`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:125:20
+    |
+125 |         unsafe { ::core::ptr::read_volatile(self.value.get()) }
+    |                    ^^^^ can't find crate
+    |
+    = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+    = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0463]: can't find crate for `core`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:134:20
+    |
+134 |         unsafe { ::core::ptr::write_volatile(self.value.get(), value) }
+    |                    ^^^^ can't find crate
+    |
+    = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+    = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:137:31
+    |
+137 |         match self.state.load(Ordering::SeqCst) {
+    |                               ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:147:35
+    |
+147 |             match self.state.load(Ordering::SeqCst) {
+    |                                   ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0433]: failed to resolve: use of undeclared type `UnsafeCell`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:159:20
+    |
+159 |             value: UnsafeCell::new(value),
+    |                    ^^^^^^^^^^ use of undeclared type `UnsafeCell`
+
+error[E0463]: can't find crate for `core`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:170:20
+    |
+170 |         unsafe { ::core::ptr::read_volatile(self.value.get()) }
+    |                    ^^^^ can't find crate
+    |
+    = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+    = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0433]: failed to resolve: use of undeclared type `Ordering`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:166:40
+    |
+166 |             self.state.store(PANICKED, Ordering::SeqCst);
+    |                                        ^^^^^^^^ use of undeclared type `Ordering`
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:72:22
+   |
+72 | pub struct Mutex<T: ?Sized>
+   |                      ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `AtomicBool` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:74:11
+   |
+74 |     lock: AtomicBool,
+   |           ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `UnsafeCell` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:75:11
+   |
+75 |     data: UnsafeCell<T>,
+   |           ^^^^^^^^^^ not found in this scope
+
+error[E0463]: can't find crate for `core`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:179:20
+    |
+179 |         unsafe { ::core::ptr::write_volatile(self.value.get(), value) }
+    |                    ^^^^ can't find crate
+    |
+    = note: the `aarch64-novusk-10804741413607038564` target may not be installed
+    = help: consider downloading the target with `rustup target add aarch64-novusk-10804741413607038564`
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:82:31
+   |
+82 | pub struct MutexGuard<'a, T: ?Sized + 'a>
+   |                               ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `AtomicBool` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:84:15
+   |
+84 |     lock: &'a AtomicBool,
+   |               ^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sync` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:89:31
+   |
+89 | unsafe impl<T: ?Sized + Send> Sync for Mutex<T> {}
+   |                               ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:89:17
+   |
+89 | unsafe impl<T: ?Sized + Send> Sync for Mutex<T> {}
+   |                 ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Send` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:89:25
+   |
+89 | unsafe impl<T: ?Sized + Send> Sync for Mutex<T> {}
+   |                         ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Send` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:90:31
+   |
+90 | unsafe impl<T: ?Sized + Send> Send for Mutex<T> {}
+   |                               ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:90:17
+   |
+90 | unsafe impl<T: ?Sized + Send> Send for Mutex<T> {}
+   |                 ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Send` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:90:25
+   |
+90 | unsafe impl<T: ?Sized + Send> Send for Mutex<T> {}
+   |                         ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:127:10
+    |
+127 | impl<T: ?Sized> Mutex<T>
+    |          ^^^^^ not found in this scope
+
+error[E0425]: cannot find function `cpu_relax` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:136:17
+    |
+136 |                 cpu_relax();
+    |                 ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:179:31
+    |
+179 |     pub fn try_lock(&self) -> Option<MutexGuard<T>>
+    |                               ^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Some` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:183:13
+    |
+183 |             Some(
+    |             ^^^^ not found in this scope
+
+error[E0425]: cannot find value `None` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:192:13
+    |
+192 |             None
+    |             ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:197:10
+    |
+197 | impl<T: ?Sized + fmt::Debug> fmt::Debug for Mutex<T>
+    |          ^^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Some` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:203:13
+    |
+203 |             Some(guard) => write!(f, "Mutex {{ data: ")
+    |             ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Default` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:211:27
+    |
+211 | impl<T: ?Sized + Default> Default for Mutex<T> {
+    |                           ^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:211:10
+    |
+211 | impl<T: ?Sized + Default> Default for Mutex<T> {
+    |          ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Default` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:211:18
+    |
+211 | impl<T: ?Sized + Default> Default for Mutex<T> {
+    |                  ^^^^^^^ not found in this scope
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:106:53
+    |
+106 | impl<T: UIntLike + fmt::Debug, R: RegisterLongName> fmt::Debug for LocalRegisterCopy<T, R> {
+    |                                                     ^^^ use of undeclared crate or module `fmt`
+
+error[E0405]: cannot find trait `Deref` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:217:21
+    |
+217 | impl<'a, T: ?Sized> Deref for MutexGuard<'a, T>
+    |                     ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:217:14
+    |
+217 | impl<'a, T: ?Sized> Deref for MutexGuard<'a, T>
+    |              ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `DerefMut` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:223:21
+    |
+223 | impl<'a, T: ?Sized> DerefMut for MutexGuard<'a, T>
+    |                     ^^^^^^^^ not found in this scope
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:106:20
+    |
+106 | impl<T: UIntLike + fmt::Debug, R: RegisterLongName> fmt::Debug for LocalRegisterCopy<T, R> {
+    |                    ^^^ use of undeclared crate or module `fmt`
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:223:14
+    |
+223 | impl<'a, T: ?Sized> DerefMut for MutexGuard<'a, T>
+    |              ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Drop` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:228:21
+    |
+228 | impl<'a, T: ?Sized> Drop for MutexGuard<'a, T>
+    |                     ^^^^ not found in this scope
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:107:27
+    |
+107 |     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+    |                           ^^^ use of undeclared crate or module `fmt`
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/mutex.rs:228:14
+    |
+228 | impl<'a, T: ?Sized> Drop for MutexGuard<'a, T>
+    |              ^^^^^ not found in this scope
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:107:46
+    |
+107 |     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+    |                                              ^^^ use of undeclared crate or module `fmt`
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:59:23
+   |
+59 | pub struct RwLock<T: ?Sized> {
+   |                       ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `AtomicUsize` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:60:11
+   |
+60 |     lock: AtomicUsize,
+   |           ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `UnsafeCell` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:61:11
+   |
+61 |     data: UnsafeCell<T>,
+   |           ^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:73:41
+   |
+73 | pub struct RwLockReadGuard<'a, T: 'a + ?Sized> {
+   |                                         ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `AtomicUsize` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:74:15
+   |
+74 |     lock: &'a AtomicUsize,
+   |               ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonNull` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:75:11
+   |
+75 |     data: NonNull<T>,
+   |           ^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:82:42
+   |
+82 | pub struct RwLockWriteGuard<'a, T: 'a + ?Sized> {
+   |                                          ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `AtomicUsize` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:83:15
+   |
+83 |     lock: &'a AtomicUsize,
+   |               ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonNull` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:84:11
+   |
+84 |     data: NonNull<T>,
+   |           ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomData` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:86:17
+   |
+86 |     _invariant: PhantomData<&'a mut T>,
+   |                 ^^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:98:48
+   |
+98 | pub struct RwLockUpgradeableGuard<'a, T: 'a + ?Sized> {
+   |                                                ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `AtomicUsize` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:99:15
+   |
+99 |     lock: &'a AtomicUsize,
+   |               ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `NonNull` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:100:11
+    |
+100 |     data: NonNull<T>,
+    |           ^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:102:17
+    |
+102 |     _invariant: PhantomData<&'a mut T>,
+    |                 ^^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Send` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:106:31
+    |
+106 | unsafe impl<T: ?Sized + Send> Send for RwLock<T> {}
+    |                               ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:106:17
+    |
+106 | unsafe impl<T: ?Sized + Send> Send for RwLock<T> {}
+    |                 ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Send` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:106:25
+    |
+106 | unsafe impl<T: ?Sized + Send> Send for RwLock<T> {}
+    |                         ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sync` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:107:38
+    |
+107 | unsafe impl<T: ?Sized + Send + Sync> Sync for RwLock<T> {}
+    |                                      ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:107:17
+    |
+107 | unsafe impl<T: ?Sized + Send + Sync> Sync for RwLock<T> {}
+    |                 ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Send` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:107:25
+    |
+107 | unsafe impl<T: ?Sized + Send + Sync> Sync for RwLock<T> {}
+    |                         ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sync` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:107:32
+    |
+107 | unsafe impl<T: ?Sized + Send + Sync> Sync for RwLock<T> {}
+    |                                ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:143:10
+    |
+143 | impl<T: ?Sized> RwLock<T> {
+    |          ^^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Some` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:169:17
+    |
+169 |                 Some(guard) => return guard,
+    |                 ^^^^ not found in this scope
+
+error[E0425]: cannot find function `cpu_relax` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:170:25
+    |
+170 |                 None => cpu_relax(),
+    |                         ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:198:31
+    |
+198 |     pub fn try_read(&self) -> Option<RwLockReadGuard<T>> {
+    |                               ^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `None` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:206:13
+    |
+206 |             None
+    |             ^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Some` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:208:13
+    |
+208 |             Some(RwLockReadGuard {
+    |             ^^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:240:51
+    |
+240 |     fn try_write_internal(&self, strong: bool) -> Option<RwLockWriteGuard<T>> {
+    |                                                   ^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Some` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:251:13
+    |
+251 |             Some(RwLockWriteGuard {
+    |             ^^^^ not found in this scope
+
+error[E0425]: cannot find value `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:254:29
+    |
+254 |                 _invariant: PhantomData,
+    |                             ^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `None` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:257:13
+    |
+257 |             None
+    |             ^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Some` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:283:17
+    |
+283 |                 Some(guard) => return guard,
+    |                 ^^^^ not found in this scope
+
+error[E0425]: cannot find function `cpu_relax` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:284:25
+    |
+284 |                 None => cpu_relax(),
+    |                         ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:309:32
+    |
+309 |     pub fn try_write(&self) -> Option<RwLockWriteGuard<T>> {
+    |                                ^^^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Some` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:319:17
+    |
+319 |                 Some(guard) => return guard,
+    |                 ^^^^ not found in this scope
+
+error[E0425]: cannot find function `cpu_relax` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:320:25
+    |
+320 |                 None => cpu_relax(),
+    |                         ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:327:43
+    |
+327 |     pub fn try_upgradeable_read(&self) -> Option<RwLockUpgradeableGuard<T>> {
+    |                                           ^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Some` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:329:13
+    |
+329 |             Some(RwLockUpgradeableGuard {
+    |             ^^^^ not found in this scope
+
+error[E0425]: cannot find value `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:332:29
+    |
+332 |                 _invariant: PhantomData,
+    |                             ^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `None` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:337:13
+    |
+337 |             None
+    |             ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:342:10
+    |
+342 | impl<T: ?Sized + fmt::Debug> fmt::Debug for RwLock<T> {
+    |          ^^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Some` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:345:13
+    |
+345 |             Some(guard) => write!(f, "RwLock {{ data: ")
+    |             ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Default` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:353:27
+    |
+353 | impl<T: ?Sized + Default> Default for RwLock<T> {
+    |                           ^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:353:10
+    |
+353 | impl<T: ?Sized + Default> Default for RwLock<T> {
+    |          ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Default` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:353:18
+    |
+353 | impl<T: ?Sized + Default> Default for RwLock<T> {
+    |                  ^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:359:19
+    |
+359 | impl<'rwlock, T: ?Sized> RwLockUpgradeableGuard<'rwlock, T> {
+    |                   ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:361:52
+    |
+361 |     fn try_upgrade_internal(self, strong: bool) -> Result<RwLockWriteGuard<'rwlock, T>, Self> {
+    |                                                    ^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Ok` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:373:23
+    |
+373 |             let out = Ok(RwLockWriteGuard {
+    |                       ^^ not found in this scope
+
+error[E0425]: cannot find value `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:376:29
+    |
+376 |                 _invariant: PhantomData,
+    |                             ^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Err` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:384:13
+    |
+384 |             Err(self)
+    |             ^^^------
+    |             |
+    |             help: try calling `Err` as a method: `self.Err()`
+
+error[E0531]: cannot find tuple struct or tuple variant `Ok` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:400:17
+    |
+400 |                 Ok(guard) => return guard,
+    |                 ^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Err` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:401:17
+    |
+401 |                 Err(e) => e,
+    |                 ^^^ not found in this scope
+
+error[E0425]: cannot find function `cpu_relax` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:404:13
+    |
+404 |             cpu_relax();
+    |             ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:420:33
+    |
+420 |     pub fn try_upgrade(self) -> Result<RwLockWriteGuard<'rwlock, T>, Self> {
+    |                                 ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:451:19
+    |
+451 | impl<'rwlock, T: ?Sized> RwLockWriteGuard<'rwlock, T> {
+    |                   ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Deref` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:478:26
+    |
+478 | impl<'rwlock, T: ?Sized> Deref for RwLockReadGuard<'rwlock, T> {
+    |                          ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:478:19
+    |
+478 | impl<'rwlock, T: ?Sized> Deref for RwLockReadGuard<'rwlock, T> {
+    |                   ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Deref` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:486:26
+    |
+486 | impl<'rwlock, T: ?Sized> Deref for RwLockUpgradeableGuard<'rwlock, T> {
+    |                          ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:486:19
+    |
+486 | impl<'rwlock, T: ?Sized> Deref for RwLockUpgradeableGuard<'rwlock, T> {
+    |                   ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Deref` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:494:26
+    |
+494 | impl<'rwlock, T: ?Sized> Deref for RwLockWriteGuard<'rwlock, T> {
+    |                          ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:494:19
+    |
+494 | impl<'rwlock, T: ?Sized> Deref for RwLockWriteGuard<'rwlock, T> {
+    |                   ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `DerefMut` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:502:26
+    |
+502 | impl<'rwlock, T: ?Sized> DerefMut for RwLockWriteGuard<'rwlock, T> {
+    |                          ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomData` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:79:26
+   |
+79 |     associated_register: PhantomData<R>,
+   |                          ^^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:502:19
+    |
+502 | impl<'rwlock, T: ?Sized> DerefMut for RwLockWriteGuard<'rwlock, T> {
+    |                   ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Drop` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:508:26
+    |
+508 | impl<'rwlock, T: ?Sized> Drop for RwLockReadGuard<'rwlock, T> {
+    |                          ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:508:19
+    |
+508 | impl<'rwlock, T: ?Sized> Drop for RwLockReadGuard<'rwlock, T> {
+    |                   ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Drop` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:515:26
+    |
+515 | impl<'rwlock, T: ?Sized> Drop for RwLockUpgradeableGuard<'rwlock, T> {
+    |                          ^^^^ not found in this scope
+
+error[E0425]: cannot find value `PhantomData` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:87:34
+   |
+87 |             associated_register: PhantomData,
+   |                                  ^^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:515:19
+    |
+515 | impl<'rwlock, T: ?Sized> Drop for RwLockUpgradeableGuard<'rwlock, T> {
+    |                   ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Drop` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:525:26
+    |
+525 | impl<'rwlock, T: ?Sized> Drop for RwLockWriteGuard<'rwlock, T> {
+    |                          ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sized` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:525:19
+    |
+525 | impl<'rwlock, T: ?Sized> Drop for RwLockWriteGuard<'rwlock, T> {
+    |                   ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:104:76
+    |
+104 |     pub fn read_as_enum<E: TryFromValue<T, EnumType = E>>(self, val: T) -> Option<E> {
+    |                                                                            ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `AtomicUsize` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:537:14
+    |
+537 |     atomic: &AtomicUsize,
+    |              ^^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Clone` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:125:40
+    |
+125 | impl<T: UIntLike, R: RegisterLongName> Clone for Field<T, R> {
+    |                                        ^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Ordering` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:540:14
+    |
+540 |     success: Ordering,
+    |              ^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Ordering` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:541:14
+    |
+541 |     failure: Ordering,
+    |              ^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:134:40
+    |
+134 | impl<T: UIntLike, R: RegisterLongName> Copy for Field<T, R> {}
+    |                                        ^^^^ not found in this scope
+
+error[E0412]: cannot find type `Result` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/rw_lock.rs:543:6
+    |
+543 | ) -> Result<usize, usize> {
+    |      ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:161:26
+    |
+161 |     associated_register: PhantomData<R>,
+    |                          ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `AtomicUsize` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:22:12
+   |
+22 |     state: AtomicUsize,
+   |            ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `UnsafeCell` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:23:11
+   |
+23 |     data: UnsafeCell<Option<T>>, // TODO remove option and use mem::uninitialized
+   |           ^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:174:42
+    |
+174 |                     associated_register: PhantomData,
+    |                                          ^^^^^^^^^^^ not found in this scope
+...
+189 | FieldValue_impl_for!(u8);
+    | ------------------------ in this macro invocation
+    |
+    = note: this error originates in the macro `FieldValue_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0412]: cannot find type `Option` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:23:22
+   |
+23 |     data: UnsafeCell<Option<T>>, // TODO remove option and use mem::uninitialized
+   |                      ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:181:35
+    |
+181 |         impl<R: RegisterLongName> From<FieldValue<$type, R>> for $type {
+    |                                   ^^^^ not found in this scope
+...
+189 | FieldValue_impl_for!(u8);
+    | ------------------------ in this macro invocation
+    |
+    = note: this error originates in the macro `FieldValue_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0531]: cannot find tuple struct or tuple variant `Some` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:29:13
+   |
+29 |             Some(s) => write!(f, "Once {{ data: ")
+   |             ^^^^ not found in this scope
+
+error[E0425]: cannot find value `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:174:42
+    |
+174 |                     associated_register: PhantomData,
+    |                                          ^^^^^^^^^^^ not found in this scope
+...
+190 | FieldValue_impl_for!(u16);
+    | ------------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `FieldValue_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Sync` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:39:29
+   |
+39 | unsafe impl<T: Send + Sync> Sync for Once<T> {}
+   |                             ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:181:35
+    |
+181 |         impl<R: RegisterLongName> From<FieldValue<$type, R>> for $type {
+    |                                   ^^^^ not found in this scope
+...
+190 | FieldValue_impl_for!(u16);
+    | ------------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `FieldValue_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Send` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:39:16
+   |
+39 | unsafe impl<T: Send + Sync> Sync for Once<T> {}
+   |                ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sync` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:39:23
+   |
+39 | unsafe impl<T: Send + Sync> Sync for Once<T> {}
+   |                       ^^^^ not found in this scope
+
+error[E0425]: cannot find value `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:174:42
+    |
+174 |                     associated_register: PhantomData,
+    |                                          ^^^^^^^^^^^ not found in this scope
+...
+191 | FieldValue_impl_for!(u32);
+    | ------------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `FieldValue_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `Send` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:40:22
+   |
+40 | unsafe impl<T: Send> Send for Once<T> {}
+   |                      ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Send` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:40:16
+   |
+40 | unsafe impl<T: Send> Send for Once<T> {}
+   |                ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:181:35
+    |
+181 |         impl<R: RegisterLongName> From<FieldValue<$type, R>> for $type {
+    |                                   ^^^^ not found in this scope
+...
+191 | FieldValue_impl_for!(u32);
+    | ------------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `FieldValue_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0425]: cannot find value `None` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:55:31
+   |
+55 |         data: UnsafeCell::new(None),
+   |                               ^^^^ not found in this scope
+
+error[E0425]: cannot find value `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:174:42
+    |
+174 |                     associated_register: PhantomData,
+    |                                          ^^^^^^^^^^^ not found in this scope
+...
+192 | FieldValue_impl_for!(u64);
+    | ------------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `FieldValue_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0425]: cannot find function `unreachable` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:65:33
+   |
+65 |             None    => unsafe { unreachable() },
+   |                                 ^^^^^^^^^^^ not found in this scope
+
+error[E0531]: cannot find tuple struct or tuple variant `Some` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:66:13
+   |
+66 |             Some(p) => p,
+   |             ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:181:35
+    |
+181 |         impl<R: RegisterLongName> From<FieldValue<$type, R>> for $type {
+    |                                   ^^^^ not found in this scope
+...
+192 | FieldValue_impl_for!(u64);
+    | ------------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `FieldValue_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `FnOnce` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:99:18
+   |
+99 |         where F: FnOnce() -> T
+   |                  ^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Some` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:110:45
+    |
+110 |                 unsafe { *self.data.get() = Some(builder()) };
+    |                                             ^^^^ not found in this scope
+
+error[E0425]: cannot find value `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:174:42
+    |
+174 |                     associated_register: PhantomData,
+    |                                          ^^^^^^^^^^^ not found in this scope
+...
+193 | FieldValue_impl_for!(u128);
+    | -------------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `FieldValue_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0425]: cannot find function `cpu_relax` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:125:21
+    |
+125 |                     cpu_relax();
+    |                     ^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:181:35
+    |
+181 |         impl<R: RegisterLongName> From<FieldValue<$type, R>> for $type {
+    |                                   ^^^^ not found in this scope
+...
+193 | FieldValue_impl_for!(u128);
+    | -------------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `FieldValue_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0425]: cannot find function `unreachable` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:130:31
+    |
+130 |                 _ => unsafe { unreachable() },
+    |                               ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:136:33
+    |
+136 |     pub fn try<'a>(&'a self) -> Option<&'a T> {
+    |                                 ^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:174:42
+    |
+174 |                     associated_register: PhantomData,
+    |                                          ^^^^^^^^^^^ not found in this scope
+...
+194 | FieldValue_impl_for!(usize);
+    | --------------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `FieldValue_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Some` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:138:25
+    |
+138 |             COMPLETE => Some(self.force_get()),
+    |                         ^^^^ not found in this scope
+
+error[E0425]: cannot find value `None` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:139:25
+    |
+139 |             _        => None,
+    |                         ^^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:145:34
+    |
+145 |     pub fn wait<'a>(&'a self) -> Option<&'a T> {
+    |                                  ^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `None` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:148:38
+    |
+148 |                 INCOMPLETE => return None,
+    |                                      ^^^^ not found in this scope
+
+error[E0425]: cannot find function `cpu_relax` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:149:31
+    |
+149 |                 RUNNING    => cpu_relax(), // We spin
+    |                               ^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find function, tuple struct or tuple variant `Some` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:150:38
+    |
+150 |                 COMPLETE   => return Some(self.force_get()),
+    |                                      ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:181:35
+    |
+181 |         impl<R: RegisterLongName> From<FieldValue<$type, R>> for $type {
+    |                                   ^^^^ not found in this scope
+...
+194 | FieldValue_impl_for!(usize);
+    | --------------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `FieldValue_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0425]: cannot find function `unreachable` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:152:31
+    |
+152 |                 _ => unsafe { unreachable() },
+    |                               ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `AtomicUsize` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:159:16
+    |
+159 |     state: &'a AtomicUsize,
+    |                ^^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Drop` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/spin-0.5.2/src/once.rs:163:10
+    |
+163 | impl<'a> Drop for Finish<'a> {
+    |          ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Add` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:228:40
+    |
+228 | impl<T: UIntLike, R: RegisterLongName> Add for FieldValue<T, R> {
+    |                                        ^^^ not found in this scope
+
+error[E0425]: cannot find value `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:236:34
+    |
+236 |             associated_register: PhantomData,
+    |                                  ^^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `AddAssign` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:242:40
+    |
+242 | impl<T: UIntLike, R: RegisterLongName> AddAssign for FieldValue<T, R> {
+    |                                        ^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/fields.rs:255:26
+    |
+255 |     fn try_from(v: V) -> Option<Self::EnumType>;
+    |                          ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/interfaces.rs:181:10
+    |
+181 |     ) -> Option<E> {
+    |          ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `UnsafeCell` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:35:12
+   |
+35 |     value: UnsafeCell<T>,
+   |            ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomData` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:36:26
+   |
+36 |     associated_register: PhantomData<R>,
+   |                          ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomData` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:66:26
+   |
+66 |     associated_register: PhantomData<R>,
+   |                          ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `UnsafeCell` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:86:12
+   |
+86 |     value: UnsafeCell<T>,
+   |            ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomData` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:87:26
+   |
+87 |     associated_register: PhantomData<R>,
+   |                          ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `UnsafeCell` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:116:12
+    |
+116 |     value: UnsafeCell<T>,
+    |            ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:117:26
+    |
+117 |     associated_register: PhantomData<(R, W)>,
+    |                          ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `UnsafeCell` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:152:12
+    |
+152 |     value: UnsafeCell<T>,
+    |            ^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:153:26
+    |
+153 |     associated_register: PhantomData<R>,
+    |                          ^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/registers.rs:160:34
+    |
+160 |             associated_register: PhantomData,
+    |                                  ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomData` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:33:26
+   |
+33 |     associated_register: PhantomData<R>,
+   |                          ^^^^^^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `PhantomData` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:40:34
+   |
+40 |             associated_register: PhantomData,
+   |                                  ^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `Option` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:64:89
+   |
+64 |     pub fn read_as_enum<E: TryFromValue<T, EnumType = E>>(&self, field: Field<T, R>) -> Option<E> {
+   |                                                                                         ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:116:35
+    |
+116 |         impl<R: RegisterLongName> From<LocalRegisterCopy<$type, R>> for $type {
+    |                                   ^^^^ not found in this scope
+...
+124 | From_impl_for!(u8);
+    | ------------------ in this macro invocation
+    |
+    = note: this error originates in the macro `From_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:116:35
+    |
+116 |         impl<R: RegisterLongName> From<LocalRegisterCopy<$type, R>> for $type {
+    |                                   ^^^^ not found in this scope
+...
+125 | From_impl_for!(u16);
+    | ------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `From_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:116:35
+    |
+116 |         impl<R: RegisterLongName> From<LocalRegisterCopy<$type, R>> for $type {
+    |                                   ^^^^ not found in this scope
+...
+126 | From_impl_for!(u32);
+    | ------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `From_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:116:35
+    |
+116 |         impl<R: RegisterLongName> From<LocalRegisterCopy<$type, R>> for $type {
+    |                                   ^^^^ not found in this scope
+...
+127 | From_impl_for!(u64);
+    | ------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `From_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:116:35
+    |
+116 |         impl<R: RegisterLongName> From<LocalRegisterCopy<$type, R>> for $type {
+    |                                   ^^^^ not found in this scope
+...
+128 | From_impl_for!(u128);
+    | -------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `From_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `From` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/local_register.rs:116:35
+    |
+116 |         impl<R: RegisterLongName> From<LocalRegisterCopy<$type, R>> for $type {
+    |                                   ^^^^ not found in this scope
+...
+129 | From_impl_for!(usize);
+    | --------------------- in this macro invocation
+    |
+    = note: this error originates in the macro `From_impl_for` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error[E0405]: cannot find trait `BitAnd` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/lib.rs:84:5
+   |
+84 |     BitAnd<Output = Self>
+   |     ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `BitOr` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/lib.rs:85:7
+   |
+85 |     + BitOr<Output = Self>
+   |       ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `BitOrAssign` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/lib.rs:86:7
+   |
+86 |     + BitOrAssign
+   |       ^^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Not` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/lib.rs:87:7
+   |
+87 |     + Not<Output = Self>
+   |       ^^^ not found in this scope
+
+error[E0405]: cannot find trait `Eq` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/lib.rs:88:7
+   |
+88 |     + Eq
+   |       ^^ not found in this scope
+
+error[E0405]: cannot find trait `Shr` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/lib.rs:89:7
+   |
+89 |     + Shr<usize, Output = Self>
+   |       ^^^ not found in this scope
+
+error[E0405]: cannot find trait `Shl` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/lib.rs:90:7
+   |
+90 |     + Shl<usize, Output = Self>
+   |       ^^^ not found in this scope
+
+error[E0405]: cannot find trait `Copy` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/lib.rs:91:7
+   |
+91 |     + Copy
+   |       ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Clone` in this scope
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/lib.rs:92:7
+   |
+92 |     + Clone
+   |       ^^^^^ not found in this scope
+
+error[E0554]: `#![feature]` may not be used on the stable release channel
+  --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/tock-registers-0.7.0/src/lib.rs:56:1
+   |
+56 | #![feature(const_fn_trait_bound)]
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: remove the attribute
+   |
+   = help: the feature `const_fn_trait_bound` has been stable since 1.61.0 and no longer requires an attribute to enable
+
+Some errors have detailed explanations: E0405, E0412, E0425, E0433, E0463, E0531.
+error: could not compile `spin` due to 199 previous errors
+Some errors have detailed explanations: E0405, E0412, E0425, E0433, E0463, E0554.
+error: could not compile `tock-registers` due to 77 previous errors
+error[E0433]: failed to resolve: use of undeclared type `ManuallyDrop`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:319:20
+    |
+319 |             value: ManuallyDrop::new(v),
+    |                    ^^^^^^^^^^^^ use of undeclared type `ManuallyDrop`
+
+error[E0433]: failed to resolve: use of undeclared type `ManuallyDrop`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:320:21
+    |
+320 |             dropfn: ManuallyDrop::new(dropfn),
+    |                     ^^^^^^^^^^^^ use of undeclared type `ManuallyDrop`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ptr`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:352:25
+    |
+352 |             let value = ptr::read(&*guard.value);
+    |                         ^^^ use of undeclared crate or module `ptr`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ptr`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:357:27
+    |
+357 |             let _dropfn = ptr::read(&*guard.dropfn);
+    |                           ^^^ use of undeclared crate or module `ptr`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `mem`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:358:13
+    |
+358 |             mem::forget(guard);
+    |             ^^^ use of undeclared crate or module `mem`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ptr`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:456:14
+    |
+456 |             (ptr::read(&*self.value), ptr::read(&*self.dropfn))
+    |              ^^^ use of undeclared crate or module `ptr`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `ptr`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:456:39
+    |
+456 |             (ptr::read(&*self.value), ptr::read(&*self.dropfn))
+    |                                       ^^^ use of undeclared crate or module `ptr`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:464:15
+    |
+464 | impl<T, F, S> fmt::Debug for ScopeGuard<T, F, S>
+    |               ^^^ use of undeclared crate or module `fmt`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:465:14
+    |
+465 |     where T: fmt::Debug,
+    |              ^^^ use of undeclared crate or module `fmt`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:469:27
+    |
+469 |     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+    |                           ^^^ use of undeclared crate or module `fmt`
+
+error[E0433]: failed to resolve: use of undeclared crate or module `fmt`
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:469:46
+    |
+469 |     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+    |                                              ^^^ use of undeclared crate or module `fmt`
+
+error[E0405]: cannot find trait `FnOnce` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:299:14
+    |
+299 |     where F: FnOnce(T),
+    |              ^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `ManuallyDrop` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:302:12
+    |
+302 |     value: ManuallyDrop<T>,
+    |            ^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `ManuallyDrop` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:303:13
+    |
+303 |     dropfn: ManuallyDrop<F>,
+    |             ^^^^^^^^^^^^ not found in this scope
+
+error[E0412]: cannot find type `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:305:15
+    |
+305 |     strategy: PhantomData<fn(S) -> S>,
+    |               ^^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `FnOnce` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:309:14
+    |
+309 |     where F: FnOnce(T),
+    |              ^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `PhantomData` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:321:23
+    |
+321 |             strategy: PhantomData,
+    |                       ^^^^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `FnOnce` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:368:14
+    |
+368 |     where F: FnOnce(T)
+    |              ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sync` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:422:22
+    |
+422 | unsafe impl<T, F, S> Sync for ScopeGuard<T, F, S>
+    |                      ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Sync` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:423:14
+    |
+423 |     where T: Sync,
+    |              ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `FnOnce` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:424:14
+    |
+424 |           F: FnOnce(T),
+    |              ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Deref` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:428:15
+    |
+428 | impl<T, F, S> Deref for ScopeGuard<T, F, S>
+    |               ^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `FnOnce` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:429:14
+    |
+429 |     where F: FnOnce(T),
+    |              ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `DerefMut` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:439:15
+    |
+439 | impl<T, F, S> DerefMut for ScopeGuard<T, F, S>
+    |               ^^^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `FnOnce` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:440:14
+    |
+440 |     where F: FnOnce(T),
+    |              ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `Drop` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:448:15
+    |
+448 | impl<T, F, S> Drop for ScopeGuard<T, F, S>
+    |               ^^^^ not found in this scope
+
+error[E0405]: cannot find trait `FnOnce` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:449:14
+    |
+449 |     where F: FnOnce(T),
+    |              ^^^^^^ not found in this scope
+
+error[E0405]: cannot find trait `FnOnce` in this scope
+   --> /Users/jasonq/.cargo/registry/src/github.com-1ecc6299db9ec823/scopeguard-1.1.0/src/lib.rs:466:14
+    |
+466 |           F: FnOnce(T),
+    |              ^^^^^^ not found in this scope
+
+Some errors have detailed explanations: E0405, E0412, E0425, E0433, E0463.
+error: could not compile `scopeguard` due to 33 previous errors
+thread 'main' panicked at 'assertion failed: status.success()', xtask/src/main.rs:96:5
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
