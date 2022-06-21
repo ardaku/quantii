@@ -49,9 +49,9 @@ notice = "warn"
 # output a note when they are encountered.
 ignore = [
     # Bug in conquer-once can't fix until new novusk version
-    # "RUSTSEC-2020-0101",
+    "RUSTSEC-2020-0101",
     # Incorrectly identifies novusk/time as the time crate so invalid
-    # "RUSTSEC-2020-0071", 
+    "RUSTSEC-2020-0071", 
 ]
 # Threshold for security vulnerabilities, any vulnerability with a CVSS score
 # lower than the range specified will be ignored. Note that ignored advisories
@@ -75,10 +75,14 @@ ignore = [
 [licenses]
 # The lint level for crates which do not have a detectable license
 <<<<<<< HEAD
+<<<<<<< HEAD
 unlicensed = "warn"
 =======
 unlicensed = "deny"
 >>>>>>> 6b0bd15 (Add cargo deny checks to CI)
+=======
+unlicensed = "warn"
+>>>>>>> 0b7473c (Get to pass tests)
 # List of explicitly allowed licenses
 # See https://spdx.org/licenses/ for list of possible licenses
 # [possible values: any SPDX 3.11 short identifier (+ optional exception)].
@@ -87,13 +91,19 @@ allow = [
     "Apache-2.0",
     "BSL-1.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0b7473c (Get to pass tests)
     "GPL-3.0",
     "ISC",
     "0BSD",
     "MPL-2.0",
+<<<<<<< HEAD
 =======
     #"Apache-2.0 WITH LLVM-exception",
 >>>>>>> 6b0bd15 (Add cargo deny checks to CI)
+=======
+>>>>>>> 0b7473c (Get to pass tests)
 ]
 # List of explicitly disallowed licenses
 # See https://spdx.org/licenses/ for list of possible licenses
@@ -103,10 +113,14 @@ deny = [
 ]
 # Lint level for licenses considered copyleft
 <<<<<<< HEAD
+<<<<<<< HEAD
 copyleft = "deny"
 =======
 copyleft = "warn"
 >>>>>>> 6b0bd15 (Add cargo deny checks to CI)
+=======
+copyleft = "deny"
+>>>>>>> 0b7473c (Get to pass tests)
 # Blanket approval or denial for OSI-approved or FSF Free/Libre licenses
 # * both - The license will be approved if it is both OSI-approved *AND* FSF
 # * either - The license will be approved if it is either OSI-approved *OR* FSF
@@ -158,10 +172,14 @@ exceptions = [
 # To see how to mark a crate as unpublished (to the official registry),
 # visit https://doc.rust-lang.org/cargo/reference/manifest.html#the-publish-field.
 <<<<<<< HEAD
+<<<<<<< HEAD
 ignore = true
 =======
 ignore = false
 >>>>>>> 6b0bd15 (Add cargo deny checks to CI)
+=======
+ignore = true
+>>>>>>> 0b7473c (Get to pass tests)
 # One or more private registries that you might publish crates to, if a crate
 # is only published to private registries, and ignore is true, the crate will
 # not have its license(s) checked
@@ -175,6 +193,7 @@ registries = [
 [bans]
 # Lint level for when multiple versions of the same crate are detected
 <<<<<<< HEAD
+<<<<<<< HEAD
 multiple-versions = "deny"
 # Lint level for when a crate version requirement is `*`
 wildcards = "warn"
@@ -183,6 +202,11 @@ multiple-versions = "warn"
 # Lint level for when a crate version requirement is `*`
 wildcards = "allow"
 >>>>>>> 6b0bd15 (Add cargo deny checks to CI)
+=======
+multiple-versions = "deny"
+# Lint level for when a crate version requirement is `*`
+wildcards = "warn"
+>>>>>>> 0b7473c (Get to pass tests)
 # The graph highlighting used when creating dotgraphs for crates
 # with multiple versions
 # * lowest-version - The path to the lowest versioned duplicate is highlighted
@@ -206,6 +230,9 @@ deny = [
 # Certain crates/versions that will be skipped when doing duplicate detection.
 skip = [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0b7473c (Get to pass tests)
     { name = "x86_64", version = "0.1" },
     { name = "volatile", version = "0.2" },
     { name = "syn", version = "0.15" },
@@ -231,10 +258,13 @@ skip = [
     { name = "rand_core", version = "0.3" },
     { name = "rand_core", version = "0.4" },
     { name = "raw-cpuid", version = "9.1" },
+<<<<<<< HEAD
     { name = "unicode-xid", version = "0.1" },
 =======
     #{ name = "ansi_term", version = "=0.11.0" },
 >>>>>>> 6b0bd15 (Add cargo deny checks to CI)
+=======
+>>>>>>> 0b7473c (Get to pass tests)
 ]
 # Similarly to `skip` allows you to skip certain crates during duplicate
 # detection. Unlike skip, it also includes the entire tree of transitive
@@ -251,6 +281,7 @@ skip-tree = [
 # Lint level for what to happen when a crate from a crate registry that is not
 # in the allow list is encountered
 <<<<<<< HEAD
+<<<<<<< HEAD
 unknown-registry = "deny"
 # Lint level for what to happen when a crate from a git repository that is not
 # in the allow list is encountered
@@ -261,16 +292,26 @@ unknown-registry = "warn"
 # in the allow list is encountered
 unknown-git = "warn"
 >>>>>>> 6b0bd15 (Add cargo deny checks to CI)
+=======
+unknown-registry = "deny"
+# Lint level for what to happen when a crate from a git repository that is not
+# in the allow list is encountered
+unknown-git = "deny"
+>>>>>>> 0b7473c (Get to pass tests)
 # List of URLs for allowed crate registries. Defaults to the crates.io index
 # if not specified. If it is specified but empty, no registries are allowed.
 allow-registry = ["https://github.com/rust-lang/crates.io-index"]
 # List of URLs for allowed Git repositories
 allow-git = [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0b7473c (Get to pass tests)
     "https://github.com/new-kernel/novusk.git",
     "https://github.com/NathanMcMillan54/pc-beeper.git",
     "https://github.com/ardaku/ardaku.git",
     "https://github.com/ardaku/compiler-builtins.git",
+<<<<<<< HEAD
 ]
 
 [sources.allow-org]
@@ -286,3 +327,8 @@ gitlab = [""]
 # 1 or more bitbucket.org organizations to allow git sources for
 bitbucket = [""]
 >>>>>>> 6b0bd15 (Add cargo deny checks to CI)
+=======
+]
+
+[sources.allow-org]
+>>>>>>> 0b7473c (Get to pass tests)
