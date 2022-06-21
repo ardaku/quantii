@@ -5,3 +5,6 @@
 
 # Editor generated files/directories
 .idea/
+
+# Platform-specific build config
+/quantii/.cargo/config.toml
