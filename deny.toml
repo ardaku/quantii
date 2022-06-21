@@ -208,6 +208,7 @@ skip = [
     { name = "rand_core", version = "0.3" },
     { name = "rand_core", version = "0.4" },
     { name = "raw-cpuid", version = "9.1" },
+    { name = "unicode-xid", version = "0.1" },
 ]
 # Similarly to `skip` allows you to skip certain crates during duplicate
 # detection. Unlike skip, it also includes the entire tree of transitive
