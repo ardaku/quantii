@@ -23,6 +23,14 @@
 #![no_std]
 #![no_main]
 
+#![no_std]
+#![warn(clippy::all)]
+#![warn(clippy::pedantic)]
+#![warn(clippy::nursery)]
+#![warn(clippy::cargo)]
+#![warn(clippy::restriction)]
+#![allow(clippy::blanket_clippy_restriction_lints)]
+
 extern crate novusk;
 extern crate quantii;
 

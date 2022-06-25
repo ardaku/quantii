@@ -20,7 +20,25 @@
 // Lesser General Public License along with
 // Quantii. If not, see <https://www.gnu.org/licenses/>.
 
+//! Quantii's real entry point.
+//!
+//! Enters at [`setup`]
+
 #![no_std]
+#![warn(clippy::all)]
+#![warn(clippy::pedantic)]
+#![warn(clippy::nursery)]
+#![warn(clippy::cargo)]
+#![warn(clippy::restriction)]
+#![allow(clippy::blanket_clippy_restriction_lints)]
+// Allow: `clippy::implicit_returns`
+// coincides with `clippy::return_used`
+#![allow(clippy::implicit_return)]
+// Allow: type [`Result<(), <unknown>>`]
+// cannot be easily unwrapped.
+#![allow(unused_results)]
+// Allow: Same as `unused_results`
+#![allow(unused_must_use)]
 
 extern crate alloc;
 extern crate novuskinc;
@@ -38,6 +56,7 @@ pub mod novusk;
 /// The executable WASM for the kernel's initially running App
 const APP_EXE: &[u8] = include_bytes!("hello_world.wasm");
 
+/// Wrapper for the kernel's syscall interface.
 struct System;
 
 impl ardaku::System for System {
@@ -63,6 +82,9 @@ impl ardaku::System for System {
     /// Return version of the kernel.
     fn version(&self) -> u32 {
         #[cfg(not(target_arch = "riscv32"))]
+        // Safety: Syscalls are generally unsafe.
+        // In this case it is okay, as this is an
+        // operating system.
         unsafe {
             syscalls::syscall(syscalls::VERSION, 0).into()
         }
@@ -84,12 +106,22 @@ impl ardaku::System for System {
 
         // On all other targets, proceed to reboot.
         #[cfg(not(target_arch = "riscv32"))]
+        // Safety: Syscalls are generally unsafe.
+        // In this case it is okay, as this is an
+        // operating system.
         unsafe {
             syscalls::syscall(syscalls::REBOOT, 0);
         };
     }
 }
 
+/// The OS's entry point.
+///
+/// This function is called by the main function
+/// in `main.rs` when it is ready to run.
+#[inline]
+// Allow: requires extra allocation do use [`push_str`]
+#[allow(clippy::string_add)]
 pub fn setup() -> ! {
     use ardaku::System;
 
