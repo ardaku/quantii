@@ -22,8 +22,6 @@
 
 #![no_std]
 #![no_main]
-
-#![no_std]
 #![warn(clippy::all)]
 #![warn(clippy::pedantic)]
 #![warn(clippy::nursery)]
