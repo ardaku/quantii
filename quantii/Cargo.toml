@@ -44,5 +44,5 @@ git = "https://github.com/ardaku/ardaku"
 
 [dependencies.novusk]
 git = "https://github.com/new-kernel/novusk"
-tag = "v3"
+tag = "v3.0.1"
 features = ["custom_config", "hifive", "rpi3"]

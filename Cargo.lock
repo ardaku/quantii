@@ -5,7 +5,7 @@ version = 3
 [[package]]
 name = "aarch64"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "armfb",
  "init",
@@ -38,15 +38,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "amd64_timer"
-version = "1.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ce5e4ed94558ec2df60da8cc818f74a6079b10150e69b66e7585ca09549a8b51"
-dependencies = [
- "rustc_version 0.2.3",
-]
-
-[[package]]
 name = "ardaku"
 version = "0.1.0"
 source = "git+https://github.com/ardaku/ardaku#5b2ce66b5ae6bede576457138c19ea089fcf9a01"
@@ -57,7 +48,7 @@ dependencies = [
 [[package]]
 name = "arm32"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "cfg-if 1.0.0",
  "cortex-a",
@@ -74,14 +65,13 @@ dependencies = [
  "rpi",
  "rpi2kernel",
  "stellarisd",
- "stmd",
  "time",
 ]
 
 [[package]]
 name = "armfb"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "fb",
  "libcolor",
@@ -157,12 +147,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "cast"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "37b2a672a2cb129a2e41c10b1224bb368f9f37a2b16b612598138befd7b37eb5"
-
-[[package]]
 name = "cfg-if"
 version = "0.1.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -175,28 +159,9 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
-name = "chrono"
-version = "0.4.19"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "670ad68c9088c2a963aaa298cb369688cf3f9465ce5e2d4ca10e6e0098a1ce73"
-dependencies = [
- "num-integer",
- "num-traits",
-]
-
-[[package]]
 name = "compiler_builtins_patch"
 version = "0.1.66"
 source = "git+https://github.com/ardaku/compiler-builtins?branch=quantii#9190dcf4d02fb28d32e10484eb7e5d8c9b28de8d"
-
-[[package]]
-name = "conquer-once"
-version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "96eb12fb69466716fbae9009d389e6a30830ae8975e170eff2d2cff579f9efa3"
-dependencies = [
- "conquer-util 0.2.0",
-]
 
 [[package]]
 name = "conquer-once"
@@ -204,14 +169,8 @@ version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7c6d3a9775a69f6d1fe2cc888999b67ed30257d3da4d2af91984e722f2ec918a"
 dependencies = [
- "conquer-util 0.3.0",
+ "conquer-util",
 ]
-
-[[package]]
-name = "conquer-util"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "654fb2472cc369d311c547103a1fa81d467bef370ae7a0680f65939895b1182a"
 
 [[package]]
 name = "conquer-util"
@@ -222,16 +181,16 @@ checksum = "e763eef8846b13b380f37dfecda401770b0ca4e56e95170237bd7c25c7db3582"
 [[package]]
 name = "console"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "gpu",
 ]
 
 [[package]]
 name = "cortex-a"
-version = "6.1.0"
+version = "7.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "509fc35485a2b4ddbacabe0bf2212cdfff88da93658608e5cc651afcb75b7733"
+checksum = "f75db6964ed6748e88ff46f9aa209249a0aefe6b06d4b9e9ab820c867586d51a"
 dependencies = [
  "tock-registers",
 ]
@@ -284,9 +243,9 @@ dependencies = [
 
 [[package]]
 name = "cortex-m-semihosting"
-version = "0.3.7"
+version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6bffa6c1454368a6aa4811ae60964c38e6996d397ff8095a8b9211b1c1f749bc"
+checksum = "c23234600452033cc77e4b761e740e02d2c4168e11dbf36ab14a0f58973592b0"
 dependencies = [
  "cortex-m 0.7.4",
 ]
@@ -294,33 +253,31 @@ dependencies = [
 [[package]]
 name = "cpu"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 
 [[package]]
 name = "crossbeam-queue"
-version = "0.2.3"
+version = "0.3.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "774ba60a54c213d409d5353bda12d49cd68d14e45036a285234c8d6f91f92570"
+checksum = "1cd42583b04998a5363558e5f9291ee5a5ff6b49944332103f251e7479a82aa7"
 dependencies = [
- "cfg-if 0.1.10",
+ "cfg-if 1.0.0",
  "crossbeam-utils",
- "maybe-uninit",
 ]
 
 [[package]]
 name = "crossbeam-utils"
-version = "0.7.2"
+version = "0.8.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c3c7c73a2d1e9fc0886a08b93e98eb643461230d5f1925e4036204d5f2e261a8"
+checksum = "51887d4adc7b564537b15adcfb307936f8075dfcd5f00dde9a9f1d29383682bc"
 dependencies = [
- "autocfg",
- "cfg-if 0.1.10",
+ "cfg-if 1.0.0",
 ]
 
 [[package]]
 name = "ctypes"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 
 [[package]]
 name = "darling"
@@ -360,7 +317,7 @@ dependencies = [
 [[package]]
 name = "device"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 
 [[package]]
 name = "downcast-rs"
@@ -392,15 +349,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "embedded-dma"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "46c8c02e4347a0267ca60813c952017f4c5948c232474c6010a381a337f1bda4"
-dependencies = [
- "stable_deref_trait",
-]
-
-[[package]]
 name = "embedded-hal"
 version = "0.2.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -413,7 +361,7 @@ dependencies = [
 [[package]]
 name = "esp"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "device",
  "esp32-hal",
@@ -460,17 +408,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "ethernet"
-version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
-dependencies = [
- "novuskinc 0.1.0",
-]
-
-[[package]]
 name = "ex1"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "novuskinc 0.1.0",
 ]
@@ -478,7 +418,7 @@ dependencies = [
 [[package]]
 name = "fb"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "font8x8",
 ]
@@ -492,7 +432,7 @@ checksum = "3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1"
 [[package]]
 name = "fom_os"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "libost",
  "novuskinc 0.1.1",
@@ -507,7 +447,7 @@ checksum = "875488b8711a968268c7cf5d139578713097ca4635a76044e8fe8eedf831d07e"
 [[package]]
 name = "fscheck"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "kinfo",
  "konfig",
@@ -569,7 +509,7 @@ dependencies = [
 [[package]]
 name = "gpu"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "armfb",
  "novuskinc 0.1.0",
@@ -598,7 +538,7 @@ checksum = "b9e0384b61958566e926dc50660321d12159025e767c18e043daf26b70104c39"
 [[package]]
 name = "init"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "cfg-if 1.0.0",
  "console",
@@ -618,7 +558,7 @@ dependencies = [
 [[package]]
 name = "kb_mouse"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "novuskinc 0.1.0",
  "pc_keyboard",
@@ -628,9 +568,9 @@ dependencies = [
 [[package]]
 name = "keyboard"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
- "conquer-once 0.2.1",
+ "conquer-once",
  "crossbeam-queue",
  "futures-util",
  "pc-keyboard",
@@ -640,7 +580,7 @@ dependencies = [
 [[package]]
 name = "kinfo"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "printk",
 ]
@@ -648,7 +588,7 @@ dependencies = [
 [[package]]
 name = "konfig"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "lazy_static",
  "printk",
@@ -667,7 +607,7 @@ dependencies = [
 [[package]]
 name = "lba"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "novuskinc 0.1.1",
  "printk",
@@ -678,7 +618,7 @@ dependencies = [
 [[package]]
 name = "libbmu"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "memory",
 ]
@@ -692,7 +632,7 @@ checksum = "1b03d17f364a3a042d5e5d46b053bbbf82c92c9430c592dd4c064dc6ee997125"
 [[package]]
 name = "libcolor"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 
 [[package]]
 name = "libm"
@@ -703,7 +643,7 @@ checksum = "da83a57f3f5ba3680950aa3cbc806fc297bc0b289d42e8942ed528ace71b8145"
 [[package]]
 name = "libost"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "gpu",
  "mouse",
@@ -712,7 +652,7 @@ dependencies = [
 [[package]]
 name = "libwin"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "armfb",
  "novuskinc 0.1.0",
@@ -740,13 +680,7 @@ dependencies = [
 [[package]]
 name = "mailbox"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
-
-[[package]]
-name = "maybe-uninit"
-version = "2.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "60302e4db3a61da70c0cb7991976248362f30319e88850c487b9b95bbf059e00"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 
 [[package]]
 name = "memchr"
@@ -757,7 +691,7 @@ checksum = "308cc39be01b73d0d18f82a0e7b2a3df85245f84af96fdddc5d202d27e47b86a"
 [[package]]
 name = "memory"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "ctypes",
 ]
@@ -777,12 +711,12 @@ checksum = "8452105ba047068f40ff7093dd1d9da90898e63dd61736462e9cdda6a90ad3c3"
 [[package]]
 name = "mio"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 
 [[package]]
 name = "modules"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "armfb",
  "ex1",
@@ -796,12 +730,12 @@ dependencies = [
 [[package]]
 name = "mouse"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 
 [[package]]
 name = "multiboot"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "multiboot2",
  "printk",
@@ -809,9 +743,9 @@ dependencies = [
 
 [[package]]
 name = "multiboot2"
-version = "0.12.2"
+version = "0.13.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "004ef1d859a3efbd94f332855b0c4e3fbd7d5eb4828c99198b58086208005865"
+checksum = "d408e10189a4b0e1d488a24a19c5c8c9786f011b30c824c8ab02d3ebf5f62ca2"
 dependencies = [
  "bitflags",
 ]
@@ -840,7 +774,7 @@ checksum = "546c37ac5d9e56f55e73b677106873d9d9f5190605e41a856503623648488cae"
 [[package]]
 name = "nkuefi"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "uart_16550",
 ]
@@ -848,7 +782,7 @@ dependencies = [
 [[package]]
 name = "nmallocator"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "cfg-if 1.0.0",
  "linked_list_allocator",
@@ -858,15 +792,15 @@ dependencies = [
 [[package]]
 name = "notify"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "keyboard",
 ]
 
 [[package]]
 name = "novusk"
-version = "3.0.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+version = "3.0.1"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "aarch64",
  "arm32",
@@ -906,7 +840,7 @@ checksum = "2a4c27dbbcc49aa343a1169f58bd3db40e6f1e0cc95d6303b74c15456809f05d"
 [[package]]
 name = "novuskinc"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "cfg-if 1.0.0",
  "hifive1",
@@ -997,9 +931,9 @@ checksum = "5c6f2d937e3b8d63449b01401e2bae4041bc9dd1129c2e3e0d239407cf6635ac"
 [[package]]
 name = "pc_keyboard"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
- "conquer-once 0.2.1",
+ "conquer-once",
  "crossbeam-queue",
  "futures-util",
  "keyboard",
@@ -1033,7 +967,7 @@ checksum = "8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184"
 [[package]]
 name = "power"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "printk",
  "x86_64 0.14.7",
@@ -1042,7 +976,7 @@ dependencies = [
 [[package]]
 name = "printk"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 
 [[package]]
 name = "proc-macro2"
@@ -1132,25 +1066,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9c33a3c44ca05fa6f1807d8e6743f3824e8509beca625669633be0acbdf509dc"
 
 [[package]]
-name = "rand_core"
-version = "0.6.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d34f1408f55294453790c48b2f1ebbb1c5b4b7563eb1f418bcfcfdbb06ebb4e7"
-
-[[package]]
 name = "raw-cpuid"
-version = "9.1.1"
+version = "10.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1733f6f80c9c24268736a501cd00d41a9849b4faa7a9f9334c096e5d10553206"
-dependencies = [
- "bitflags",
-]
-
-[[package]]
-name = "raw-cpuid"
-version = "10.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "929f54e29691d4e6a9cc558479de70db7aa3d98cd6fe7ab86d7507aa2886b9d2"
+checksum = "738bc47119e3eeccc7e94c4a506901aea5e7b4944ecd0829cbebf4af04ceda12"
 dependencies = [
  "bitflags",
 ]
@@ -1175,7 +1094,7 @@ checksum = "49b3de9ec5dc0a3417da371aab17d729997c15010e7fd24ff707773a33bddb64"
 [[package]]
 name = "riscv"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "hifive1",
  "kinfo",
@@ -1249,9 +1168,8 @@ dependencies = [
 [[package]]
 name = "rpi"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
- "cortex-a",
  "device",
  "libbmu",
  "mailbox",
@@ -1263,7 +1181,7 @@ dependencies = [
 [[package]]
 name = "rpi2kernel"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "armfb",
  "console",
@@ -1272,15 +1190,6 @@ dependencies = [
  "konfig",
  "printk",
  "rpi",
-]
-
-[[package]]
-name = "rtcc"
-version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ef35f9dcbf434a34dcc99b3ebba1c1945d49c70832958e932e83dc63a5273994"
-dependencies = [
- "chrono",
 ]
 
 [[package]]
@@ -1331,7 +1240,7 @@ checksum = "388a1df253eca08550bef6c72392cfe7c30914bf41df5269b68cbd6ff8f570a3"
 [[package]]
 name = "setup"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "kinfo",
  "konfig",
@@ -1344,7 +1253,7 @@ dependencies = [
 [[package]]
 name = "sf_rpilcd_35"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "novuskinc 0.1.0",
  "rpi",
@@ -1353,7 +1262,7 @@ dependencies = [
 [[package]]
 name = "sifive"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "device",
  "hifive1",
@@ -1362,7 +1271,7 @@ dependencies = [
 [[package]]
 name = "sos"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "fom_os",
  "libost",
@@ -1402,7 +1311,7 @@ checksum = "a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3"
 [[package]]
 name = "stellarisd"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "cortex-m 0.7.4",
  "cortex-m-semihosting",
@@ -1413,75 +1322,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "stm32-eth"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "eff9a05e95e0289b6f7bc729785272b2aab2bd848553a090b66ca679d52670d9"
-dependencies = [
- "aligned",
- "cortex-m 0.6.7",
- "volatile-register",
-]
-
-[[package]]
-name = "stm32f4"
-version = "0.13.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "da3d56009c8f32e4f208dbea17df72484154d1040a8969b75d8c73eb7b18fe8f"
-dependencies = [
- "bare-metal 0.2.5",
- "cortex-m 0.7.4",
- "cortex-m-rt",
- "vcell",
-]
-
-[[package]]
-name = "stm32f4xx-hal"
-version = "0.10.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3a06fde2dd27c0ba934c9e69b62af66eb1c20dbb6d741b187a763912e9892d13"
-dependencies = [
- "bare-metal 1.0.0",
- "cast 0.3.0",
- "cortex-m 0.7.4",
- "cortex-m-rt",
- "embedded-dma",
- "embedded-hal",
- "nb 1.0.0",
- "rand_core 0.6.3",
- "rtcc",
- "stm32f4",
- "void",
-]
-
-[[package]]
-name = "stm_eth"
-version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
-dependencies = [
- "ethernet",
- "novuskinc 0.1.0",
- "stm32-eth",
-]
-
-[[package]]
-name = "stmd"
-version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
-dependencies = [
- "cortex-m 0.7.4",
- "cortex-m-rt",
- "ethernet",
- "kinfo",
- "novuskinc 0.1.0",
- "stm32f4xx-hal",
- "stm_eth",
-]
-
-[[package]]
 name = "storage"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "novuskinc 0.1.1",
  "printk",
@@ -1518,7 +1361,7 @@ dependencies = [
 [[package]]
 name = "tempfs"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "vfs",
 ]
@@ -1526,7 +1369,7 @@ dependencies = [
 [[package]]
 name = "time"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 
 [[package]]
 name = "tm4c-hal"
@@ -1534,7 +1377,7 @@ version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f805f472ac1ff0ca60d80c2e64e6621ca3f6b4043531bab2b80ce884cea8e9b"
 dependencies = [
- "cast 0.2.7",
+ "cast",
  "cortex-m 0.6.7",
  "embedded-hal",
  "nb 1.0.0",
@@ -1557,7 +1400,7 @@ version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0cc56eeb40b7b69264083ad913bdd10f5846bd3db2907f0123445b7136615a0b"
 dependencies = [
- "cast 0.2.7",
+ "cast",
  "cortex-m 0.6.7",
  "embedded-hal",
  "nb 1.0.0",
@@ -1603,7 +1446,7 @@ checksum = "8ccb82d61f80a663efe1f787a51b16b5a51e3314d6ac365b08639f52387b33f3"
 [[package]]
 name = "unistd"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "cfg-if 1.0.0",
  "novuskinc 0.1.0",
@@ -1612,7 +1455,7 @@ dependencies = [
 [[package]]
 name = "usbd"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 
 [[package]]
 name = "vcell"
@@ -1629,7 +1472,7 @@ checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
 [[package]]
 name = "vfs"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "memory",
 ]
@@ -1641,7 +1484,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "67cbcb7bfff998d176ffb8f2c3dfd6cb0fe62740e36dee6c64fc3928c01001bf"
 dependencies = [
  "bitflags",
- "conquer-once 0.3.2",
+ "conquer-once",
  "font8x8",
  "num-traits",
  "spinning_top",
@@ -1651,7 +1494,7 @@ dependencies = [
 [[package]]
 name = "vgag"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "fb",
  "lazy_static",
@@ -1748,23 +1591,22 @@ checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
 
 [[package]]
 name = "x86"
-version = "0.41.0"
+version = "0.49.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "edcf43654d533a571fe7f7116373098a95ebc01279efdc5038fc45d3b220cb5a"
+checksum = "ae0df8874628b15fdefccbd5c6b06766ec9ec2d6cd30d6d2f82245343358c50a"
 dependencies = [
  "bit_field",
  "bitflags",
- "raw-cpuid 10.2.0",
+ "raw-cpuid",
 ]
 
 [[package]]
 name = "x86_64"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
- "amd64_timer",
  "bootloader",
- "conquer-once 0.2.1",
+ "conquer-once",
  "crossbeam-queue",
  "futures-util",
  "init",
@@ -1782,7 +1624,7 @@ dependencies = [
  "pc_keyboard",
  "pic8259",
  "printk",
- "raw-cpuid 9.1.1",
+ "raw-cpuid",
  "setup",
  "spin 0.9.2",
  "time",
@@ -1807,7 +1649,7 @@ dependencies = [
 [[package]]
 name = "x86_64-sound"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "pc-beeper",
 ]
@@ -1819,7 +1661,7 @@ version = "0.1.0"
 [[package]]
 name = "xtensa"
 version = "0.1.0"
-source = "git+https://github.com/new-kernel/novusk?tag=v3#1b7d3dc229901b0d5ba56534144235e0f5a12ce4"
+source = "git+https://github.com/new-kernel/novusk?tag=v3.0.1#dd76e1ce14b624c4a53204ba347d0ec4137ed499"
 dependencies = [
  "device",
  "esp",
