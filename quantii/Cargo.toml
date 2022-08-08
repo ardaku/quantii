@@ -34,13 +34,20 @@ path = "src/lib.rs"
 name = "quantii"
 path = "src/main.rs"
 
-[dependencies]
-libm = { version = "0.2", features = ["unstable"] }
-novuskinc = "0.1.1"
-externc-libm = { version = "0.1" }
+[dependencies.libm]
+version = "0.2"
+features = ["unstable"]
+
+[dependencies.novuskinc]
+version = "0.1.1"
+
+[dependencies.externc-libm]
+git = "https://github.com/ardaku/externc-libm.git"
+branch = "quantii"
 
 [dependencies.ardaku]
 git = "https://github.com/ardaku/ardaku.git"
+commit = "7da6ce78a26a8f704b9c95d94cab4bd1c84c80e0"
 
 [dependencies.novusk]
 git = "https://github.com/NathanMcMillan54/novusk.git"

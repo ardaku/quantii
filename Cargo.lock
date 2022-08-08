@@ -429,8 +429,7 @@ dependencies = [
 [[package]]
 name = "externc-libm"
 version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a92d5ce4982632e52cebdfdef7580f2f1b3dc02f541a74ac8838412bb3e9b123"
+source = "git+https://github.com/ardaku/externc-libm.git?branch=quantii#6536ed97f90e6b76c00b9f05dd822ac958979a23"
 dependencies = [
  "libm",
 ]
