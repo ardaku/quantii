@@ -35,14 +35,14 @@ name = "quantii"
 path = "src/main.rs"
 
 [dependencies]
-libm = "0.2"
+libm = { version = "0.2", features = ["unstable"] }
 novuskinc = "0.1.1"
-compiler_builtins_patch = { git = "https://github.com/ardaku/compiler-builtins", branch = "quantii" }
+externc-libm = { version = "0.1" }
 
 [dependencies.ardaku]
-git = "https://github.com/ardaku/ardaku"
+git = "https://github.com/ardaku/ardaku.git"
 
 [dependencies.novusk]
-git = "https://github.com/new-kernel/novusk"
-tag = "v3"
+git = "https://github.com/NathanMcMillan54/novusk.git"
+tag = "v3.0.2"
 features = ["custom_config", "hifive", "rpi3"]

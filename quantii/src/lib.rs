@@ -24,8 +24,6 @@
 
 extern crate alloc;
 extern crate novuskinc;
-// Missing intrinsics patch.
-extern crate compiler_builtins_patch;
 
 use alloc::borrow::ToOwned;
 use alloc::string::{String, ToString};
