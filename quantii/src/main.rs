@@ -25,6 +25,8 @@
 
 extern crate novusk;
 extern crate quantii;
+// Enable libm
+extern crate externc_libm;
 
 use quantii::setup;
 
