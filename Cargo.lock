@@ -42,8 +42,9 @@ dependencies = [
 [[package]]
 name = "ardaku"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/ardaku.git#7da6ce78a26a8f704b9c95d94cab4bd1c84c80e0"
+source = "git+https://github.com/ardaku/ardaku.git#698d938c50c8ce3891fcee73123f59b43c90c88a"
 dependencies = [
+ "log",
  "wasmi",
 ]
 
@@ -698,6 +699,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "log"
+version = "0.4.17"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "abb12e687cfb44aa40f41fc3978ef76448f9b6038cad6aef4259d3c095a2382e"
+dependencies = [
+ "cfg-if 1.0.0",
+]
+
+[[package]]
 name = "mailbox"
 version = "0.1.0"
 source = "git+https://github.com/NathanMcMillan54/novusk.git?tag=v3.0.2#88ad00228d1b3493e254339453404e6f3bd8adec"
@@ -715,12 +725,6 @@ source = "git+https://github.com/NathanMcMillan54/novusk.git?tag=v3.0.2#88ad0022
 dependencies = [
  "ctypes",
 ]
-
-[[package]]
-name = "memory_units"
-version = "0.3.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "71d96e3f3c0b6325d8ccd83c33b28acb183edcb6c67938ba104ec546854b0882"
 
 [[package]]
 name = "memory_units"
@@ -927,12 +931,6 @@ checksum = "578ede34cf02f8924ab9447f50c28075b4d3e5b269972345e7e0372b38c6cdcd"
 dependencies = [
  "autocfg",
 ]
-
-[[package]]
-name = "parity-wasm"
-version = "0.42.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "be5e13c266502aadf83426d87d81a0f5d1ef45b8027f5a471c360abfe4bfae92"
 
 [[package]]
 name = "pc-beeper"
@@ -1579,27 +1577,31 @@ dependencies = [
 
 [[package]]
 name = "wasmi"
-version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "03919fcab96ed058e0c411c47b370883d6393c40307f3140876f68a9256cadb1"
+version = "0.14.0"
+source = "git+https://github.com/ardaku/wasmi.git#baab359de955240fbb9c89ebbc369d7a6e6d8569"
 dependencies = [
- "downcast-rs",
- "libm",
- "memory_units 0.3.0",
- "num-rational",
- "num-traits",
- "parity-wasm",
- "wasmi-validation",
+ "spin 0.9.4",
+ "wasmi_core",
+ "wasmparser-nostd",
 ]
 
 [[package]]
-name = "wasmi-validation"
-version = "0.4.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "165343ecd6c018fc09ebcae280752702c9a2ef3e6f8d02f1cfcbdb53ef6d7937"
+name = "wasmi_core"
+version = "0.2.0"
+source = "git+https://github.com/ardaku/wasmi.git#baab359de955240fbb9c89ebbc369d7a6e6d8569"
 dependencies = [
- "parity-wasm",
+ "downcast-rs",
+ "libm",
+ "memory_units",
+ "num-rational",
+ "num-traits",
 ]
+
+[[package]]
+name = "wasmparser-nostd"
+version = "0.83.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "58a45f1058fed5ce7ff3da64153d0537a1ae664d09855fbb1402c6472f09571b"
 
 [[package]]
 name = "wee_alloc"
@@ -1609,7 +1611,7 @@ checksum = "dbb3b5a6b2bb17cb6ad44a2e68a43e8d2722c997da10e928665c72ec6c0a0b8e"
 dependencies = [
  "cfg-if 0.1.10",
  "libc",
- "memory_units 0.4.0",
+ "memory_units",
  "spin 0.5.2",
  "winapi",
 ]
