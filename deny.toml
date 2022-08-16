@@ -155,7 +155,7 @@ registries = [
 # Lint level for when multiple versions of the same crate are detected
 multiple-versions = "deny"
 # Lint level for when a crate version requirement is `*`
-wildcards = "deny"
+wildcards = "allow"
 # The graph highlighting used when creating dotgraphs for crates
 # with multiple versions
 # * lowest-version - The path to the lowest versioned duplicate is highlighted
@@ -178,6 +178,30 @@ deny = [
 ]
 # Certain crates/versions that will be skipped when doing duplicate detection.
 skip = [
+    { name = "x86_64", version = "0.1" },
+    { name = "volatile", version = "0.2" },
+    { name = "syn", version = "0.15" },
+    { name = "spin", version = "0.5" },
+    { name = "rustc_version", version = "0.2" },
+    { name = "semver", version = "0.9" },
+    { name = "riscv", version = "0.1" },
+    { name = "riscv", version = "0.6" },
+    { name = "bare-metal", version = "0.2" },
+    { name = "cast", version = "0.2" },
+    { name = "cfg-if", version = "0.1" },
+    { name = "cortex-m", version = "0.6" },
+    { name = "generic-array", version = "0.12" },
+    { name = "generic-array", version = "0.13" },
+    { name = "memory_units", version = "0.3" },
+    { name = "nb", version = "0.1" },
+    { name = "novuskinc", version = "=0.1.0" },
+    { name = "proc-macro2", version = "0.4" },
+    { name = "quote", version = "0.6" },
+    { name = "r0", version = "0.2" },
+    { name = "rand_core", version = "0.3" },
+    { name = "rand_core", version = "0.4" },
+    { name = "raw-cpuid", version = "9.1" },
+    { name = "unicode-xid", version = "0.1" },
 ]
 # Similarly to `skip` allows you to skip certain crates during duplicate
 # detection. Unlike skip, it also includes the entire tree of transitive
@@ -202,17 +226,15 @@ unknown-git = "deny"
 allow-registry = ["https://github.com/rust-lang/crates.io-index"]
 # List of URLs for allowed Git repositories
 allow-git = [
-    "https://github.com/new-kernel/novusk.git",
+    "https://github.com/NathanMcMillan54/novusk.git",
     "https://github.com/NathanMcMillan54/pc-beeper.git",
     "https://github.com/ardaku/ardaku.git",
-    "https://github.com/ardaku/compiler-builtins.git",
+    "https://github.com/ardaku/externc-libm.git",
 ]
 
 [sources.allow-org]
 # 1 or more github.com organizations to allow git sources for
-github = [
-    "https://github.com/new-kernel/novusk.git",
-]
+github = []
 # 1 or more gitlab.com organizations to allow git sources for
 gitlab = []
 # 1 or more bitbucket.org organizations to allow git sources for
