@@ -50,7 +50,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: EmbarkStudios/cargo-deny-action@v1.2.1
+    - uses: EmbarkStudios/cargo-deny-action@v1.1
       with:
         rust-version: "nightly-2022-08-06"
         log-level: warn
