@@ -47,12 +47,7 @@ yanked = "warn"
 notice = "warn"
 # A list of advisory IDs to ignore. Note that ignored advisories will still
 # output a note when they are encountered.
-ignore = [
-    # Bug in conquer-once can't fix until new novusk version
-    "RUSTSEC-2020-0101",
-    # Incorrectly identifies novusk/time as the time crate so invalid
-    "RUSTSEC-2020-0071", 
-]
+ignore = [ ]
 # Threshold for security vulnerabilities, any vulnerability with a CVSS score
 # lower than the range specified will be ignored. Note that ignored advisories
 # will still output a note when they are encountered.
@@ -219,6 +214,6 @@ github = [
     "https://github.com/new-kernel/novusk.git",
 ]
 # 1 or more gitlab.com organizations to allow git sources for
-gitlab = [""]
+gitlab = []
 # 1 or more bitbucket.org organizations to allow git sources for
-bitbucket = [""]
+bitbucket = []
