@@ -20,14 +20,13 @@
 // Lesser General Public License along with
 // Quantii. If not, see <https://www.gnu.org/licenses/>.
 
-
-
+use core::ops::DerefMut;
 
 #[derive(Clone, Copy)]
 pub struct Pixel {
-    pub(crate) red: u8,
-    pub(crate) green: u8,
-    pub(crate) blue: u8,
+    pub red: u8,
+    pub green: u8,
+    pub blue: u8,
 }
 
 #[derive(Clone)]
@@ -41,7 +40,12 @@ pub struct FrameBuffer {
 impl FrameBuffer {
     /// Create the framebuffer
     #[must_use]
-    pub fn new(width: usize, height: usize, bpp: usize, buffer: &'static mut &'static mut [&'static mut [Pixel]]) -> Self {
+    pub fn new(
+        width: usize,
+        height: usize,
+        bpp: usize,
+        buffer: &'static mut &'static mut [&'static mut [Pixel]],
+    ) -> Self {
         Self {
             width,
             height,
@@ -53,7 +57,9 @@ impl FrameBuffer {
     /// Initialize the framebuffer
     pub fn init(&mut self) {
         let mut x = 0;
-        for (y, row) in unsafe {self.buffer.take_mut(..)}.iter_mut().enumerate() {
+        for (y, row) in
+            unsafe { (*self.buffer).deref_mut() }.iter_mut().enumerate()
+        {
             for pixel in row.iter() {
                 self.draw_pixel(x, y, pixel);
                 x += 1;
@@ -64,44 +70,54 @@ impl FrameBuffer {
 
     /// Draw a pixel
     pub(crate) fn draw_pixel(&mut self, x: usize, y: usize, pixel: &Pixel) {
-        unsafe { (*self.buffer)[y][x] = *pixel; }
+        unsafe {
+            (*self.buffer)[y][x] = *pixel;
+        }
     }
 
     /// Clear the framebuffer
     pub(crate) fn clear(&self) {
-        let buffer = unsafe { core::slice::from_raw_parts_mut(0x000B8000 as *mut u8, 4000) };
+        let buffer = unsafe {
+            core::slice::from_raw_parts_mut(0x000B8000 as *mut u8, 4000)
+        };
         for byte in buffer {
             *byte = 0;
         }
     }
 
     /// Get the framebuffer width
-    #[must_use] pub fn get_width(&self) -> usize {
+    #[must_use]
+    pub fn get_width(&self) -> usize {
         self.width
     }
 
     /// Get the framebuffer height
-    #[must_use] pub fn get_height(&self) -> usize {
+    #[must_use]
+    pub fn get_height(&self) -> usize {
         self.height
     }
 
     /// Get the framebuffer bpp
-    #[must_use] pub fn get_bpp(&self) -> usize {
+    #[must_use]
+    pub fn get_bpp(&self) -> usize {
         self.bpp
     }
 
     /// Get the framebuffer buffer
-    #[must_use] pub fn get_buffer(&mut self) -> *mut &'static mut [&'static mut [Pixel]] {
+    #[must_use]
+    pub fn get_buffer(&mut self) -> *mut &'static mut [&'static mut [Pixel]] {
         self.buffer
     }
 
     /// Blip the framebuffer
     pub fn blip(&mut self) {
         self.clear();
-        let buffer = unsafe {*self.buffer};
+        let buffer = unsafe { (*self.buffer).deref_mut() };
         for (y, row) in buffer.iter().enumerate() {
             for (x, pixel) in row.iter().enumerate() {
-                unsafe { self._draw(x, y, pixel); }
+                unsafe {
+                    self._draw(x, y, pixel);
+                }
             }
         }
     }
@@ -109,12 +125,12 @@ impl FrameBuffer {
     /// Internal blip function
     unsafe fn _draw(&self, x: usize, y: usize, pixel: &Pixel) {
         // Prepare the screen for drawing
-        let screen = core::slice::from_raw_parts_mut(0x000B8000 as *mut u8, 4000);
+        let screen =
+            core::slice::from_raw_parts_mut(0x000B8000 as *mut u8, 4000);
         // Calculate the offset
         let offset = (y * self.width + x) * 2;
         // Draw the pixel
         screen[offset] = pixel.blue;
         screen[offset + 1] = 0x0F;
-
     }
 }
