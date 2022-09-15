@@ -1,3 +1,4 @@
+#![feature(slice_take)]
 // Copyright (c) 2022 The Quantii Contributors
 //
 // This file is part of Quantii.
@@ -30,6 +31,7 @@ use alloc::string::{String, ToString};
 use ardaku::Error as ArdakuError;
 use novuskinc::kernel::syscalls;
 
+pub mod framebuffer;
 /// Novusk config
 pub mod novusk;
 
@@ -88,7 +90,7 @@ impl ardaku::System for System {
     }
 }
 
-pub fn setup() -> ! {
+pub fn setup() {
     use ardaku::System;
 
     System.write(b"Quantii OS v0.0.1");
@@ -115,9 +117,4 @@ pub fn setup() -> ! {
     System.write(msg.as_bytes());
 
     System.write(b"=== ARDAKU STOPPED ===\n");
-
-    // TODO: Do something more proper after the app has stopped.
-    loop {
-        System.sleep();
-    }
 }

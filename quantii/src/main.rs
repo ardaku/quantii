@@ -28,12 +28,18 @@ extern crate quantii;
 // Enable libm
 extern crate externc_libm;
 
-use quantii::setup;
+use quantii::{framebuffer, setup};
 
 // Called from novusk
 #[no_mangle]
 pub extern "C" fn kernel_main() -> ! {
-    setup()
+    setup();
+    let mut framebuffer = framebuffer::FrameBuffer::new(640, 480, 32, unsafe {
+        &mut *(0x4000_0000 as *mut [&mut [framebuffer::Pixel]])
+    });
+    framebuffer.init();
+    framebuffer.blip();
+    loop {}
 }
 
 #[no_mangle]
