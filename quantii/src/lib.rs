@@ -1,4 +1,5 @@
 #![feature(slice_take)]
+#![feature(ptr_metadata)]
 // Copyright (c) 2022 The Quantii Contributors
 //
 // This file is part of Quantii.
@@ -37,7 +38,7 @@ pub mod novusk;
 /// The executable WASM for the kernel's initially running App
 const APP_EXE: &[u8] = include_bytes!("hello_world.wasm");
 
-struct System;
+pub struct System;
 
 impl ardaku::System for System {
     /// Sleep until an event interrupt occurs.
