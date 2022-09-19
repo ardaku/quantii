@@ -1,5 +1,6 @@
 #![feature(slice_take)]
 #![feature(ptr_metadata)]
+#![feature(asm_const)]
 // Copyright (c) 2022 The Quantii Contributors
 //
 // This file is part of Quantii.
