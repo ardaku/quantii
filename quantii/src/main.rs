@@ -11,13 +11,12 @@ extern crate externc_libm;
 extern crate alloc;
 
 use alloc::string::ToString;
-use core::arch::{asm, global_asm};
-use core::borrow::BorrowMut;
-use core::ptr;
-use quantii::framebuffer::Pixel;
-#[cfg(feature = "rpi")]
-use quantii::framebuffer::mailbox::Mailbox;
-use quantii::{framebuffer, setup};
+use ardaku::System;
+use novusk::drivers::gpu::armfb::{armfb_end, armfb_init, BLACK, graphics_pixel, graphics_write, LIGHT_GRAY, WHITE};
+use novusk::drivers::gpu::armfb::a64::A64Fb;
+use novusk::fb::FbColor;
+use novusk::fb::framebuffer::FrameBufferGraphics;
+use quantii::setup;
 
 
 // Called from novusk
@@ -28,10 +27,69 @@ pub extern "C" fn kernel_main() -> ! {
 
     setup();
 
-    let mb: Mailbox<0x2000B880> = Mailbox::new();
-    System.write("Mailbox base: {}".replace("{}", mb.get_base().to_string().as_str()).as_bytes());
-    mb.write(0x40000000);
-    System.write("Mailbox read: {}".replace("{}", mb.read(8).to_string().as_str()).as_bytes());
+    #[cfg(feature = "rpi")]
+    {
+        let mut fb = A64Fb::new();
+        fb.init();
+        fb.clear_screen(FbColor::new(0xFFFFFF, 0, 0));
+        fb.pixel(20, 20, FbColor::new(0, 0, 0));
+        fb.pixel(20, 21, FbColor::new(0, 0, 0));
+        fb.pixel(20, 22, FbColor::new(0, 0, 0));
+        fb.pixel(20, 23, FbColor::new(0, 0, 0));
+        fb.pixel(20, 24, FbColor::new(0, 0, 0));
+        fb.pixel(20, 25, FbColor::new(0, 0, 0));
+        fb.pixel(20, 26, FbColor::new(0, 0, 0));
+        fb.pixel(20, 27, FbColor::new(0, 0, 0));
+        fb.pixel(20, 28, FbColor::new(0, 0, 0));
+        fb.pixel(20, 29, FbColor::new(0, 0, 0));
+        fb.pixel(20, 30, FbColor::new(0, 0, 0));
+        fb.pixel(21, 20, FbColor::new(0, 0, 0));
+        fb.pixel(21, 21, FbColor::new(0, 0, 0));
+        fb.pixel(21, 22, FbColor::new(0, 0, 0));
+        fb.pixel(21, 23, FbColor::new(0, 0, 0));
+        fb.pixel(21, 24, FbColor::new(0, 0, 0));
+        fb.pixel(21, 25, FbColor::new(0, 0, 0));
+        fb.pixel(21, 26, FbColor::new(0, 0, 0));
+        fb.pixel(21, 27, FbColor::new(0, 0, 0));
+        fb.pixel(21, 28, FbColor::new(0, 0, 0));
+        fb.pixel(21, 29, FbColor::new(0, 0, 0));
+        fb.pixel(21, 30, FbColor::new(0, 0, 0));
+        fb.pixel(22, 20, FbColor::new(0, 0, 0));
+        fb.pixel(22, 21, FbColor::new(0, 0, 0));
+        fb.pixel(22, 22, FbColor::new(0, 0, 0));
+        fb.pixel(22, 23, FbColor::new(0, 0, 0));
+        fb.pixel(22, 24, FbColor::new(0, 0, 0));
+        fb.pixel(22, 25, FbColor::new(0, 0, 0));
+        fb.pixel(22, 26, FbColor::new(0, 0, 0));
+        fb.pixel(22, 27, FbColor::new(0, 0, 0));
+        fb.pixel(22, 28, FbColor::new(0, 0, 0));
+        fb.pixel(22, 29, FbColor::new(0, 0, 0));
+        fb.pixel(22, 30, FbColor::new(0, 0, 0));
+        fb.pixel(23, 20, FbColor::new(0, 0, 0));
+        fb.pixel(23, 21, FbColor::new(0, 0, 0));
+        fb.pixel(23, 22, FbColor::new(0, 0, 0));
+        fb.pixel(23, 23, FbColor::new(0, 0, 0));
+        fb.pixel(23, 24, FbColor::new(0, 0, 0));
+        fb.pixel(23, 25, FbColor::new(0, 0, 0));
+        fb.pixel(23, 26, FbColor::new(0, 0, 0));
+        fb.pixel(23, 27, FbColor::new(0, 0, 0));
+        fb.pixel(23, 28, FbColor::new(0, 0, 0));
+        fb.pixel(23, 29, FbColor::new(0, 0, 0));
+        fb.pixel(23, 30, FbColor::new(0, 0, 0));
+        fb.pixel(24, 20, FbColor::new(0, 0, 0));
+        fb.pixel(24, 21, FbColor::new(0, 0, 0));
+        fb.pixel(24, 22, FbColor::new(0, 0, 0));
+        fb.pixel(24, 23, FbColor::new(0, 0, 0));
+        fb.pixel(24, 24, FbColor::new(0, 0, 0));
+        fb.pixel(24, 25, FbColor::new(0, 0, 0));
+        fb.pixel(24, 26, FbColor::new(0, 0, 0));
+        fb.pixel(24, 27, FbColor::new(0, 0, 0));
+        fb.pixel(24, 28, FbColor::new(0, 0, 0));
+        fb.pixel(24, 29, FbColor::new(0, 0, 0));
+        fb.pixel(24, 30, FbColor::new(0, 0, 0));
+        fb.pixel(25, 20, FbColor::new(0, 0, 0));
+        fb.pixel(25, 21, FbColor::new(0, 0, 0));
+    }
 
     loop {}
 }

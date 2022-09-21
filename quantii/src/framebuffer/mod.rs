@@ -22,11 +22,6 @@
 
 use core::slice::from_raw_parts_mut;
 
-#[cfg(feature = "rpi")]
-pub mod mailbox;
-
-#[cfg(feature = "rpi")]
-pub use mailbox::*;
 
 #[derive(Clone, Copy)]
 pub struct Pixel {

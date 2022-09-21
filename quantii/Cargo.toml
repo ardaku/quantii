@@ -53,9 +53,5 @@ git = "https://github.com/ardaku/ardaku.git"
 commit = "7da6ce78a26a8f704b9c95d94cab4bd1c84c80e0"
 
 [dependencies.novusk]
-git = "https://github.com/NathanMcMillan54/novusk.git"
-tag = "v3.0.2"
+path = "../novusk"
 features = ["custom_config", "hifive", "rpi3"]
-
-[dependencies.embedded-graphics]
-version = "0.7"
