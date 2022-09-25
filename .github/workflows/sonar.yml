@@ -22,5 +22,5 @@ jobs:
       uses: kitabisa/sonarqube-action@v1.2.0
       with:
         host: ${{ secrets.SONAR_HOST }}
-        prjectKey: quantii
+        projectKey: quantii
         login: ${{ secrets.SONAR_TOKEN }}
