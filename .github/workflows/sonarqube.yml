@@ -10,16 +10,19 @@ on:
 name: SonarQube Scan
 jobs:
   sonarqube:
-    name: SonarQube Trigger
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checking out
-      uses: actions/checkout@master
-      with:
-        # Disabling shallow clone is recommended for improving relevancy of reporting
-        fetch-depth: 0
-    - name: SonarQube Scan
-      uses: kitabisa/sonarqube-action@v1.2.0
-      with:
-        host: ${{ secrets.SONARQUBE_HOST }}
-        login: ${{ secrets.SONARQUBE_TOKEN }}
+    # You may pin to the exact commit or the version.
+    # uses: kitabisa/sonarqube-action@513476d3b8845ec1776adaf7e1314019e5151e00
+    uses: kitabisa/sonarqube-action@v1.2.0
+    with:
+      # SonarQube server URL.
+      host: ${{ secrets.SONAR_HOST }}
+      # The project's unique key. Allowed characters are: letters, numbers, -, _, . and :, with at least one non-digit.
+      projectKey: Quantii
+      # Name of the project that will be displayed on the web interface.
+      projectName: Quantii 
+      # Login or authentication token of a SonarQube user.
+      login: ${{ secrets.SONAR_TOKEN  }}
+      # Encoding of the source code.
+      encoding: UTF-8
+
+    
