@@ -3,7 +3,7 @@ on:
   # a pull request. 
   push:
     branches:
-      - master
+      - sonarqube
   pull_request:
       types: [opened, synchronize, reopened]
 
