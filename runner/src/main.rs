@@ -25,7 +25,6 @@ use std::process::Command;
 fn main() {
     let path = std::env::args().skip(1).next().unwrap();
     let path = path.as_str();
-    println!("Path: {}", path);
     match path {
         _path
             if _path

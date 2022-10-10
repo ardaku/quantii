@@ -34,9 +34,6 @@ path = "src/lib.rs"
 name = "quantii"
 path = "src/main.rs"
 
-[features]
-rpi = []
-
 [dependencies.libm]
 version = "0.2"
 features = ["unstable"]

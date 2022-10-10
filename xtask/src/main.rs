@@ -90,7 +90,7 @@ fn dist_arm() {
     let _ = fs::create_dir_all("../target/dist/quantii-arm");
 
     let status = Command::new("cargo")
-        .args(["build", "--features", "rpi", "--release", "--target", "aarch64-novusk.json"])
+        .args(["build", "--release", "--target", "aarch64-novusk.json"])
         .status()
         .expect("failed to execute process");
     assert!(status.success());
@@ -135,7 +135,7 @@ fn qemu_riscv() {
 
 fn qemu_arm() {
     let status = Command::new("cargo")
-        .args(["run", "--features", "rpi", "--release", "--target", "aarch64-novusk.json"])
+        .args(["run", "--release", "--target", "aarch64-novusk.json"])
         .status()
         .expect("failed to execute process");
     assert!(status.success());
