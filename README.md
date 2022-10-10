@@ -67,3 +67,20 @@ See the [Porting Guide](PORTING.md).
 
 ## Building
 See the [Instructions](BUILDING.md).
+## Legal
+Quantii is licensed under the [GNU Lesser General Public License v3.0](LICENSE).
+If the LICENSE file is missing, it can be found [here](https://www.gnu.org/licenses/lgpl-3.0.en.html).
+
+Until further notice, the Quantii project may not be used by any person or entity
+with the intent of commercial or monetary gain without the explicit written consent from any of the following people:
+
+* Jeron Aldaron Lau: <a href="mailto:aldaronlau@quantii.org">aldaronlau@quantii.org</a>
+* Jason Qin: <a href="mailto:cswine@quantii.org">cswine@quantii.org</a>
+* William Nelson: <a href="mailto:catboardbeta@quantii.org">catboardbeta@quantii.org</a>
+* Kyle Shuman: <a href="mailto:nerdguy87@quantii.org">nerdguy87@quantii.org</a>
+
+Although using Quantii for public defense is allowed, we reserve the right to take legal 
+action in the case that we believe that Quantii is being used for the detriment
+of the public good.
+
+Any use of Quantii is legally binding acceptance of the terms and conditions stated within the license agreement and this section of the README.md.
