@@ -1,6 +1,3 @@
-#![feature(slice_take)]
-#![feature(ptr_metadata)]
-#![feature(asm_const)]
 // Copyright (c) 2022 The Quantii Contributors
 //
 // This file is part of Quantii.
@@ -32,14 +29,13 @@ use alloc::string::{String, ToString};
 use ardaku::Error as ArdakuError;
 use novuskinc::kernel::syscalls;
 
-pub mod framebuffer;
 /// Novusk config
 pub mod novusk;
 
 /// The executable WASM for the kernel's initially running App
 const APP_EXE: &[u8] = include_bytes!("hello_world.wasm");
 
-pub struct System;
+struct System;
 
 impl ardaku::System for System {
     /// Sleep until an event interrupt occurs.
