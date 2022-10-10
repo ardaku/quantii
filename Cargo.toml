@@ -28,4 +28,3 @@ members = [
 ]
 
 default-members = ["xtask"]
-exclude = ["novusk"]
