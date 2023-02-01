@@ -4,7 +4,7 @@ cargo-binutils and the binutils-aarch64-linux-gnu, qemu-system-riscv packages
 installed.
 
 ```shell
-rustup component add rust-src --toolchain nightly-2022-08-06
+rustup component add rust-src --toolchain nightly-2023-01-30
 rustup component add llvm-tools-preview
 cargo install cargo-binutils
 ```
