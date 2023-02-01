@@ -116,7 +116,7 @@ fn dist() {
         Some("riscv") => dist_riscv(),
         Some("arm") => dist_arm(),
         Some("ci") => dist_ci(),
-        Some(arg) => panic!("dist: Invalid argument: {}", arg),
+        Some(arg) => panic!("dist: Invalid argument: {arg}"),
     }
 }
 
@@ -146,7 +146,7 @@ fn qemu() {
         None => panic!("qemu: need arch"),
         Some("riscv") => qemu_riscv(),
         Some("arm") => qemu_arm(),
-        Some(arg) => panic!("qemu: Invalid argument: {}", arg),
+        Some(arg) => panic!("qemu: Invalid argument: {arg}"),
     }
 }
 
@@ -155,7 +155,7 @@ fn main() {
     let curdir = env::current_dir().unwrap();
     let curdir = curdir.as_path().to_str().unwrap();
     let path = env::var("PATH").unwrap();
-    env::set_var("PATH", format!("{curdir}/target/bin:{}", path));
+    env::set_var("PATH", format!("{curdir}/target/bin:{path}"));
     // Install runner
     build();
     // Create config
@@ -174,6 +174,6 @@ fn main() {
         None | Some("--help") => help(),
         Some("dist") => dist(),
         Some("qemu") => qemu(),
-        Some(arg) => panic!("Invalid xtask argument: {}", arg),
+        Some(arg) => panic!("Invalid xtask argument: {arg}"),
     }
 }
