@@ -5,7 +5,7 @@ version = 3
 [[package]]
 name = "aarch64"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "armfb",
  "dif",
@@ -50,10 +50,11 @@ dependencies = [
 [[package]]
 name = "arm32"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "cfg-if 1.0.0",
  "cortex-a",
+ "cortex-m 0.7.7",
  "cortex-m-rt",
  "cortex-m-semihosting",
  "cpu",
@@ -75,7 +76,7 @@ dependencies = [
 [[package]]
 name = "armfb"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "fb",
  "libcolor",
@@ -92,15 +93,15 @@ checksum = "45403b49e3954a4b8428a0ac21a4b7afadccf92bfd96273f1a58cd4812496ae0"
 dependencies = [
  "generic-array 0.12.4",
  "generic-array 0.13.3",
- "generic-array 0.14.5",
+ "generic-array 0.14.6",
  "stable_deref_trait",
 ]
 
 [[package]]
 name = "autocfg"
-version = "1.0.1"
+version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a"
+checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
 
 [[package]]
 name = "bare-metal"
@@ -180,7 +181,7 @@ checksum = "e763eef8846b13b380f37dfecda401770b0ca4e56e95170237bd7c25c7db3582"
 [[package]]
 name = "console"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "gpu",
 ]
@@ -252,7 +253,7 @@ dependencies = [
 [[package]]
 name = "cpu"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 
 [[package]]
 name = "crossbeam-queue"
@@ -276,7 +277,7 @@ dependencies = [
 [[package]]
 name = "ctypes"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 
 [[package]]
 name = "darling"
@@ -316,7 +317,7 @@ dependencies = [
 [[package]]
 name = "device"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 
 [[package]]
 name = "dif"
@@ -372,7 +373,7 @@ dependencies = [
 [[package]]
 name = "esp"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "device",
  "esp32-hal",
@@ -421,7 +422,7 @@ dependencies = [
 [[package]]
 name = "ex1"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "novuskinc 0.1.0",
  "printk",
@@ -438,7 +439,7 @@ dependencies = [
 [[package]]
 name = "fb"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "font8x8",
 ]
@@ -452,7 +453,7 @@ checksum = "3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1"
 [[package]]
 name = "fom_os"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "libost",
  "novuskinc 0.1.1",
@@ -467,7 +468,7 @@ checksum = "875488b8711a968268c7cf5d139578713097ca4635a76044e8fe8eedf831d07e"
 [[package]]
 name = "fscheck"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "kinfo",
  "konfig",
@@ -518,9 +519,9 @@ dependencies = [
 
 [[package]]
 name = "generic-array"
-version = "0.14.5"
+version = "0.14.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "fd48d33ec7f05fbfa152300fdad764757cbded343c1aa1cff2fbaf4134851803"
+checksum = "bff49e947297f3312447abdca79f45f4738097cc82b06e72054d2223f601f1b9"
 dependencies = [
  "typenum",
  "version_check",
@@ -529,7 +530,7 @@ dependencies = [
 [[package]]
 name = "gpu"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "armfb",
  "novuskinc 0.1.0",
@@ -558,7 +559,7 @@ checksum = "b9e0384b61958566e926dc50660321d12159025e767c18e043daf26b70104c39"
 [[package]]
 name = "init"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "cfg-if 1.0.0",
  "console",
@@ -578,7 +579,7 @@ dependencies = [
 [[package]]
 name = "kb_mouse"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "novuskinc 0.1.0",
  "pc_keyboard",
@@ -588,7 +589,7 @@ dependencies = [
 [[package]]
 name = "keyboard"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "conquer-once",
  "crossbeam-queue",
@@ -600,7 +601,7 @@ dependencies = [
 [[package]]
 name = "kinfo"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "printk",
 ]
@@ -608,7 +609,7 @@ dependencies = [
 [[package]]
 name = "konfig"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "lazy_static",
  "printk",
@@ -627,7 +628,7 @@ dependencies = [
 [[package]]
 name = "lba"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "novuskinc 0.1.1",
  "printk",
@@ -638,7 +639,7 @@ dependencies = [
 [[package]]
 name = "libbmu"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "memory",
 ]
@@ -652,7 +653,7 @@ checksum = "201de327520df007757c1f0adce6e827fe8562fbc28bfd9c15571c66ca1f5f79"
 [[package]]
 name = "libcolor"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 
 [[package]]
 name = "libm"
@@ -663,7 +664,7 @@ checksum = "348108ab3fba42ec82ff6e9564fc4ca0247bdccdc68dd8af9764bbc79c3c8ffb"
 [[package]]
 name = "libost"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "gpu",
  "mouse",
@@ -672,7 +673,7 @@ dependencies = [
 [[package]]
 name = "libwin"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "armfb",
  "novuskinc 0.1.0",
@@ -694,13 +695,14 @@ version = "0.4.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "435011366fe56583b16cf956f9df0095b405b82d76425bc8981c0e22e60ec4df"
 dependencies = [
+ "autocfg",
  "scopeguard",
 ]
 
 [[package]]
 name = "mailbox"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 
 [[package]]
 name = "memchr"
@@ -711,7 +713,7 @@ checksum = "308cc39be01b73d0d18f82a0e7b2a3df85245f84af96fdddc5d202d27e47b86a"
 [[package]]
 name = "memory"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "ctypes",
 ]
@@ -731,12 +733,12 @@ checksum = "8452105ba047068f40ff7093dd1d9da90898e63dd61736462e9cdda6a90ad3c3"
 [[package]]
 name = "mio"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 
 [[package]]
 name = "modules"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "armfb",
  "ex1",
@@ -750,12 +752,12 @@ dependencies = [
 [[package]]
 name = "mouse"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 
 [[package]]
 name = "multiboot"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "multiboot2",
  "printk",
@@ -794,7 +796,7 @@ checksum = "546c37ac5d9e56f55e73b677106873d9d9f5190605e41a856503623648488cae"
 [[package]]
 name = "nkuefi"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "uart_16550",
 ]
@@ -802,7 +804,7 @@ dependencies = [
 [[package]]
 name = "nmallocator"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "cfg-if 1.0.0",
  "linked_list_allocator",
@@ -812,7 +814,7 @@ dependencies = [
 [[package]]
 name = "notify"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "keyboard",
 ]
@@ -820,7 +822,7 @@ dependencies = [
 [[package]]
 name = "novusk"
 version = "3.0.2"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "aarch64",
  "arm32",
@@ -860,7 +862,7 @@ checksum = "2a4c27dbbcc49aa343a1169f58bd3db40e6f1e0cc95d6303b74c15456809f05d"
 [[package]]
 name = "novuskinc"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 
 [[package]]
 name = "novuskinc"
@@ -936,7 +938,7 @@ checksum = "5c6f2d937e3b8d63449b01401e2bae4041bc9dd1129c2e3e0d239407cf6635ac"
 [[package]]
 name = "pc_keyboard"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "conquer-once",
  "crossbeam-queue",
@@ -972,7 +974,7 @@ checksum = "8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184"
 [[package]]
 name = "printk"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 
 [[package]]
 name = "proc-macro2"
@@ -980,7 +982,7 @@ version = "0.4.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf3d2011ab5c909338f7887f4fc896d35932e29146c12c8d01da6b22a80ba759"
 dependencies = [
- "unicode-xid 0.1.0",
+ "unicode-xid",
 ]
 
 [[package]]
@@ -989,7 +991,7 @@ version = "1.0.50"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6ef7d57beacfaf2d8aee5937dab7b7f28de3cb8b1828479bb5de2a7106f2bae2"
 dependencies = [
- "unicode-xid 0.2.2",
+ "unicode-ident",
 ]
 
 [[package]]
@@ -1099,7 +1101,7 @@ checksum = "456c603be3e8d448b072f410900c09faf164fbce2d480456f50eea6e25f9c848"
 [[package]]
 name = "riscv"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "hifive1",
  "kinfo",
@@ -1143,7 +1145,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ab9f28dc850356196a36078c51c9dc7b46014a29a8fde35d5f81c99e489d0e00"
 dependencies = [
  "r0 1.0.0",
- "riscv 0.6.0",
+ "riscv 0.7.0",
  "riscv-rt-macros",
  "riscv-target",
 ]
@@ -1173,7 +1175,7 @@ dependencies = [
 [[package]]
 name = "rpi"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "device",
  "libbmu",
@@ -1187,7 +1189,7 @@ dependencies = [
 [[package]]
 name = "rpi2kernel"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "armfb",
  "console",
@@ -1216,12 +1218,6 @@ checksum = "bfa0f585226d2e68097d4f95d113b15b83a82e819ab25717ec0590d9584ef366"
 dependencies = [
  "semver 1.0.16",
 ]
-
-[[package]]
-name = "rustversion"
-version = "1.0.11"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5583e89e108996506031660fe09baa5011b9dd0341b89029313006d1fb508d70"
 
 [[package]]
 name = "scopeguard"
@@ -1253,7 +1249,7 @@ checksum = "388a1df253eca08550bef6c72392cfe7c30914bf41df5269b68cbd6ff8f570a3"
 [[package]]
 name = "setup"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "kinfo",
  "konfig",
@@ -1267,7 +1263,7 @@ dependencies = [
 [[package]]
 name = "sf_rpilcd_35"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "novuskinc 0.1.0",
  "rpi",
@@ -1276,7 +1272,7 @@ dependencies = [
 [[package]]
 name = "sifive"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "device",
  "hifive1",
@@ -1285,7 +1281,7 @@ dependencies = [
 [[package]]
 name = "sos"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "fom_os",
  "libost",
@@ -1325,7 +1321,7 @@ checksum = "a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3"
 [[package]]
 name = "stellarisd"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "cortex-m 0.7.7",
  "cortex-m-semihosting",
@@ -1338,7 +1334,7 @@ dependencies = [
 [[package]]
 name = "storage"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "novuskinc 0.1.1",
  "printk",
@@ -1358,7 +1354,7 @@ checksum = "9ca4b3b69a77cbe1ffc9e198781b7acb0c7365a883670e8f1c1bc66fba79a5c5"
 dependencies = [
  "proc-macro2 0.4.30",
  "quote 0.6.13",
- "unicode-xid 0.1.0",
+ "unicode-xid",
 ]
 
 [[package]]
@@ -1375,7 +1371,7 @@ dependencies = [
 [[package]]
 name = "tempfs"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "vfs",
 ]
@@ -1383,7 +1379,7 @@ dependencies = [
 [[package]]
 name = "time"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 
 [[package]]
 name = "tm4c-hal"
@@ -1458,15 +1454,9 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fc72304796d0818e357ead4e000d19c9c174ab23dc11093ac919054d20a6a7fc"
 
 [[package]]
-name = "unicode-xid"
-version = "0.2.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8ccb82d61f80a663efe1f787a51b16b5a51e3314d6ac365b08639f52387b33f3"
-
-[[package]]
 name = "unistd"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "cfg-if 1.0.0",
  "novuskinc 0.1.0",
@@ -1475,7 +1465,7 @@ dependencies = [
 [[package]]
 name = "usbd"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 
 [[package]]
 name = "vcell"
@@ -1492,7 +1482,7 @@ checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
 [[package]]
 name = "vfs"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "memory",
 ]
@@ -1514,7 +1504,7 @@ dependencies = [
 [[package]]
 name = "vgag"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "fb",
  "lazy_static",
@@ -1623,7 +1613,7 @@ dependencies = [
 [[package]]
 name = "x86_64"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "bootloader",
  "conquer-once",
@@ -1665,14 +1655,13 @@ checksum = "fb611915c917c6296d11e23f71ff1ecfe49c5766daba92cd3df52df6b58285b6"
 dependencies = [
  "bit_field",
  "bitflags",
- "rustversion",
  "volatile 0.4.6",
 ]
 
 [[package]]
 name = "x86_64-sound"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "pc-beeper",
 ]
@@ -1684,7 +1673,7 @@ version = "0.1.0"
 [[package]]
 name = "xtensa"
 version = "0.1.0"
-source = "git+https://github.com/NathanMcMillan54/novusk.git?rev=b180e3e4fc2e47090c2f6ae16a27be7bfe836485#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
+source = "git+https://github.com/NathanMcMillan54/novusk.git?branch=v3-branch#b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
 dependencies = [
  "device",
  "esp",

@@ -54,4 +54,5 @@ commit = "7da6ce78a26a8f704b9c95d94cab4bd1c84c80e0"
 git = "https://github.com/NathanMcMillan54/novusk.git"
 #tag = "v3.0.2"
 features = ["custom_config", "hifive", "rpi3"]
+branch = "v3-branch"
 commit = "b180e3e4fc2e47090c2f6ae16a27be7bfe836485"
