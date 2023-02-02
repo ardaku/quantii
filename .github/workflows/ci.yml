@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        tc: [nightly-2022-08-06]
+        tc: [nightly-2023-01-30]
     steps:
     - uses: actions/checkout@v2
     - uses: actions-rs/toolchain@v1
@@ -33,7 +33,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        tc: [nightly-2022-08-06]
+        tc: [nightly-2023-01-30]
     steps:
     - uses: actions/checkout@v2
     - uses: actions-rs/toolchain@v1
