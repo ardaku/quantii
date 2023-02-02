@@ -18,13 +18,13 @@
 # dependencies not shared by any other crates, would be ignored, as the target
 # list here is effectively saying which targets you are building for.
 targets = [
-    # The triple can be any string, but only the target triples built in to
-    # rustc (as of 1.40) can be checked against actual config expressions
-    #{ triple = "x86_64-unknown-linux-musl" },
-    # You can also specify which target_features you promise are enabled for a
-    # particular target. target_features are currently not validated against
-    # the actual valid features supported by the target architecture.
-    #{ triple = "wasm32-unknown-unknown", features = ["atomics"] },
+  # The triple can be any string, but only the target triples built in to
+  # rustc (as of 1.40) can be checked against actual config expressions
+  #{ triple = "x86_64-unknown-linux-musl" },
+  # You can also specify which target_features you promise are enabled for a
+  # particular target. target_features are currently not validated against
+  # the actual valid features supported by the target architecture.
+  #{ triple = "wasm32-unknown-unknown", features = ["atomics"] },
 ]
 
 # This section is considered when running `cargo deny check advisories`
@@ -47,7 +47,20 @@ yanked = "deny"
 notice = "deny"
 # A list of advisory IDs to ignore. Note that ignored advisories will still
 # output a note when they are encountered.
-ignore = [ ]
+ignore = [
+  # https://rustsec.org/advisories/RUSTSEC-2022-0054
+  #
+  # https://github.com/ardaku/quantii/issues/39
+  "RUSTSEC-2022-0054",
+  # https://rustsec.org/advisories/RUSTSEC-2022-0063
+  #
+  # https://github.com/ardaku/quantii/issues/40
+  "RUSTSEC-2022-0063",
+  # https://rustsec.org/advisories/RUSTSEC-2022-0061
+  #
+  # https://github.com/ardaku/quantii/issues/41
+  "RUSTSEC-2022-0061",
+]
 # Threshold for security vulnerabilities, any vulnerability with a CVSS score
 # lower than the range specified will be ignored. Note that ignored advisories
 # will still output a note when they are encountered.
@@ -74,19 +87,20 @@ unlicensed = "deny"
 # See https://spdx.org/licenses/ for list of possible licenses
 # [possible values: any SPDX 3.11 short identifier (+ optional exception)].
 allow = [
-    "MIT",
-    "Apache-2.0",
-    "BSL-1.0",
-    "GPL-3.0",
-    "ISC",
-    "0BSD",
-    "MPL-2.0",
+  "MIT",
+  "Apache-2.0",
+  "BSL-1.0",
+  "GPL-3.0",
+  "ISC",
+  "0BSD",
+  "MPL-2.0",
+  "Unicode-DFS-2016",
 ]
 # List of explicitly disallowed licenses
 # See https://spdx.org/licenses/ for list of possible licenses
 # [possible values: any SPDX 3.11 short identifier (+ optional exception)].
 deny = [
-    #"Nokia",
+  #"Nokia",
 ]
 # Lint level for licenses considered copyleft
 copyleft = "deny"
@@ -110,9 +124,9 @@ confidence-threshold = 0.8
 # Allow 1 or more licenses on a per-crate basis, so that particular licenses
 # aren't accepted for every possible crate as with the normal allow list
 exceptions = [
-    # Each entry is the crate and version constraint, and its specific allow
-    # list
-    #{ allow = ["Zlib"], name = "adler32", version = "*" },
+  # Each entry is the crate and version constraint, and its specific allow
+  # list
+  #{ allow = ["Zlib"], name = "adler32", version = "*" },
 ]
 
 # Some crates don't have (easily) machine readable licensing information,
@@ -131,8 +145,8 @@ exceptions = [
 # and the crate will be checked normally, which may produce warnings or errors
 # depending on the rest of your configuration
 #license-files = [
-    # Each entry is a crate relative path, and the (opaque) hash of its contents
-    #{ path = "LICENSE", hash = 0xbd0eed23 }
+  # Each entry is a crate relative path, and the (opaque) hash of its contents
+  #{ path = "LICENSE", hash = 0xbd0eed23 }
 #]
 
 [licenses.private]
@@ -145,7 +159,7 @@ ignore = true
 # is only published to private registries, and ignore is true, the crate will
 # not have its license(s) checked
 registries = [
-    #"https://sekretz.com/registry
+  #"https://sekretz.com/registry
 ]
 
 # This section is considered when running `cargo deny check bans`.
@@ -164,51 +178,51 @@ wildcards = "warn"
 highlight = "all"
 # List of crates that are allowed. Use with care!
 allow = [
-    #{ name = "ansi_term", version = "=0.11.0" },
+  #{ name = "ansi_term", version = "=0.11.0" },
 ]
 # List of crates to deny
 deny = [
-    # Each entry the name of a crate and a version range. If version is
-    # not specified, all versions will be matched.
-    #{ name = "ansi_term", version = "=0.11.0" },
-    #
-    # Wrapper crates can optionally be specified to allow the crate when it
-    # is a direct dependency of the otherwise banned crate
-    #{ name = "ansi_term", version = "=0.11.0", wrappers = [] },
+  # Each entry the name of a crate and a version range. If version is
+  # not specified, all versions will be matched.
+  #{ name = "ansi_term", version = "=0.11.0" },
+  #
+  # Wrapper crates can optionally be specified to allow the crate when it
+  # is a direct dependency of the otherwise banned crate
+  #{ name = "ansi_term", version = "=0.11.0", wrappers = [] },
 ]
 # Certain crates/versions that will be skipped when doing duplicate detection.
 skip = [
-    { name = "x86_64", version = "0.1" },
-    { name = "volatile", version = "0.2" },
-    { name = "syn", version = "0.15" },
-    { name = "spin", version = "0.5" },
-    { name = "rustc_version", version = "0.2" },
-    { name = "semver", version = "0.9" },
-    { name = "riscv", version = "0.1" },
-    { name = "riscv", version = "0.6" },
-    { name = "bare-metal", version = "0.2" },
-    { name = "cast", version = "0.2" },
-    { name = "cfg-if", version = "0.1" },
-    { name = "cortex-m", version = "0.6" },
-    { name = "generic-array", version = "0.12" },
-    { name = "generic-array", version = "0.13" },
-    { name = "memory_units", version = "0.3" },
-    { name = "nb", version = "0.1" },
-    { name = "novuskinc", version = "=0.1.0" },
-    { name = "proc-macro2", version = "0.4" },
-    { name = "quote", version = "0.6" },
-    { name = "r0", version = "0.2" },
-    { name = "rand_core", version = "0.3" },
-    { name = "rand_core", version = "0.4" },
-    { name = "raw-cpuid", version = "9.1" },
-    { name = "unicode-xid", version = "0.1" },
+  { name = "x86_64", version = "0.1" },
+  { name = "volatile", version = "0.2" },
+  { name = "syn", version = "0.15" },
+  { name = "spin", version = "0.5" },
+  { name = "rustc_version", version = "0.2" },
+  { name = "semver", version = "0.9" },
+  { name = "riscv", version = "0.1" },
+  { name = "riscv", version = "0.6" },
+  { name = "bare-metal", version = "0.2" },
+  { name = "cast", version = "0.2" },
+  { name = "cfg-if", version = "0.1" },
+  { name = "cortex-m", version = "0.6" },
+  { name = "generic-array", version = "0.12" },
+  { name = "generic-array", version = "0.13" },
+  { name = "memory_units", version = "0.3" },
+  { name = "nb", version = "0.1" },
+  { name = "novuskinc", version = "=0.1.0" },
+  { name = "proc-macro2", version = "0.4" },
+  { name = "quote", version = "0.6" },
+  { name = "r0", version = "0.2" },
+  { name = "rand_core", version = "0.3" },
+  { name = "rand_core", version = "0.4" },
+  { name = "raw-cpuid", version = "9.1" },
+  { name = "unicode-xid", version = "0.1" },
 ]
 # Similarly to `skip` allows you to skip certain crates during duplicate
 # detection. Unlike skip, it also includes the entire tree of transitive
 # dependencies starting at the specified crate, up to a certain depth, which is
 # by default infinite
 skip-tree = [
-    #{ name = "ansi_term", version = "=0.11.0", depth = 20 },
+  #{ name = "ansi_term", version = "=0.11.0", depth = 20 },
 ]
 
 # This section is considered when running `cargo deny check sources`.
@@ -226,10 +240,10 @@ unknown-git = "deny"
 allow-registry = ["https://github.com/rust-lang/crates.io-index"]
 # List of URLs for allowed Git repositories
 allow-git = [
-    "https://github.com/NathanMcMillan54/novusk.git",
-    "https://github.com/NathanMcMillan54/pc-beeper.git",
-    "https://github.com/ardaku/ardaku.git",
-    "https://github.com/ardaku/externc-libm.git",
+  "https://github.com/NathanMcMillan54/novusk.git",
+  "https://github.com/NathanMcMillan54/pc-beeper.git",
+  "https://github.com/ardaku/ardaku.git",
+  "https://github.com/ardaku/externc-libm.git",
 ]
 
 [sources.allow-org]
