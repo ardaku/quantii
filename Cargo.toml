@@ -21,6 +21,7 @@
 # Quantii. If not, see <https://www.gnu.org/licenses/>.
 
 [workspace]
+resolver = "2"
 members = [
     "quantii",
     "xtask",
