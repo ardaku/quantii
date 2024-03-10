@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        tc: [nightly-2023-12-15]
+        tc: [nightly-2024-03-01]
     steps:
     - uses: actions/checkout@v2
     - uses: actions-rs/toolchain@v1
@@ -33,7 +33,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        tc: [nightly-2023-12-15]
+        tc: [nightly-2024-03-01]
     steps:
     - uses: actions/checkout@v2
     - uses: actions-rs/toolchain@v1
@@ -52,6 +52,6 @@ jobs:
     - uses: actions/checkout@v3
     - uses: EmbarkStudios/cargo-deny-action@v1
       with:
-        rust-version: "nightly-2023-12-15"
+        rust-version: "nightly-2024-03-01"
         log-level: warn
         command: check
