@@ -159,7 +159,7 @@ fn main() {
     let curdir = curdir.as_path().to_str().unwrap();
     let path = env::var("PATH").unwrap();
     // Install runner
-    build(&curdir, &path);
+    build(curdir, &path);
     // Create config
     const CONFIG_DIR: &str = "quantii/.cargo/";
     const CONFIG_FILE: &str = "quantii/.cargo/config.toml";
@@ -175,7 +175,7 @@ fn main() {
     match env::args().nth(1).as_deref() {
         None | Some("--help") => help(),
         Some("dist") => dist(),
-        Some("qemu") => qemu(&curdir, &path),
+        Some("qemu") => qemu(curdir, &path),
         Some(arg) => panic!("Invalid xtask argument: {arg}"),
     }
 }
