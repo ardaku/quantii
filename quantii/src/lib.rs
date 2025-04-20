@@ -41,7 +41,7 @@ struct System;
 impl ardaku::System for System {
     /// Sleep until an event interrupt occurs.
     fn sleep(&self) -> (ardaku::Event, u32) {
-        let byte = novuskinc::kernel::io::safe_sys_read();
+        let byte = b'_'; // novuskinc::kernel::io::safe_sys_read();
         (ardaku::Event::Read, byte.into())
     }
 
@@ -52,24 +52,14 @@ impl ardaku::System for System {
     /// in a separate console. For QEMU, this would be the
     /// console used to start the QEMU process.
     fn write(&self, line: &[u8]) {
-        for c in line {
-            novuskinc::kernel::io::safe_sys_write(*c);
-        }
-        novuskinc::kernel::io::safe_sys_write(b'\n');
+        let line = core::str::from_utf8(line).unwrap();
+
+        printk::printk!("{line}");
     }
 
     /// Return version of the kernel.
     fn version(&self) -> u32 {
-        #[cfg(not(target_arch = "riscv32"))]
-        unsafe {
-            syscalls::syscall(syscalls::VERSION, 0).into()
-        }
-
-        #[cfg(target_arch = "riscv32")]
-        {
-            // TODO: Implement a better versioning system that works for RISC-V.
-            3
-        }
+        novuskinc::version::MINOR_VERSION.try_into().unwrap()
     }
 
     /// Reboot the system.
@@ -83,7 +73,7 @@ impl ardaku::System for System {
         // On all other targets, proceed to reboot.
         #[cfg(not(target_arch = "riscv32"))]
         unsafe {
-            syscalls::syscall(syscalls::REBOOT, 0);
+            novuskinc::power::reboot()
         };
     }
 }
