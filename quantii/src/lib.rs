@@ -50,9 +50,15 @@ impl ardaku::System for System {
     /// in a separate console. For QEMU, this would be the
     /// console used to start the QEMU process.
     fn write(&self, line: &[u8]) {
+        unsafe extern "Rust" {
+            pub(crate) fn arch_printk(fmt: core::fmt::Arguments);
+        }
+
         let line = core::str::from_utf8(line).unwrap();
 
-        printk::printk!("{line}");
+        unsafe {
+            arch_printk(format_args!("{line}"));
+        }
     }
 
     /// Return version of the kernel.
@@ -64,15 +70,8 @@ impl ardaku::System for System {
     ///
     /// This does not work on RISC-V targets.
     fn reboot(&self) {
-        // This is a no-op on RISC-V.
-        #[cfg(target_arch = "riscv32")]
-        Self::write(self, b"Reboot not supported on RISC-V");
-
-        // On all other targets, proceed to reboot.
-        #[cfg(not(target_arch = "riscv32"))]
-        unsafe {
-            //novuskinc::power::reboot()
-        };
+        // This is a no-op for now.
+        Self::write(self, b"Reboot not supported");
     }
 }
 
