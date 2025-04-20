@@ -38,9 +38,6 @@ path = "src/main.rs"
 version = "0.2"
 features = ["unstable"]
 
-[dependencies.novuskinc]
-path = "../../novusk/include/novusk"
-
 [dependencies.printk]
 path = "../../novusk/kernel/printk"
 
@@ -55,8 +52,8 @@ rev = "7da6ce78a26a8f704b9c95d94cab4bd1c84c80e0" # from branch "stable"
 version = "0.1"
 
 [dependencies.novusk]
-git = "https://github.com/ardaku/novusk.git"
-rev = "56eab01a76334791464ae6f955daa0227107302e" # from branch "v3-branch"
-version = "3.0"
-#path = "../../novusk"
+#git = "https://github.com/ardaku/novusk.git"
+#rev = "56eab01a76334791464ae6f955daa0227107302e" # from branch "v3-branch"
+#version = "3.0"
+path = "../../novusk"
 features = ["custom_config", "hifive", "rpi3"]

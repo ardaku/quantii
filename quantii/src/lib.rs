@@ -23,12 +23,10 @@
 #![no_std]
 
 extern crate alloc;
-extern crate novuskinc;
 
 use alloc::borrow::ToOwned;
 use alloc::string::{String, ToString};
 use ardaku::Error as ArdakuError;
-use novuskinc::kernel::syscalls;
 
 /// Novusk config
 pub mod novusk;
@@ -59,7 +57,7 @@ impl ardaku::System for System {
 
     /// Return version of the kernel.
     fn version(&self) -> u32 {
-        novuskinc::version::MINOR_VERSION.try_into().unwrap()
+        3 // novuskinc::version::MINOR_VERSION.try_into().unwrap()
     }
 
     /// Reboot the system.
@@ -73,7 +71,7 @@ impl ardaku::System for System {
         // On all other targets, proceed to reboot.
         #[cfg(not(target_arch = "riscv32"))]
         unsafe {
-            novuskinc::power::reboot()
+            //novuskinc::power::reboot()
         };
     }
 }

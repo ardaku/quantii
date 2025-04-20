@@ -5,7 +5,6 @@ version = 3
 [[package]]
 name = "aarch64"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "armfb",
  "dif",
@@ -14,7 +13,7 @@ dependencies = [
  "kinfo",
  "nmallocator",
  "novusk_syscalls",
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
  "r0 1.0.0",
  "rpi",
  "setup",
@@ -41,7 +40,6 @@ dependencies = [
 [[package]]
 name = "arm32"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "cfg-if 1.0.0",
  "cortex-a",
@@ -56,8 +54,7 @@ dependencies = [
  "kinfo",
  "nmallocator",
  "novusk_syscalls",
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
  "rpi",
  "rpi2kernel",
  "stellarisd",
@@ -67,12 +64,11 @@ dependencies = [
 [[package]]
 name = "armfb"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "fb",
  "libcolor",
  "novuskinc 0.1.1",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "printk",
  "rpi",
 ]
 
@@ -166,7 +162,6 @@ checksum = "e763eef8846b13b380f37dfecda401770b0ca4e56e95170237bd7c25c7db3582"
 [[package]]
 name = "console"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "gpu",
 ]
@@ -225,7 +220,6 @@ dependencies = [
 [[package]]
 name = "cpu"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 
 [[package]]
 name = "crossbeam-queue"
@@ -245,7 +239,6 @@ checksum = "22ec99545bb0ed0ea7bb9b8e1e9122ea386ff8a48c0922e43f36d45ab09e0e80"
 [[package]]
 name = "ctypes"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 
 [[package]]
 name = "darling"
@@ -283,9 +276,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "derive_more"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4a9b99b9cbbe49445b21764dc0625032a89b145a2642e67603e1c936f5458d05"
+dependencies = [
+ "derive_more-impl",
+]
+
+[[package]]
+name = "derive_more-impl"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "cb7330aeadfbe296029522e6c40f315320aba36fc43a5b3632f3795348f3bd22"
+dependencies = [
+ "proc-macro2 1.0.89",
+ "quote 1.0.37",
+ "syn 2.0.87",
+ "unicode-xid 0.2.6",
+]
+
+[[package]]
 name = "device"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 
 [[package]]
 name = "dif"
@@ -341,7 +354,6 @@ dependencies = [
 [[package]]
 name = "esp"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "device",
  "esp32-hal",
@@ -390,10 +402,8 @@ dependencies = [
 [[package]]
 name = "ex1"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
 ]
 
 [[package]]
@@ -407,7 +417,6 @@ dependencies = [
 [[package]]
 name = "fb"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "font8x8",
 ]
@@ -421,7 +430,6 @@ checksum = "3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1"
 [[package]]
 name = "fom_os"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "libost",
  "novuskinc 0.1.1",
@@ -436,11 +444,10 @@ checksum = "875488b8711a968268c7cf5d139578713097ca4635a76044e8fe8eedf831d07e"
 [[package]]
 name = "fscheck"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "kinfo",
  "konfig",
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
 ]
 
 [[package]]
@@ -470,10 +477,9 @@ dependencies = [
 [[package]]
 name = "gpu"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "armfb",
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
  "rpi",
  "vgag",
 ]
@@ -499,7 +505,6 @@ checksum = "b9e0384b61958566e926dc50660321d12159025e767c18e043daf26b70104c39"
 [[package]]
 name = "init"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "cfg-if 1.0.0",
  "console",
@@ -508,8 +513,8 @@ dependencies = [
  "konfig",
  "lazy_static",
  "modules",
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
+ "printk",
  "spin 0.9.8",
  "storage",
  "tempfs",
@@ -519,9 +524,8 @@ dependencies = [
 [[package]]
 name = "kb_mouse"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
  "pc_keyboard",
  "x86_64 0.14.12",
 ]
@@ -529,30 +533,27 @@ dependencies = [
 [[package]]
 name = "keyboard"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "conquer-once",
  "crossbeam-queue",
  "futures-util",
  "pc-keyboard",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "printk",
 ]
 
 [[package]]
 name = "kinfo"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "printk",
 ]
 
 [[package]]
 name = "konfig"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "lazy_static",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "printk",
  "spin 0.9.8",
 ]
 
@@ -568,10 +569,9 @@ dependencies = [
 [[package]]
 name = "lba"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "novuskinc 0.1.1",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "printk",
  "storage",
  "x86_64 0.14.12",
 ]
@@ -579,7 +579,6 @@ dependencies = [
 [[package]]
 name = "libbmu"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "memory",
 ]
@@ -593,7 +592,6 @@ checksum = "18d287de67fe55fd7e1581fe933d965a5a9477b38e949cfa9f8574ef01506398"
 [[package]]
 name = "libcolor"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 
 [[package]]
 name = "libm"
@@ -604,7 +602,6 @@ checksum = "8355be11b20d696c8f18f6cc018c4e372165b1fa8126cef092399c9951984ffa"
 [[package]]
 name = "libost"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "gpu",
  "mouse",
@@ -613,10 +610,9 @@ dependencies = [
 [[package]]
 name = "libwin"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "armfb",
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
  "vgag",
 ]
 
@@ -640,9 +636,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "log"
+version = "0.4.27"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "13dc2df351e3202783a1fe0d44375f7295ffb4049267b0f3018346dc122a1d94"
+
+[[package]]
 name = "mailbox"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 
 [[package]]
 name = "memchr"
@@ -653,7 +654,6 @@ checksum = "78ca9ab1a0babb1e7d5695e3530886289c18cf2f87ec19a575a0abdce112e3a3"
 [[package]]
 name = "memory"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "ctypes",
 ]
@@ -673,18 +673,16 @@ checksum = "8452105ba047068f40ff7093dd1d9da90898e63dd61736462e9cdda6a90ad3c3"
 [[package]]
 name = "mio"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 
 [[package]]
 name = "modules"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "armfb",
  "ex1",
  "fscheck",
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
+ "printk",
  "sf_rpilcd_35",
  "vgag",
 ]
@@ -692,24 +690,37 @@ dependencies = [
 [[package]]
 name = "mouse"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 
 [[package]]
 name = "multiboot"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "multiboot2",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "printk",
 ]
 
 [[package]]
 name = "multiboot2"
-version = "0.12.2"
+version = "0.23.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "004ef1d859a3efbd94f332855b0c4e3fbd7d5eb4828c99198b58086208005865"
+checksum = "43fcee184de68e344a888bc4f2b9d6b2f2f527cae8cedbb4d62a4df727d1ceae"
 dependencies = [
- "bitflags 1.3.2",
+ "bitflags 2.6.0",
+ "derive_more",
+ "log",
+ "multiboot2-common",
+ "ptr_meta",
+ "uefi-raw",
+]
+
+[[package]]
+name = "multiboot2-common"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fbabf8d9980d55576ba487924fa0b9a467fc0012b996b93d2319904f168ed8ab"
+dependencies = [
+ "derive_more",
+ "ptr_meta",
 ]
 
 [[package]]
@@ -736,7 +747,6 @@ checksum = "8d5439c4ad607c3c23abf66de8c8bf57ba8adcd1f129e699851a6e43935d339d"
 [[package]]
 name = "nkuefi"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "uart_16550",
 ]
@@ -744,7 +754,6 @@ dependencies = [
 [[package]]
 name = "nmallocator"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "cfg-if 1.0.0",
  "linked_list_allocator",
@@ -754,7 +763,6 @@ dependencies = [
 [[package]]
 name = "notify"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "keyboard",
 ]
@@ -762,7 +770,6 @@ dependencies = [
 [[package]]
 name = "novusk"
 version = "3.0.2"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "aarch64",
  "arm32",
@@ -778,9 +785,9 @@ dependencies = [
  "libost",
  "libwin",
  "memory",
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
  "pc_keyboard",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "printk",
  "riscv 0.1.0",
  "storage",
  "unistd",
@@ -802,11 +809,21 @@ checksum = "2a4c27dbbcc49aa343a1169f58bd3db40e6f1e0cc95d6303b74c15456809f05d"
 [[package]]
 name = "novuskinc"
 version = "0.1.0"
-
-[[package]]
-name = "novuskinc"
-version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
+dependencies = [
+ "cfg-if 1.0.0",
+ "hifive1",
+ "kinfo",
+ "libbmu",
+ "novusk_syscalls",
+ "pc_keyboard",
+ "power",
+ "printk",
+ "rpi",
+ "tempfs",
+ "tock-registers",
+ "vfs",
+ "vgag",
+]
 
 [[package]]
 name = "novuskinc"
@@ -879,7 +896,6 @@ checksum = "5c6f2d937e3b8d63449b01401e2bae4041bc9dd1129c2e3e0d239407cf6635ac"
 [[package]]
 name = "pc_keyboard"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "conquer-once",
  "crossbeam-queue",
@@ -887,7 +903,7 @@ dependencies = [
  "keyboard",
  "notify",
  "pc-keyboard",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "printk",
  "x86_64 0.14.12",
 ]
 
@@ -913,13 +929,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8b870d8c151b6f2fb93e84a13146138f05d02ed11c7e7c54f8826aaaf7c9f184"
 
 [[package]]
-name = "printk"
+name = "power"
 version = "0.1.0"
+dependencies = [
+ "printk",
+ "x86_64 0.14.12",
+]
 
 [[package]]
 name = "printk"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 
 [[package]]
 name = "proc-macro2"
@@ -927,7 +946,7 @@ version = "0.4.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf3d2011ab5c909338f7887f4fc896d35932e29146c12c8d01da6b22a80ba759"
 dependencies = [
- "unicode-xid",
+ "unicode-xid 0.1.0",
 ]
 
 [[package]]
@@ -940,6 +959,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "ptr_meta"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bcada80daa06c42ed5f48c9a043865edea5dc44cbf9ac009fda3b89526e28607"
+dependencies = [
+ "ptr_meta_derive",
+]
+
+[[package]]
+name = "ptr_meta_derive"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bca9224df2e20e7c5548aeb5f110a0f3b77ef05f8585139b7148b59056168ed2"
+dependencies = [
+ "proc-macro2 1.0.89",
+ "quote 1.0.37",
+ "syn 1.0.109",
+]
+
+[[package]]
 name = "quantii"
 version = "0.1.0"
 dependencies = [
@@ -947,8 +986,7 @@ dependencies = [
  "externc-libm",
  "libm",
  "novusk",
- "novuskinc 0.1.0",
- "printk 0.1.0",
+ "printk",
 ]
 
 [[package]]
@@ -1059,14 +1097,13 @@ checksum = "2b15c43186be67a4fd63bee50d0303afffcef381492ebe2c5d87f324e1b8815c"
 [[package]]
 name = "riscv"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "hifive1",
  "kinfo",
  "nmallocator",
  "novusk_syscalls",
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
+ "printk",
  "r0 1.0.0",
  "riscv 0.7.0",
  "riscv-rt",
@@ -1133,7 +1170,6 @@ dependencies = [
 [[package]]
 name = "rpi"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "device",
  "libbmu",
@@ -1146,14 +1182,13 @@ dependencies = [
 [[package]]
 name = "rpi2kernel"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "armfb",
  "console",
  "fb",
  "kinfo",
  "konfig",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "printk",
  "rpi",
 ]
 
@@ -1211,12 +1246,11 @@ checksum = "388a1df253eca08550bef6c72392cfe7c30914bf41df5269b68cbd6ff8f570a3"
 [[package]]
 name = "setup"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "kinfo",
  "konfig",
  "libbmu",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "printk",
  "sos",
  "unistd",
 ]
@@ -1224,16 +1258,14 @@ dependencies = [
 [[package]]
 name = "sf_rpilcd_35"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
  "rpi",
 ]
 
 [[package]]
 name = "sifive"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "device",
  "hifive1",
@@ -1242,11 +1274,10 @@ dependencies = [
 [[package]]
 name = "sos"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "fom_os",
  "libost",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "printk",
 ]
 
 [[package]]
@@ -1276,23 +1307,21 @@ dependencies = [
 [[package]]
 name = "stellarisd"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "cortex-m",
  "cortex-m-semihosting",
  "device",
  "libbmu",
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
  "tm4c123x-hal",
 ]
 
 [[package]]
 name = "storage"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "novuskinc 0.1.1",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "printk",
 ]
 
 [[package]]
@@ -1309,7 +1338,7 @@ checksum = "9ca4b3b69a77cbe1ffc9e198781b7acb0c7365a883670e8f1c1bc66fba79a5c5"
 dependencies = [
  "proc-macro2 0.4.30",
  "quote 0.6.13",
- "unicode-xid",
+ "unicode-xid 0.1.0",
 ]
 
 [[package]]
@@ -1324,9 +1353,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "syn"
+version = "2.0.87"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "25aa4ce346d03a6dcd68dd8b4010bcb74e54e62c90c573f394c46eae99aba32d"
+dependencies = [
+ "proc-macro2 1.0.89",
+ "quote 1.0.37",
+ "unicode-ident",
+]
+
+[[package]]
 name = "tempfs"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "vfs",
 ]
@@ -1334,7 +1373,6 @@ dependencies = [
 [[package]]
 name = "time"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 
 [[package]]
 name = "tm4c-hal"
@@ -1391,6 +1429,23 @@ dependencies = [
 ]
 
 [[package]]
+name = "uefi-raw"
+version = "0.8.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b463030b802e1265a3800fab24df95d3229c202c2e408832a206f05b4d1496ca"
+dependencies = [
+ "bitflags 2.6.0",
+ "ptr_meta",
+ "uguid",
+]
+
+[[package]]
+name = "uguid"
+version = "2.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0c8352f8c05e47892e7eaf13b34abd76a7f4aeaf817b716e88789381927f199c"
+
+[[package]]
 name = "unicode-ident"
 version = "1.0.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1403,18 +1458,22 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fc72304796d0818e357ead4e000d19c9c174ab23dc11093ac919054d20a6a7fc"
 
 [[package]]
+name = "unicode-xid"
+version = "0.2.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ebc1c04c71510c7f702b52b7c350734c9ff1295c464a03335b00bb84fc54f853"
+
+[[package]]
 name = "unistd"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "cfg-if 1.0.0",
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
 ]
 
 [[package]]
 name = "usbd"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 
 [[package]]
 name = "vcell"
@@ -1425,7 +1484,6 @@ checksum = "77439c1b53d2303b20d9459b1ade71a83c716e3f9c34f3228c00e6f185d6c002"
 [[package]]
 name = "vfs"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "memory",
 ]
@@ -1447,7 +1505,6 @@ dependencies = [
 [[package]]
 name = "vgag"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "fb",
  "lazy_static",
@@ -1556,7 +1613,6 @@ dependencies = [
 [[package]]
 name = "x86_64"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "bootloader",
  "conquer-once",
@@ -1575,10 +1631,10 @@ dependencies = [
  "nmallocator",
  "notify",
  "novusk_syscalls",
- "novuskinc 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "novuskinc 0.1.0",
  "pc_keyboard",
  "pic8259",
- "printk 0.1.0 (git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e)",
+ "printk",
  "raw-cpuid 9.1.1",
  "setup",
  "spin 0.9.8",
@@ -1605,7 +1661,6 @@ dependencies = [
 [[package]]
 name = "x86_64-sound"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "pc-beeper",
 ]
@@ -1617,7 +1672,6 @@ version = "0.1.0"
 [[package]]
 name = "xtensa"
 version = "0.1.0"
-source = "git+https://github.com/ardaku/novusk.git?rev=56eab01a76334791464ae6f955daa0227107302e#56eab01a76334791464ae6f955daa0227107302e"
 dependencies = [
  "device",
  "esp",
