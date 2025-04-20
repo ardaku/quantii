@@ -22,9 +22,7 @@
 
 [package]
 name = "quantii"
-version = "0.1.0"
-edition = "2021"
-publish = false
+edition = "2024"
 
 [lib]
 name = "quantii"

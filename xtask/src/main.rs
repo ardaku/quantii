@@ -33,8 +33,9 @@ fn help() {
     println!("  arm            AARCH 64");
 }
 
-fn build() {
+fn build(curdir: &str, path: &str) {
     let status = Command::new("cargo")
+        .env("PATH", format!("{curdir}/target/bin:{path}"))
         .args(["install", "--path", "runner", "--root", "target"])
         .status()
         .expect("failed to execute process");
@@ -120,8 +121,9 @@ fn dist() {
     }
 }
 
-fn qemu_riscv() {
+fn qemu_riscv(curdir: &str, path: &str) {
     let status = Command::new("cargo")
+        .env("PATH", format!("{curdir}/target/bin:{path}"))
         .args([
             "run",
             "--release",
@@ -133,19 +135,20 @@ fn qemu_riscv() {
     assert!(status.success());
 }
 
-fn qemu_arm() {
+fn qemu_arm(curdir: &str, path: &str) {
     let status = Command::new("cargo")
+        .env("PATH", format!("{curdir}/target/bin:{path}"))
         .args(["run", "--release", "--target", "aarch64-novusk.json"])
         .status()
         .expect("failed to execute process");
     assert!(status.success());
 }
 
-fn qemu() {
+fn qemu(curdir: &str, path: &str) {
     match env::args().nth(2).as_deref() {
         None => panic!("qemu: need arch"),
-        Some("riscv") => qemu_riscv(),
-        Some("arm") => qemu_arm(),
+        Some("riscv") => qemu_riscv(curdir, path),
+        Some("arm") => qemu_arm(curdir, path),
         Some(arg) => panic!("qemu: Invalid argument: {arg}"),
     }
 }
@@ -155,9 +158,8 @@ fn main() {
     let curdir = env::current_dir().unwrap();
     let curdir = curdir.as_path().to_str().unwrap();
     let path = env::var("PATH").unwrap();
-    env::set_var("PATH", format!("{curdir}/target/bin:{path}"));
     // Install runner
-    build();
+    build(&curdir, &path);
     // Create config
     const CONFIG_DIR: &str = "quantii/.cargo/";
     const CONFIG_FILE: &str = "quantii/.cargo/config.toml";
@@ -173,7 +175,7 @@ fn main() {
     match env::args().nth(1).as_deref() {
         None | Some("--help") => help(),
         Some("dist") => dist(),
-        Some("qemu") => qemu(),
+        Some("qemu") => qemu(&curdir, &path),
         Some(arg) => panic!("Invalid xtask argument: {arg}"),
     }
 }

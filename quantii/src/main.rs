@@ -31,10 +31,10 @@ extern crate externc_libm;
 use quantii::setup;
 
 // Called from novusk
-#[no_mangle]
+#[unsafe(no_mangle)]
 pub extern "C" fn kernel_main() -> ! {
     setup()
 }
 
-#[no_mangle]
+#[unsafe(no_mangle)]
 pub extern "C" fn initramfs_main() {}
