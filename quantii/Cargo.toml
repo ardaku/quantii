@@ -22,9 +22,7 @@
 
 [package]
 name = "quantii"
-version = "0.1.0"
-edition = "2021"
-publish = false
+edition = "2024"
 
 [lib]
 name = "quantii"
@@ -34,18 +32,6 @@ path = "src/lib.rs"
 name = "quantii"
 path = "src/main.rs"
 
-[dependencies.libm]
-version = "0.2"
-features = ["unstable"]
-
-[dependencies.novuskinc]
-version = "0.1.1"
-
-[dependencies.externc-libm]
-git = "https://github.com/ardaku/externc-libm.git"
-branch = "quantii"
-version = "0.1"
-
 [dependencies.ardaku]
 git = "https://github.com/ardaku/ardaku.git"
 rev = "7da6ce78a26a8f704b9c95d94cab4bd1c84c80e0" # from branch "stable"
@@ -53,6 +39,6 @@ version = "0.1"
 
 [dependencies.novusk]
 git = "https://github.com/ardaku/novusk.git"
-rev = "67604d34adaf4a436c3e008c4a16917b1494c2a5" # from branch "v3-branch"
+rev = "e2ae773bd8a700a45792f20b8f1077ab42655fcb" # from branch "quantii-patches"
 version = "3.0"
 features = ["custom_config", "hifive", "rpi3"]

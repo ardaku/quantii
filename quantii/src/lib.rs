@@ -23,12 +23,10 @@
 #![no_std]
 
 extern crate alloc;
-extern crate novuskinc;
 
 use alloc::borrow::ToOwned;
 use alloc::string::{String, ToString};
 use ardaku::Error as ArdakuError;
-use novuskinc::kernel::syscalls;
 
 /// Novusk config
 pub mod novusk;
@@ -41,7 +39,7 @@ struct System;
 impl ardaku::System for System {
     /// Sleep until an event interrupt occurs.
     fn sleep(&self) -> (ardaku::Event, u32) {
-        let byte = novuskinc::kernel::io::safe_sys_read();
+        let byte = b'_'; // novuskinc::kernel::io::safe_sys_read();
         (ardaku::Event::Read, byte.into())
     }
 
@@ -52,39 +50,28 @@ impl ardaku::System for System {
     /// in a separate console. For QEMU, this would be the
     /// console used to start the QEMU process.
     fn write(&self, line: &[u8]) {
-        for c in line {
-            novuskinc::kernel::io::safe_sys_write(*c);
+        unsafe extern "Rust" {
+            pub(crate) fn arch_printk(fmt: core::fmt::Arguments);
         }
-        novuskinc::kernel::io::safe_sys_write(b'\n');
+
+        let line = core::str::from_utf8(line).unwrap();
+
+        unsafe {
+            arch_printk(format_args!("{line}"));
+        }
     }
 
     /// Return version of the kernel.
     fn version(&self) -> u32 {
-        #[cfg(not(target_arch = "riscv32"))]
-        unsafe {
-            syscalls::syscall(syscalls::VERSION, 0).into()
-        }
-
-        #[cfg(target_arch = "riscv32")]
-        {
-            // TODO: Implement a better versioning system that works for RISC-V.
-            3
-        }
+        3 // novuskinc::version::MINOR_VERSION.try_into().unwrap()
     }
 
     /// Reboot the system.
     ///
     /// This does not work on RISC-V targets.
     fn reboot(&self) {
-        // This is a no-op on RISC-V.
-        #[cfg(target_arch = "riscv32")]
-        Self::write(self, b"Reboot not supported on RISC-V");
-
-        // On all other targets, proceed to reboot.
-        #[cfg(not(target_arch = "riscv32"))]
-        unsafe {
-            syscalls::syscall(syscalls::REBOOT, 0);
-        };
+        // This is a no-op for now.
+        Self::write(self, b"Reboot not supported");
     }
 }
 
